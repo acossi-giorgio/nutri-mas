@@ -7,6 +7,7 @@ from spade_bdi.bdi import BDIAgent
 from src.utils.logger import get_logger
 from src.utils.bdi import (
     add_belief_fact,
+    add_typed_belief_fact,
     belief_dicts,
     group_rows_by_key,
     ground,
@@ -679,7 +680,19 @@ class NutritionistAgent(BDIAgent):
             (weight_rows, "weight_log_entry", _WEIGHT_SCHEMA),
         ):
             for row in rows:
-                add_belief_fact(self, belief_name, *_row_args(row, schema))
+                args = _row_args(row, schema)
+                if belief_name == "meal_log_row":
+                    args = [
+                        value
+                        if index in {6, 17}
+                        else agentspeak.Literal(value)
+                        if isinstance(value, str)
+                        else value
+                        for index, value in enumerate(args)
+                    ]
+                    add_typed_belief_fact(self, belief_name, *args)
+                else:
+                    add_belief_fact(self, belief_name, *args)
                 injected += 1
         logger.info(
             "Injected %d CSV rows into Nutritionist BDI beliefs",

@@ -407,6 +407,15 @@ def _request_recipe(asl_agent, term, intention):
     yield
 
 
+@actions.add(".same_text", 2)
+def _same_text(asl_agent, term, intention):
+    """Compare two ASL values as normalized text."""
+    left = _text(ground(term.args[0], intention.scope)).strip().lower()
+    right = _text(ground(term.args[1], intention.scope)).strip().lower()
+    if left == right:
+        yield
+
+
 @actions.add(".get_next_slot", 4)
 def _get_next_slot(asl_agent, term, intention):
     """Return next slot."""

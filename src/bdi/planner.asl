@@ -514,20 +514,22 @@ start.
     .request_recipe(Username, Day, Slot, Template, Calories, Protein, Carbs, Fat).
 
 /* Handle the recipe event. */
-+recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
-        pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative") <-
-    -recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
-    -pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative");
++recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
+        pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative") &
+        .same_text(RecipeDay, PendingDay) & .same_text(RecipeSlot, PendingSlot) <-
+    -recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
+    -pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative");
     .send("nutritionist@localhost", tell,
-        runtime_recipe_response(Username, Date, Slot, Template, Name, Calories, Protein, Carbs, Fat)).
+        runtime_recipe_response(Username, Date, PendingSlot, Template, Name, Calories, Protein, Carbs, Fat)).
 
 /* Handle the recipe event. */
-+recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
-        pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "rebalance") <-
-    -recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
-    -pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "rebalance");
++recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
+        pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "rebalance") &
+        .same_text(RecipeDay, PendingDay) & .same_text(RecipeSlot, PendingSlot) <-
+    -recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
+    -pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "rebalance");
     .send("nutritionist@localhost", tell,
-        rebalance_recipe_response(Username, Date, Slot, Template, Name, Calories, Protein, Carbs, Fat)).
+        rebalance_recipe_response(Username, Date, PendingSlot, Template, Name, Calories, Protein, Carbs, Fat)).
 
 /* Handle the recipe event. */
 +recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :

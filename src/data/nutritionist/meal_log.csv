@@ -1,1 +1,6 @@
 username,date,weekday,meal_type,planned_recipe,actual_recipe,status,planned_calories,planned_protein_g,planned_carbs_g,planned_fat_g,calories,protein_g,carbs_g,fat_g,source,forecasted_at,confirmation_requested_at,updated_at
+test_3,2026-07-16,thursday,afternoon_snack,Apple and Ricotta Snack,,forecasted,244,14,28,17,244,14,28,17,plan,bdi,,bdi
+test_3,2026-07-16,thursday,breakfast,"Whole-Wheat Biscuits with Ricotta, Yogurt and Banana",,forecasted,455,26,53,15,455,26,53,15,plan,bdi,,bdi
+test_3,2026-07-16,thursday,dinner,Whole-wheat pasta with ricotta and zucchini,,forecasted,507,30,58,17,507,30,58,17,plan,bdi,,bdi
+test_3,2026-07-16,thursday,lunch,Warm Lentils with Ricotta and Salad,,forecasted,506,31,60,17,506,31,60,17,plan,bdi,,bdi
+test_3,2026-07-16,thursday,morning_snack,Ricotta with Apple and Wholegrain Crispbread,,forecasted,168,9,20,9,168,9,20,9,plan,bdi,,bdi

@@ -10,8 +10,13 @@ def ground(term_arg, scope):
 def add_belief_fact(agent, name: str, *args) -> None:
     """Add a BDI fact unless an identical belief already exists."""
     new_args = tuple(agentspeak.Literal(x) if isinstance(x, str) else x for x in args)
+    add_typed_belief_fact(agent, name, *new_args)
+
+
+def add_typed_belief_fact(agent, name: str, *args) -> None:
+    """Add a BDI fact while preserving each argument's ASL type."""
     source_self = agentspeak.Literal("source", (agentspeak.Literal("self"),))
-    term = agentspeak.Literal(name, new_args, (source_self,))
+    term = agentspeak.Literal(name, tuple(args), (source_self,))
     for belief in list(agent.bdi_agent.beliefs[term.literal_group()]):
         if agentspeak.unifies(term, belief):
             return
