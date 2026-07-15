@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Local environment and secrets
+.env
+.env.*
+llm_config.yaml
+!.env.example
+config/.env
+config/.env.*
+!config/.env.example
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.token
+*.secret
+secrets/
+
+# LiteLLM Proxy local config may contain provider keys.
+config/litellm_config.yaml
+config/litellm_config.local.yaml
+!config/litellm_config.example.yaml
+
+# Runtime outputs
+logs/
+.cache/
+src/data/simulation/runs/
+
+# OS/editor/tooling
+.DS_Store
+.agents/
+.streamlit/

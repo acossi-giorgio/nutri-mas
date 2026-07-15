@@ -1,0 +1,15 @@
+spade>=4.1.2
+spade-bdi>=0.3.2
+spade-llm>=0.3.0
+litellm[proxy]>=1.0.0
+spade-artifact>=0.3.1
+pyjabber>=0.4.1
+requests>=2.32.5
+loguru>=0.7.3
+rich>=13.0.0
+python-dotenv>=1.0.0
+PyYAML>=6.0.0
+qdrant-client>=1.9.0
+pandas>=2.0.0
+openpyxl>=3.1.0
+streamlit>=1.30.0

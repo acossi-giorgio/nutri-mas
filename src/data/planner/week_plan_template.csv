@@ -1,0 +1,106 @@
+username,day,slot,template,calories,protein_g,carbs_g,fat_g,category
+test,friday,afternoon_snack,Spuntino salato proteico (Uova) Medium,240,14,28,8,egg
+test,friday,breakfast,Colazione a base di carboidrati complessi Medium,450,26,53,15,grain
+test,friday,dinner,Secondo piatto di carne rossa con contorno Small,500,29,59,17,red_meat
+test,friday,lunch,Piatto a base di verdure con proteine leggere Medium,650,37,76,22,vegetable
+test,friday,morning_snack,Spuntino salato proteico (Affettati) Large,280,16,33,9,poultry
+test,monday,afternoon_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test,monday,breakfast,Colazione a base di latticini Small,300,17,35,10,dairy
+test,monday,dinner,Secondo piatto di pesce con contorno Small,500,29,59,17,fish
+test,monday,lunch,Secondo piatto di carne rossa con contorno Medium,650,37,76,22,red_meat
+test,monday,morning_snack,Spuntino a base di frutta secca Medium,240,14,28,8,nuts
+test,saturday,afternoon_snack,Spuntino a base di frutta fresca Small,160,9,19,5,fruit
+test,saturday,breakfast,Colazione salata con affettati Small,300,17,35,10,poultry
+test,saturday,dinner,Secondo piatto di legumi con contorno Small,500,29,59,17,legume
+test,saturday,lunch,Secondo piatto di carne bianca con contorno Medium,650,37,76,22,poultry
+test,saturday,morning_snack,Spuntino salato proteico (Uova) Medium,240,14,28,8,egg
+test,sunday,afternoon_snack,Spuntino salato proteico (Affettati) Small,160,9,19,5,poultry
+test,sunday,breakfast,Colazione con frutta secca o semi Small,300,17,35,10,nuts
+test,sunday,dinner,Secondo piatto a base di formaggi con contorno Small,500,29,59,17,dairy
+test,sunday,lunch,Secondo piatto a base di uova con contorno Medium,650,37,76,22,egg
+test,sunday,morning_snack,Spuntino a base di frutta secca Small,160,9,19,5,nuts
+test,thursday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test,thursday,breakfast,Colazione a base di latticini Medium,450,26,53,15,dairy
+test,thursday,dinner,Secondo piatto a base di uova con contorno Small,500,29,59,17,egg
+test,thursday,lunch,Piatto a base di verdure con proteine leggere Medium,650,37,76,22,vegetable
+test,thursday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test,tuesday,afternoon_snack,Spuntino salato proteico (Affettati) Small,160,9,19,5,poultry
+test,tuesday,breakfast,Colazione salata con affettati Medium,450,26,53,15,poultry
+test,tuesday,dinner,Secondo piatto a base di uova con contorno Small,500,29,59,17,egg
+test,tuesday,lunch,Secondo piatto di carne rossa con contorno Medium,650,37,76,22,red_meat
+test,tuesday,morning_snack,Spuntino a base di frutta secca Large,280,16,33,9,nuts
+test,wednesday,afternoon_snack,Spuntino salato proteico (Uova) Small,160,9,19,5,egg
+test,wednesday,breakfast,Colazione a base di carboidrati complessi Medium,450,26,53,15,grain
+test,wednesday,dinner,Secondo piatto di carne bianca con contorno Small,500,29,59,17,poultry
+test,wednesday,lunch,Secondo piatto a base di formaggi con contorno Medium,650,37,76,22,dairy
+test,wednesday,morning_snack,Spuntino a base di latticini Medium,240,14,28,8,dairy
+test_2,friday,afternoon_snack,Spuntino salato proteico (Uova) Medium,240,14,28,8,egg
+test_2,friday,breakfast,Colazione a base di carboidrati complessi Large,600,34,70,20,grain
+test_2,friday,dinner,Secondo piatto a base di uova con contorno Medium,650,37,76,22,egg
+test_2,friday,lunch,Secondo piatto di legumi con contorno Medium,650,37,76,22,legume
+test_2,friday,morning_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
+test_2,monday,afternoon_snack,Spuntino a base di latticini Medium,240,14,28,8,dairy
+test_2,monday,breakfast,Colazione salata con uova Large,600,34,70,20,egg
+test_2,monday,dinner,Primo piatto di carboidrati con contorno Medium,650,37,76,22,grain
+test_2,monday,lunch,Piatto a base di verdure con proteine leggere Medium,650,37,76,22,vegetable
+test_2,monday,morning_snack,Spuntino salato proteico (Uova) Medium,240,14,28,8,egg
+test_2,saturday,afternoon_snack,Spuntino a base di frutta secca Medium,240,14,28,8,nuts
+test_2,saturday,breakfast,Colazione con frutta secca o semi Large,600,34,70,20,nuts
+test_2,saturday,dinner,Secondo piatto a base di uova con contorno Medium,650,37,76,22,egg
+test_2,saturday,lunch,Piatto a base di verdure con proteine leggere Medium,650,37,76,22,vegetable
+test_2,saturday,morning_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
+test_2,sunday,afternoon_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
+test_2,sunday,breakfast,Colazione salata con affettati Large,600,34,70,20,poultry
+test_2,sunday,dinner,Secondo piatto a base di uova con contorno Medium,650,37,76,22,egg
+test_2,sunday,lunch,Secondo piatto di pesce con contorno Medium,650,37,76,22,fish
+test_2,sunday,morning_snack,Spuntino a base di carboidrati Medium,240,14,28,8,grain
+test_2,thursday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_2,thursday,breakfast,Colazione a base di frutta Large,600,34,70,20,fruit
+test_2,thursday,dinner,Secondo piatto a base di uova con contorno Medium,650,37,76,22,egg
+test_2,thursday,lunch,Secondo piatto di pesce con contorno Medium,650,37,76,22,fish
+test_2,thursday,morning_snack,Spuntino a base di frutta secca Medium,240,14,28,8,nuts
+test_2,tuesday,afternoon_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
+test_2,tuesday,breakfast,Colazione salata con uova Large,600,34,70,20,egg
+test_2,tuesday,dinner,Secondo piatto di carne bianca con contorno Medium,650,37,76,22,poultry
+test_2,tuesday,lunch,Piatto a base di verdure con proteine leggere Medium,650,37,76,22,vegetable
+test_2,tuesday,morning_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_2,wednesday,afternoon_snack,Spuntino a base di frutta secca Medium,240,14,28,8,nuts
+test_2,wednesday,breakfast,Colazione a base di latticini Large,600,34,70,20,dairy
+test_2,wednesday,dinner,Primo piatto di carboidrati con contorno Medium,650,37,76,22,grain
+test_2,wednesday,lunch,Secondo piatto di carne rossa con contorno Medium,650,37,76,22,red_meat
+test_2,wednesday,morning_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
+test_3,friday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,friday,breakfast,Colazione a base di latticini Medium,450,26,53,15,dairy
+test_3,friday,dinner,Secondo piatto a base di uova con contorno Small,500,29,59,17,egg
+test_3,friday,lunch,Primo piatto di carboidrati con contorno Small,500,29,59,17,grain
+test_3,friday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test_3,monday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,monday,breakfast,Colazione a base di frutta Medium,450,26,53,15,fruit
+test_3,monday,dinner,Piatto a base di verdure con proteine leggere Small,500,29,59,17,vegetable
+test_3,monday,lunch,Secondo piatto di legumi con contorno Small,500,29,59,17,legume
+test_3,monday,morning_snack,Spuntino a base di frutta secca Small,160,9,19,5,nuts
+test_3,saturday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,saturday,breakfast,Colazione a base di latticini Medium,450,26,53,15,dairy
+test_3,saturday,dinner,Secondo piatto a base di uova con contorno Small,500,29,59,17,egg
+test_3,saturday,lunch,Primo piatto di carboidrati con contorno Small,500,29,59,17,grain
+test_3,saturday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test_3,sunday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,sunday,breakfast,Colazione a base di latticini Medium,450,26,53,15,dairy
+test_3,sunday,dinner,Piatto a base di verdure con proteine leggere Small,500,29,59,17,vegetable
+test_3,sunday,lunch,Secondo piatto a base di formaggi con contorno Small,500,29,59,17,dairy
+test_3,sunday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test_3,thursday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,thursday,breakfast,Colazione a base di latticini Medium,450,26,53,15,dairy
+test_3,thursday,dinner,Primo piatto di carboidrati con contorno Small,500,29,59,17,grain
+test_3,thursday,lunch,Secondo piatto di legumi con contorno Small,500,29,59,17,legume
+test_3,thursday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy
+test_3,tuesday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,tuesday,breakfast,Colazione a base di frutta Medium,450,26,53,15,fruit
+test_3,tuesday,dinner,Piatto a base di verdure con proteine leggere Small,500,29,59,17,vegetable
+test_3,tuesday,lunch,Secondo piatto di legumi con contorno Small,500,29,59,17,legume
+test_3,tuesday,morning_snack,Spuntino a base di frutta secca Small,160,9,19,5,nuts
+test_3,wednesday,afternoon_snack,Spuntino a base di frutta fresca Medium,240,14,28,8,fruit
+test_3,wednesday,breakfast,Colazione a base di frutta Medium,450,26,53,15,fruit
+test_3,wednesday,dinner,Primo piatto di carboidrati con contorno Small,500,29,59,17,grain
+test_3,wednesday,lunch,Secondo piatto di legumi con contorno Small,500,29,59,17,legume
+test_3,wednesday,morning_snack,Spuntino a base di latticini Small,160,9,19,5,dairy

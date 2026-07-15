@@ -1,0 +1,1589 @@
+﻿"ingredient","calories","protein_g","carbs_g","fat_g"
+"Cardamom seed, dried, ground",295,10,34,6
+"Cinnamon, dried, ground",240,4,27,1
+"Chilli (chili), dried, ground",293,12,12,14
+"Cloves, dried, ground",332,6,31,13
+"Coriander seed, dried, ground",321,12,8,17
+"Cumin (cummin) seed, dried, ground",426,17,33,22
+"Curry powder",294,14,2,14
+"Fenugreek seed, dried",258,23,4,6
+"Ginger, dried, ground",334,9,57,4
+"Mustard powder",547,29,17,39
+"Nutmeg, dried, ground",500,5,28,36
+"Oregano, dried",262,9,26,4
+"Paprika, dry powder",313,14,19,12
+"Pepper, black, ground",276,10,38,3
+"Rosemary, dried",314,4,20,15
+"Sage, dried",315,10,20,12
+"Thyme, dried, ground",283,9,26,7
+"Turmeric, dried, ground",291,9,44,3
+"Salt substitute, potassium chloride",0,0,0,0
+"Salt, table, iodised",0,0,0,0
+"Salt, table, non-iodised",0,0,0,0
+"Stock, dry powder or cube",215,11,22,8
+"Stock, liquid, all flavours (except fish), prepared from commercial powder or cube",4,0,0,0
+"Taco seasoning mix, chilli-based",319,6,58,4
+"Baking powder, dry powder",87,0,19,0
+"Baking soda (bicarbonate), dry powder",0,0,0,0
+"Cream of tartar, dry powder",0,0,0,0
+"Lecithin, soy, granules",626,6,4,62
+"Gelatine, all types",346,84,0,0
+"Vanilla, artificial or imitation",55,0,14,0
+"Vanilla bean extract",288,0,12,0
+"Yeast, dry powder",269,36,6,5
+"Beer, high alcohol (5% v/v & above)",42,0,2,0
+"Beer, full strength (alcohol 4-4.9% v/v)",36,0,2,0
+"Beer, full strength (alcohol 4-4.9% v/v), carbohydrate modified",30,0,1,0
+"Beer, mid-strength (alcohol 3-3.9% v/v)",31,0,2,0
+"Beer, light (alcohol 1-2.9% v/v)",24,0,2,0
+"Alcoholic beverage, spirit, ~30% v/v, all (Brandy, Gin, Rum, Vodka and Whisky), cooked",72,0,0,0
+"Alcoholic beverage, spirit, ~40% v/v, all (Brandy, Gin, Rum, Vodka and Whisky)",213,0,0,0
+"Cider, apple (alcohol ~4-5% v/v)",50,0,5,0
+"Mirin",169,0,26,0
+"Wine, red",80,0,0,0
+"Wine, red, cabernet sauvignon",79,0,0,0
+"Wine, red, merlot",79,0,0,0
+"Wine, red, pinot noir",77,0,0,0
+"Wine, red, shiraz",82,0,0,0
+"Wine, red, sparkling",81,0,2,0
+"Wine, red, cooked",29,0,0,0
+"Wine, rose",69,0,0,0
+"Wine, white, sauvignon blanc",71,0,0,0
+"Wine, white, semillon",65,0,0,0
+"Wine, white, chardonnay",74,0,0,0
+"Wine, white, riesling",70,0,0,0
+"Wine, white",72,0,0,0
+"Wine, white, cooked",26,0,0,0
+"Wine, white, sparkling",73,0,1,0
+"Wine, white, sweet dessert style",119,0,14,0
+"Wine, fortified, port",143,0,12,0
+"Wine, fortified, sherry, dry style (~1% sugars)",104,0,1,0
+"Wine, fortified, sherry, sweet style (~11% sugars)",138,0,11,0
+"Beverage base, chocolate flavour, added vitamins & minerals (Milo)",385,12,60,9
+"Beverage base, chocolate flavour, unfortified (Nesquik brand)",376,5,83,2
+"Beverage base, drinking chocolate, unfortified",360,5,76,4
+"Cocoa powder",319,22,10,15
+"Beverage, chocolate flavour, from Milo powder, with regular fat cow's milk",93,4,10,4
+"Beverage, chocolate flavour, from Nesquik powder, with regular fat cow's milk",82,3,9,3
+"Beverage, chocolate flavour, from drinking chocolate, with regular fat cow's milk",85,3,10,3
+"Protein powder, hemp seed based",335,35,4,13
+"Protein powder, whey based, protein >70%, unfortified",375,85,1,2
+"Protein powder, whey based, protein >70%, unfortified, prepared with water",62,14,0,0
+"Coffee, instant, dry powder or granules",141,18,3,0
+"Coffee, instant, dry powder or granules, decaffeinated",141,18,3,0
+"Coffee mix, with beverage whitener & sugar, dry powder",393,13,56,12
+"Coffee, prepared from coffee mix with sugar & whitener, no added milk",20,0,2,0
+"Coffee, black, from instant coffee powder",2,0,0,0
+"Coffee, black, from instant coffee powder, decaffeinated",2,0,0,0
+"Coffee, espresso, from ground coffee beans",10,1,0,0
+"Coffee, long black, from ground coffee beans",2,0,0,0
+"Coffee, flat white/latte/cappuccino, from ground coffee beans, with regular fat cow's milk",47,2,3,2
+"Cordial base, 25% citrus fruit juice, regular",145,0,37,0
+"Cordial base, 40% citrus fruit juice, regular",158,0,40,0
+"Cordial base, blackcurrant juice, regular",175,0,45,0
+"Cordial base, fruit juice/flavours, intense sweetened or diet",29,0,7,0
+"Cordial, 25% citrus fruit juice, regular, recommended dilution",34,0,8,0
+"Cordial, 40% citrus fruit juice, regular, recommended dilution",37,0,9,0
+"Cordial, blackcurrant juice, regular, recommended dilution",36,0,9,0
+"Cordial, fruit juice/flavours, recommended dilution",26,0,6,0
+"Cordial, fruit juice/flavours, intense sweetened or diet, recommended dilution",3,0,0,0
+"Juice, apple, commercial, added vitamin C",29,0,7,0
+"Juice, apple & blackcurrant, commercial",39,0,9,0
+"Juice, lemon",27,0,1,0
+"Juice, lime",28,0,1,0
+"Juice, orange, commercial",32,0,6,0
+"Juice, orange & mango, commercial",35,0,7,0
+"Juice, vegetable blend, commercial",17,0,2,0
+"Fruit drink, apple juice",33,0,8,0
+"Fruit drink, blackcurrant, commercial",38,0,9,0
+"Fruit drink, cranberry",47,0,12,0
+"Fruit drink, orange juice",39,0,9,0
+"Soft drink, cola flavour",49,0,12,0
+"Soft drink, cola flavour, decaffeinated",49,0,12,0
+"Soft drink, cola flavour, intense sweetened or diet",0,0,0,0
+"Soft drink, cola flavour, intense sweetened or diet, decaffeinated",0,0,0,0
+"Soft drink, dry ginger ale or ginger beer, regular",38,0,9,0
+"Soft drink, fruit flavours",34,0,8,0
+"Soft drink, tonic water",34,0,8,0
+"Soft drink, fruit flavours, intense sweetened or diet",0,0,0,0
+"Soft drink, tonic water, intense sweetened or diet",0,0,0,0
+"Soft drink, energy drink, Red Bull",43,0,10,0
+"Soft drink, energy drink, V",43,0,10,0
+"Kombucha, flavoured, added juice or intense sweeteners",7,0,0,0
+"Tea, regular, black, brewed from leaf or teabags, without milk",0,0,0,0
+"Tea, black, brewed from leaf or teabags, decaffeinated",0,0,0,0
+"Tea, green, plain, without milk",1,0,0,0
+"Mineral water, natural, unflavoured",0,0,0,0
+"Mineral water, citrus flavoured",15,0,3,0
+"Water, bottled, still",0,0,0,0
+"Water, soda",0,0,0,0
+"Water, tap",0,0,0,0
+"Biscuit, savoury, corn cake, plain, salted",370,9,71,3
+"Biscuit, savoury, rice cracker, plain",389,7,78,4
+"Biscuit, savoury, rice cracker, added vegetable powder",395,6,73,7
+"Biscuit, savoury, rice cake, from brown rice, plain",383,8,76,3
+"Biscuit, savoury, rice cracker, flavoured (excluding seaweed)",393,7,74,6
+"Biscuit, savoury, rice cracker, seaweed flavoured",359,9,75,1
+"Biscuit, savoury, from rye flour, crispbread",324,8,60,1
+"Biscuit, savoury, seed based",572,20,6,49
+"Biscuit, savoury, from white wheat flour, flaky cracker style",494,11,63,20
+"Biscuit, savoury, from white wheat flour, plain snack cracker style",492,8,66,20
+"Biscuit, savoury, from white wheat flour, Salada style",427,9,63,14
+"Biscuit, savoury, from white wheat flour, water cracker style",394,10,69,7
+"Biscuit, savoury, from white wheat flour, cheese-flavoured",499,12,56,24
+"Biscuit, savoury, from white wheat flour, flavoured (excluding cheese)",501,9,59,24
+"Biscuit, savoury, from wholemeal wheat flour, crispbread",375,10,59,8
+"Biscuit, savoury, from wholemeal wheat flour & rye flour, crispbread, puffed",385,14,69,3
+"Biscuit, savoury, from wheat flour, crispbread, puffed & toasted",374,12,66,5
+"Biscuit, sweet, Anzac style, commercial",464,5,60,22
+"Biscuit, sweet, Anzac style, homemade from basic ingredients",475,4,64,22
+"Biscuit, sweet, ginger flavoured, commercial",424,4,77,10
+"Biscuit, sweet, plain",446,6,69,15
+"Biscuit, sweet, plain, with icing, commercial",426,4,77,11
+"Biscuit, sweet, shortbread style, commercial",504,6,60,26
+"Biscuit, sweet, wheatmeal",413,7,67,11
+"Biscuit, sweet, biscuit base, caramel filling, chocolate-coated, commercial",440,5,61,19
+"Biscuit, sweet, biscuit base, mint filling, chocolate-coated",523,6,60,29
+"Biscuit, sweet, chocolate chip or coated",473,5,61,22
+"Biscuit, sweet, chocolate chip, homemade from basic ingredients, fat not further defined",473,5,66,21
+"Biscuit, sweet, chocolate flavoured, commercial",467,6,72,17
+"Biscuit, sweet, cream filled, commercial",465,5,62,21
+"Biscuit, sweet, sandwich, cream & jam filling",472,4,64,22
+"Biscuit, sweet, sandwich, cream filling, chocolate-coated, tim tam style",497,5,63,25
+"Biscuit, sweet, breakfast style, with or without dried fruit",437,7,64,15
+"Cone, wafer style, for ice cream",402,9,79,4
+"Bread, flat (pita or Lebanese), white, commercial",263,9,49,2
+"Bread, flat (pita or Lebanese), wholemeal, commercial",257,8,47,2
+"Bread, Naan, commercial",293,8,47,7
+"Bread, tortilla, white, commercial",302,7,46,9
+"Bread, wrap, white, commercial",303,7,46,8
+"Bread, flat wrap or tortilla, corn, commercial",239,4,44,3
+"Breadcrumbs, white",382,14,68,4
+"Bagel, from white flour, commercial",265,10,50,1
+"Bagel, from white flour, commercial, toasted",301,11,57,1
+"Bread, damper, from white flour, homemade",259,7,42,5
+"Bread, damper, homemade, toasted",305,8,50,6
+"Bread, from white flour",251,9,46,2
+"Bread, from white flour, toasted",297,10,54,2
+"Bread, from white flour, Italian-style, commercial",256,9,46,2
+"Bread, from white flour, Italian-style, commercial, toasted",304,10,55,3
+"Bread, from white flour, Turkish",247,7,45,2
+"Bread, from white flour, Turkish, toasted",295,9,54,3
+"Bread, from white flour, sour dough, commercial",230,8,42,1
+"Bread, from white flour, sour dough, toasted",273,10,51,1
+"Bread, organic",247,11,40,2
+"Bread, organic, toasted",291,13,47,3
+"Bread, pizza base, commercial",265,8,48,3
+"Bread roll, from white flour",250,9,44,2
+"Bread, from wholemeal flour",237,10,39,2
+"Bread, from wholemeal flour, toasted",279,12,46,2
+"Bread roll, from wholemeal flour",262,10,45,3
+"Bread, mixed grain",258,10,39,4
+"Bread, mixed grain, toasted",303,12,46,5
+"Bread roll, mixed grain",250,12,40,3
+"Bread, from rye flour, sour dough",234,9,42,1
+"Bread, from rye flour, sour dough, toasted",276,10,50,1
+"Bread, from white flour, added fibre",247,9,43,1
+"Bread, from white flour, added fibre, toasted",294,11,51,2
+"Bread, from white flour, added omega-3 polyunsaturates",252,9,46,2
+"Bread, from white flour, added omega-3 polyunsaturates, toasted",293,10,54,2
+"Bread, from white Jackaroo flour, added fibre and vitamins B1 & folate & Fe",251,8,45,2
+"Bread, from white Jackaroo flour, added fibre and vitamins B1 & folate & Fe, toasted",296,9,53,2
+"Bread, gluten free",212,5,36,3
+"Bread, gluten free, toasted",253,6,43,4
+"Bread, garlic, commercial, baked",345,8,42,15
+"Bread, garlic or herb, homemade, cooked",307,8,40,11
+"Bread roll, topped with cheese",280,12,35,9
+"Bread roll, topped with cheese & bacon",280,16,27,11
+"Bread, brioche",323,9,46,10
+"Bread, from white flour, commercial, added dried fruit",266,8,47,3
+"Bread, from white wheat flour, added dried fruit, toasted",295,9,52,4
+"Bun, sweet, hot cross bun, with dried fruit",265,7,50,3
+"Bun, sweet, with dried fruit, uniced",295,6,55,5
+"Bun, sweet, with dried fruit, iced",289,6,51,6
+"Crumpet, from white flour, toasted",222,7,43,1
+"Muffin, English style, from white flour",224,10,38,2
+"Muffin, English style, from white flour, toasted",244,11,42,2
+"Muffin, English style, from white flour, added dried fruit, toasted",252,9,46,2
+"Breakfast cereal, beverage, non-chocolate flavours, added vitamins & minerals (Up & Go)",77,3,12,1
+"Breakfast cereal, flakes of corn, unfortified",372,7,75,2
+"Breakfast cereal, flakes of corn, added vitamins & minerals (Kellogg's Cornflakes)",388,7,81,1
+"Breakfast cereal, mixed grain (wheat, rice & oat), flakes, honey, unfortified (Be Natural Honey Flakes)",356,8,65,4
+"Breakfast cereal, mixed grain (rice & wheat), flakes, added vitamins & minerals (Kellogg's Special K)",399,18,70,4
+"Breakfast cereal, mixed grain (wheat, oat & corn), added vitamins & minerals (Kellogg's Nutri-grain)",371,23,62,2
+"Breakfast cereal, mixed grain (wheat & oat), flakes, apricot & sultana, added vitamins & minerals (Kellogg's Just Right)",352,9,71,1
+"Breakfast cereal, puffed or popped rice, no added sugar or salt, unfortified",383,8,77,3
+"Breakfast cereal, puffed or popped rice, added vitamins & minerals (Kellogg's Rice Bubbles)",370,6,81,1
+"Breakfast cereal, puffed or popped rice, cocoa coating, added vitamins & minerals (Kellogg's Coco Pops)",385,5,83,2
+"Breakfast cereal, whole wheat, puffed, no added sugar or salt, unfortified",338,10,62,2
+"Breakfast cereal, whole wheat, biscuit, no added sugar, unfortified",349,10,63,2
+"Breakfast cereal, wheat bran, pellets, added vitamins & minerals (Kellogg's All Bran)",322,14,41,5
+"Breakfast cereal, wheat bran, flakes, added vitamins & minerals (Kellogg's Bran Flakes)",353,12,58,3
+"Breakfast cereal, whole wheat, biscuit, added vitamins & minerals (Sanitarium Weet Bix)",339,11,61,2
+"Breakfast cereal, whole wheat, biscuit, bran, added vitamins & minerals (Sanitarium Weet-Bix Hi-Bran)",364,12,56,5
+"Breakfast cereal, whole wheat, flakes, added vitamins & minerals (Weeties style)",351,11,65,2
+"Breakfast cereal, whole wheat, flakes, dried fruit & nuts, added vitamins & minerals (Uncle Toby's Fibre Plus)",356,9,65,3
+"Breakfast cereal, wheat bran, flakes, sultanas, added vitamins & minerals (Kellogg's Sultana Bran)",332,9,63,1
+"Muesli, granola, toasted, added nuts & seeds, unfortified",424,11,52,17
+"Muesli, granola, non-oat based, toasted, added nuts & seeds, unfortified",442,11,53,18
+"Muesli, toasted, added dried fruit & nuts, unfortified",402,8,56,13
+"Muesli, untoasted or natural style, added dried fruit, unfortified",393,10,59,10
+"Porridge, rolled oats, prepared with water",89,3,11,2
+"Porridge, rolled oats, prepared with regular fat cow's milk",126,5,14,4
+"Porridge, rolled oats mixed with sugar or honey & other flavours, prepared with cow's milk",140,4,19,4
+"Bread, banana, commercial",293,5,43,11
+"Bread, banana, homemade",335,5,50,12
+"Slice, brownie, chocolate, without nuts, commercial",415,7,45,23
+"Slice, brownie, chocolate, with nuts, homemade",461,6,52,25
+"Slice, caramel",444,5,52,24
+"Cake mix, plain, dry powder",383,4,73,8
+"Cake, carrot, commercial, iced",387,4,47,20
+"Cake, carrot, homemade, uniced",342,4,45,16
+"Cake, carrot, homemade, iced",345,3,49,15
+"Cake, chocolate, homemade, uniced",373,7,41,19
+"Cake, chocolate, homemade, iced",373,6,46,18
+"Cake, fruit, homemade, uniced",307,3,49,10
+"Cake, lamington, unfilled",295,4,48,9
+"Cake, mud, dark chocolate, commercial, chocolate ganache icing",354,5,48,15
+"Cake, mud, dark chocolate, homemade, uniced",456,5,32,34
+"Cake, mud, dark chocolate, homemade, chocolate ganache icing",461,5,35,34
+"Cake, plain butter cake, commercial, uniced",355,8,46,15
+"Cake, plain butter cake, commercial, iced",372,5,52,16
+"Cake, plain butter cake, homemade, uniced",380,6,52,16
+"Cake, plain butter cake, homemade, iced",375,5,55,15
+"Cake, sponge, plain, commercial, uniced, unfilled",327,7,56,8
+"Cake, sponge, plain, commercial, uniced, filled with jam & cream",365,6,58,12
+"Cake or cupcake, sponge, plain, commercial, iced, unfilled",358,5,61,11
+"Muffin, cake-style, berry, commercial",337,5,44,15
+"Muffin, cake-style, chocolate chip, commercial",375,6,48,17
+"Doughnut, dusted with cinnamon & sugar",378,6,43,19
+"Doughnut, iced",363,6,48,15
+"Doughnut, jam filled, sugar coated",367,6,46,17
+"Pancake, plain, homemade",222,7,30,7
+"Pikelet, plain, homemade",277,7,47,5
+"Pikelet or pancake, sweet, commercial",218,5,38,4
+"Pudding, chocolate, homemade",184,3,37,2
+"Pudding, plum, steamed or boiled, homemade",334,4,54,11
+"Pudding, sticky date, homemade",352,3,48,16
+"Scone, plain, commercial",334,7,55,8
+"Scone, plain, homemade",323,8,50,9
+"Scone, fruit, commercial",327,6,59,6
+"Scone, pumpkin, homemade",291,7,47,7
+"Amaranth, grain, whole, uncooked",365,15,55,6
+"Barley, pearl, uncooked",340,9,60,3
+"Barley, pearl, boiled, no added fat or salt",141,4,25,1
+"Buckwheat groats, uncooked",326,12,58,3
+"Buckwheat groats, cooked in water, no added salt",69,2,12,0
+"Bulgur, uncooked",343,10,66,2
+"Bulgur, soaked in water, no added fat or salt",181,5,34,1
+"Sago, dry, uncooked",351,0,85,0
+"Sago, cooked in water, no added salt",55,0,13,0
+"Cornmeal (polenta), uncooked",340,8,70,1
+"Cornmeal (polenta), boiled, no added fat or salt",108,2,22,0
+"Couscous, uncooked",364,13,73,0
+"Couscous, boiled, no added fat or salt",162,6,32,0
+"Millet, uncooked",354,10,67,3
+"Millet, boiled, no added fat or salt",116,3,22,1
+"Maize, grits, uncooked",349,8,73,1
+"Oat bran, unprocessed, uncooked",364,16,45,9
+"Oats, hulled, uncooked",380,12,55,9
+"Oats, rolled, uncooked",374,12,54,9
+"Oats, rolled, mixed with sugar or honey & other flavours, uncooked",389,8,69,7
+"Psyllium, uncooked",197,3,1,1
+"Quinoa, black, uncooked",348,13,50,6
+"Quinoa, red, uncooked",368,14,55,6
+"Quinoa, white, uncooked",376,12,61,6
+"Quinoa, uncooked",370,12,58,6
+"Quinoa, cooked in water, no added salt",103,3,16,1
+"Rye, grain, whole, uncooked",310,11,51,2
+"Rye, rolled, uncooked",305,10,50,2
+"Sorghum, grain, uncooked",350,8,65,3
+"Teff, uncooked",246,13,38,2
+"Triticale, grain, uncooked",325,9,58,2
+"Semolina, uncooked",310,10,61,1
+"Semolina, boiled, no added fat or salt",99,3,19,0
+"Spelt, uncooked",332,11,59,3
+"Spelt, boiled, no added fat or salt",138,4,24,1
+"Tapioca, pearl or seed style, uncooked",325,0,79,0
+"Tapioca, pearl or seed style, boiled, no added fat or salt",47,0,11,0
+"Wheat bran, unprocessed, uncooked",267,14,22,4
+"Wheat, whole, uncooked",326,11,58,2
+"Wheat germ",307,20,32,6
+"Rice, white, uncooked",340,7,74,0
+"Rice, white, boiled or rice cooker, no added salt",158,3,34,0
+"Rice, white, purchased as 'instant', microwaved",154,3,32,0
+"Rice, brown, uncooked",347,7,69,3
+"Rice, brown, boiled, no added salt",166,4,33,1
+"Rice, wild, uncooked",360,14,68,1
+"Rice, wild, boiled, no added salt",102,4,19,0
+"Rice paper wrapper, soaked in water",154,3,32,0
+"Rice, white, fried with bacon or ham, egg, prawns & vegetables ",198,5,31,5
+"Flour, arrowroot",329,0,78,0
+"Flour, cornflour, from maize starch",348,0,84,0
+"Flour, cornflour, from maize & wheat starch",350,0,84,0
+"Flour, chickpea (besan)",328,19,38,5
+"Flour, gluten free, plain",354,3,80,1
+"Flour, rice",343,7,71,2
+"Flour, rye",322,11,54,2
+"Flour, soya (soy)",369,49,14,8
+"Flour, spelt",351,18,59,2
+"Flour, wheat, white, high protein or bread making flour",350,11,69,1
+"Flour, wheat, white, plain",353,10,73,1
+"Flour, wheat, white, plain, added vitamins B1, B2, B3, B6, E & folate & Fe, Mg & Zn (Jackaroo)",339,11,67,1
+"Flour, wheat, white, self-raising",353,10,73,1
+"Flour, wheat, white, self-raising, added vitamins B1, B2, B3, B6, E & folate & Fe, Mg & Zn (Jackaroo)",328,10,65,1
+"Flour, wheat, wholemeal, plain",328,11,61,1
+"Flour, wheat, wholemeal, self-raising",352,11,65,2
+"Gluten, from wheat (vital wheat gluten)",360,75,13,0
+"Starch, potato",318,0,74,0
+"Hamburger, white roll, beef patty, with cheese, onion, pickles & sauce, fast food chain",271,14,23,12
+"Hamburger, white roll, beef patty, with salad, independent takeaway outlet",208,12,18,9
+"Hot dog, bread roll, frankfurt & sauce filling",227,10,27,7
+"Pizza, cheese & tomato, commercial",285,16,28,11
+"Pizza, ham & pineapple, purchased frozen, baked",230,11,28,6
+"Pizza, ham & pineapple, takeaway style",224,12,23,8
+"Pizza, supreme, takeaway style",228,13,20,9
+"Pizza, supreme, fast food chain",250,12,27,9
+"Pizza, supreme, purchased frozen, baked",273,14,26,11
+"Pizza, vegetable, fast food chain",206,9,27,6
+"Noodle, rice stick, boiled, drained",119,2,26,0
+"Noodle, soba, dry",359,11,71,1
+"Noodle, soba, boiled, drained",109,3,21,0
+"Noodle, wheat, fresh, soaked, drained",145,6,26,1
+"Noodle, wheat, instant, flavoured, dry, uncooked",440,11,54,19
+"Noodle, wheat, instant, unflavoured, boiled, drained",144,3,17,6
+"Noodle, wheat, instant, unflavoured, boiled, undrained",54,1,6,2
+"Noodle, wheat, instant, unflavoured, dry, uncooked",440,11,54,19
+"Noodle, wheat, instant, flavoured, boiled, drained",144,3,17,6
+"Noodle, wheat, instant, flavoured, boiled, undrained",54,1,6,2
+"Noodle, wheat with egg, plain, boiled, no added fat",166,7,29,1
+"Pasta, gluten free, boiled from dry, no added salt",153,3,32,0
+"Pasta, legume based, boiled, no added salt",150,14,16,1
+"Pasta, white wheat flour, dry",348,12,68,1
+"Pasta, white wheat flour, boiled from dry, no added salt",137,5,26,0
+"Pasta, white wheat flour, fresh, uncooked",268,10,49,2
+"Pasta, white wheat flour, fresh, boiled, no added salt",151,5,27,1
+"Pasta, white wheat flour & egg, dry",364,10,74,1
+"Pasta, white wheat flour & egg, boiled from dry, no added salt",166,7,29,1
+"Pasta, white wheat flour & spinach, dry",364,11,73,1
+"Pasta, white wheat flour & spinach, boiled from dry, no added salt",132,3,27,0
+"Pasta, wholemeal wheat flour, dry",336,12,60,2
+"Pasta, wholemeal wheat flour, boiled from dry, no added salt",140,5,24,0
+"Pasta in cream based sauce, dry mix",370,13,69,3
+"Pasta in cream based sauce, prepared from dry mix",143,5,23,2
+"Lasagne, beef, commercial, purchased frozen, baked",137,6,11,6
+"Lasagne, beef, homemade",180,9,16,8
+"Macaroni & cheese, homemade, cooked unfilled pasta, homemade cheese sauce",167,6,21,5
+"Pasta dish, homemade, cooked unfilled pasta, homemade beef bolognese sauce & added vegetables",120,7,15,2
+"Spaghetti in tomato & cheese sauce, canned",54,2,10,0
+"Spaghetti in tomato & cheese sauce, canned, reduced salt",54,2,10,0
+"Croissant, plain",360,10,35,19
+"Pastry, filo, commercial, raw",307,10,55,3
+"Pastry, filo, commercial, baked",390,12,75,3
+"Pastry, puff, with butter, commercial, raw",331,5,32,19
+"Pastry, puff, with butter, commercial, baked",429,7,42,24
+"Pastry, puff, vegetable oil, commercial, raw",316,5,35,16
+"Pastry, puff, vegetable oil, commercial, baked",405,7,44,21
+"Pastry, shortcrust style, commercial, raw",395,6,41,21
+"Pastry, shortcrust style, commercial, baked",482,7,50,26
+"Pastry, filled with spinach & cheese, purchased frozen, baked",290,9,24,16
+"Pie, savoury, chicken & vegetable, commercial",236,8,25,11
+"Pie, savoury, meat, commercial, ready to eat",228,8,21,11
+"Pie, savoury, meat, purchased frozen, baked",217,8,19,11
+"Sausage roll, commercial, ready to eat",284,9,27,14
+"Sausage roll, purchased frozen, baked",267,9,27,12
+"Spring roll, meat & vegetable filling, commercial, deep fried",250,7,27,11
+"Pastry, danish, sweet, all types",311,7,35,15
+"Pie, sweet, apple, commercial",253,3,31,12
+"Tart, custard, commercial",242,6,30,10
+"Dressing, French or Italian, regular fat, commercial",227,0,11,19
+"Dressing, thousand island, regular fat, commercial",357,1,16,31
+"Mayonnaise, traditional (>65% fat), commercial",634,0,8,67
+"Mayonnaise, low fat, commercial",123,0,27,1
+"Gravy powder, dry mix",313,8,54,6
+"Gravy, prepared from dry powder with water",26,0,4,0
+"Mustard, cream style",83,5,6,3
+"Paste, Indian style curry, commercial",207,2,14,14
+"Paste, green curry, commercial",110,2,6,7
+"Paste, soybean",183,12,19,5
+"Paste, shrimp",94,21,0,1
+"Sauce, barbecue, commercial",173,0,42,0
+"Sauce, butter chicken, commercial",98,1,5,7
+"Sauce, cranberry, commercial",155,0,40,0
+"Sauce, fish, commercial",51,6,4,0
+"Sauce, hoi sin (hoisin), commercial",220,1,37,5
+"Sauce, oyster, commercial",113,2,21,1
+"Sauce, pasta or simmer, commercial, low fat",57,0,6,2
+"Sauce, pasta, basil pesto, commercial",382,5,7,37
+"Sauce, pasta, bolognese, homemade using beef mince & homemade tomato based sauce",93,8,3,4
+"Sauce, pasta, bolognese, homemade using beef mince & commercial tomato based sauce",113,10,3,6
+"Sauce, pasta, cheese or cream-based, commercial",87,1,5,6
+"Sauce, pasta, tomato-based, commercial, heated",54,1,7,1
+"Sauce, plum, commercial",229,0,56,0
+"Sauce, rogan josh, commercial",71,1,6,4
+"Sauce, salsa, tomato-based, commercial",35,1,6,0
+"Sauce, simmer for chicken, commercial",92,0,4,7
+"Sauce, simmer, curry flavoured, commercial",118,2,10,6
+"Sauce, soy, commercial",50,6,3,0
+"Sauce, soy, commercial, reduced salt",50,6,3,0
+"Sauce, tabasco, commercial",14,1,0,0
+"Sauce, tomato, commercial",104,1,24,0
+"Sauce, tomato, commercial, reduced salt",104,1,24,0
+"Sauce, tomato, reduced sugar & salt, commercial",55,1,11,0
+"Sauce, white, savoury, homemade",179,3,10,13
+"Sauce, Worcestershire, commercial",74,1,17,0
+"Vinegar (except balsamic vinegar)",16,0,0,0
+"Vinegar, balsamic",79,0,15,0
+"Peanut butter, smooth & crunchy, added sugar & salt",596,22,14,49
+"Peanut butter, smooth & crunchy, no added sugar or salt",628,24,9,54
+"Spread, yeast, marmite",149,13,16,0
+"Spread, yeast, vegemite",163,24,10,0
+"Cheese, blue vein",371,19,0,32
+"Cheese, bocconcini",247,16,0,20
+"Cheese, brie",363,18,0,31
+"Cheese, camembert",328,18,0,27
+"Cheese, cheddar, natural, regular fat",403,24,0,33
+"Cheese, cheddar, natural, reduced fat (~25%)",324,27,0,23
+"Cheese, cheddar, processed, regular fat",300,18,1,23
+"Cheese, cheddar, processed, reduced fat (~15%), added vitamin D",252,22,4,15
+"Cheese, cottage",133,17,1,5
+"Cheese, cream, plain",339,8,0,34
+"Cheese, edam",359,27,0,27
+"Cheese, fetta (feta)",256,16,0,20
+"Cheese, goat, firm",359,18,0,31
+"Cheese, goat, soft",285,21,0,21
+"Cheese, haloumi (halloumi)",305,20,1,24
+"Cheese, haloumi (halloumi), reduced salt",306,19,1,25
+"Cheese, mozzarella",290,22,0,22
+"Cheese, parmesan, dried, finely grated",466,40,0,33
+"Cheese, parmesan, fresh, regular fat",374,32,0,27
+"Cheese, ricotta",152,10,2,11
+"Cheese, hard, dairy alternative",294,0,19,23
+"Cream, thickened, regular fat (~35%)",340,2,2,36
+"Cream, sour, regular fat",338,1,2,36
+"Cream, sour, light (~18% fat)",207,3,4,19
+"Cream, imitation (non-dairy)",265,1,17,21
+"Ice cream, vanilla flavour, regular fat",193,3,20,11
+"Ice cream, vanilla flavour, premium or rich (~15% fat)",219,3,22,13
+"Ice confection, stick, milk-based, various flavours",135,2,19,5
+"Ice confection, stick, water-based, various flavours",67,0,17,0
+"Ice confection, stick or tub, fruit juice or fruit flavoured",73,0,18,0
+"Milk, cow, fluid, regular fat (~3.5%)",65,3,5,3
+"Milk, cow, fluid, prepared from dry powder, regular fat, standard dilution",70,3,6,3
+"Milk, cow, fluid, regular fat (~3.5%), added omega 3 polyunsaturates",60,3,5,3
+"Milk, cow, fluid, reduced fat (~1%)",43,3,4,1
+"Milk, cow, fluid, reduced fat (~1.5%), added omega 3 polyunsaturates",51,4,5,1
+"Milk, cow, fluid, skim (~0.15% fat)",35,3,5,0
+"Milk, cow, fluid, prepared from dry powder, skim, standard dilution",39,3,6,0
+"Milk, cow, fluid, lactose free, regular fat (~3.5%)",59,3,4,3
+"Milk, cow, fluid, lactose free, reduced fat (~1%)",43,3,4,1
+"Milk, cow, canned, evaporated, regular",141,7,10,8
+"Milk, cow, canned, evaporated, reduced fat (~2%)",91,7,10,2
+"Milk, cow, canned, sweetened, condensed, regular",326,8,55,9
+"Milk, cow, fluid, flavoured, chocolate, reduced fat",63,3,8,1
+"Milk, cow, powder, regular fat",493,25,43,25
+"Milk, cow, powder, regular fat, unfortified",489,25,43,25
+"Milk, cow, powder, regular fat, added vitamins A & D",509,25,43,27
+"Milk, cow, powder, skim",363,34,56,0
+"Milk, human/breast, mature, fluid",68,1,6,4
+"Custard, vanilla, regular fat",98,3,14,3
+"Custard powder, vanilla, dry mix",338,0,81,0
+"Custard, vanilla, prepared from dry mix",102,3,13,3
+"Yoghurt, natural, regular fat (~3%)",73,5,5,3
+"Yoghurt, natural, sheep's milk",94,5,2,6
+"Yoghurt, flavoured, high fat (~5%)",115,4,12,4
+"Yoghurt, apricot pieces or flavoured, regular fat (~3%)",92,4,11,3
+"Yoghurt, strawberry pieces or flavoured, regular fat (~3%)",97,4,11,3
+"Yoghurt, flavoured, low fat (~2%)",82,4,12,1
+"Yoghurt, vanilla flavoured (~2%)",98,5,14,1
+"Yoghurt, flavoured, low fat (0.2%), intense sweetened, increased protein",54,9,2,0
+"Yoghurt, vanilla flavoured, low fat (<0.5%)",88,5,13,0
+"Yoghurt, almond based, flavoured",92,2,9,4
+"Yoghurt, coconut based, flavoured",124,1,9,9
+"Yoghurt, soy based, berry flavoured, regular fat (~3%)",99,3,12,3
+"Yoghurt, soy based, vanilla flavoured, reduced fat (~1%)",74,3,12,0
+"Dairy or yoghurt dessert, chocolate, regular fat",113,2,14,4
+"Almond beverage, added sugar, unfortified",27,0,3,1
+"Almond beverage, no added sugar, unfortified",16,0,0,1
+"Almond beverage, added sugar & Ca",27,0,3,1
+"Almond beverage, no added sugar, added Ca",16,0,0,1
+"Almond beverage, added sugar & vitamins B1, B2, B12, C & Ca",27,0,3,1
+"Coconut beverage, unfortified",25,0,2,1
+"Coconut beverage, added Ca",25,0,2,1
+"Oat beverage, fluid, unfortified",54,1,10,0
+"Oat beverage, fluid, added Ca",54,1,10,0
+"Oat beverage, fluid, added calcium & vitamins",41,0,5,1
+"Rice beverage, unfortified",47,0,9,1
+"Rice beverage, fluid, added calcium",61,0,12,1
+"Soy beverage, regular fat (~3%), unfortified",59,3,4,2
+"Soy beverage, regular fat (~3%), added Ca",59,3,4,2
+"Soy beverage, regular fat (~3%), added Ca & vitamins A, B1, B2 & B12",61,4,4,2
+"Soy beverage, reduced fat (~1%), added Ca & vitamins A, B1, B2 & B12",45,3,5,0
+"Textured vegetable protein/soy granules",320,51,15,1
+"Tofu (soy bean curd), firm, as purchased",130,12,0,8
+"Meat alternative, mycoprotein/fungus base, commercial, as purchased",114,13,2,4
+"Meat alternative, mycoprotein/fungus base, schnitzels/fish alternative/patty/sausages, as purchased",200,12,16,8
+"Meat alternative, mycoprotein/fungus base, cooked",157,18,3,5
+"Meat alternative, protein (soy/wheat/pea) base, as purchased",226,19,3,13
+"Meat alternative, protein (soy/wheat/pea) base, cooked",278,23,4,16
+"Meat alternative, protein (soy/wheat/pea) base, added vitamins & minerals, as purchased",226,19,3,13
+"Meat alternative, legume and/or vegetable base, as purchased",180,7,21,5
+"Meat alternative, legume and/or vegetable base, cooked",223,9,26,7
+"Sausage, vegetarian style, unfortified, raw",193,19,7,9
+"Sausage, vegetarian style, added Fe, Zn and vitamin B12, raw",193,19,7,9
+"Sausage, vegetarian style, fried, no added fat",203,20,7,9
+"Soup, broth style, with meat, instant dry mix",323,4,65,3
+"Soup, broth style, with meat & noodles, instant dry mix",363,10,64,6
+"Soup, cream variety, instant dry mix",389,5,59,13
+"Soup, vegetable, instant dry mix",287,6,58,2
+"Soup, vegetable & noodle, instant dry mix",362,8,65,6
+"Soup, chicken & noodle, cup of soup, prepared from instant dry mix with water",19,0,3,0
+"Butter, plain, salted",734,1,0,82
+"Butter, plain, reduced salt",737,1,0,82
+"Butter, plain, no added salt",734,1,0,82
+"Ghee, clarified butter",885,0,0,99
+"Dairy blend, butter & edible oil spread (~80% fat), sodium 600 mg/100 g",697,0,1,78
+"Dairy blend, butter & edible oil spread (~80% fat), reduced salt (sodium 400 mg/100 g)",697,0,1,78
+"Margarine spread, monounsaturated (>65% fat)",598,0,0,67
+"Margarine spread, monounsaturated (>65% fat), reduced salt (sodium 360 mg/100 g)",613,1,0,68
+"Margarine spread, monounsaturated, reduced fat (<65%)",429,1,0,48
+"Margarine spread, monounsaturated, reduced fat (~55%) & salt (sodium 380 mg/100 g)",459,1,0,51
+"Margarine spread, monounsaturated (~70% fat), reduced salt (sodium 350 mg/100 g), added phytosterols",674,0,0,75
+"Margarine spread, polyunsaturated (~70% fat)",610,0,0,69
+"Margarine spread, polyunsaturated (~70% fat), reduced salt (sodium 280 mg/100 g)",630,1,0,70
+"Oil, almond",884,0,0,100
+"Oil, avocado",884,0,0,100
+"Oil, canola",884,0,0,100
+"Oil, coconut",882,0,0,99
+"Oil, copha",884,0,0,99
+"Oil, cottonseed",884,0,0,100
+"Oil, grapeseed",884,0,0,100
+"Oil, hemp",883,0,0,99
+"Oil, linseed or flaxseed",884,0,0,100
+"Oil, macadamia",884,0,0,100
+"Oil, maize",884,0,0,100
+"Oil, mustard seed",884,0,0,100
+"Oil, olive",883,0,0,99
+"Oil, palm",884,0,0,100
+"Oil, peanut",884,0,0,100
+"Oil, rice bran",884,0,0,100
+"Oil, safflower",884,0,0,100
+"Oil, sesame",884,0,0,100
+"Oil, soybean",884,0,0,100
+"Oil, sunflower",884,0,0,100
+"Oil, blend of polyunsaturated vegetable oils",884,0,0,100
+"Oil, blend of monounsaturated vegetable oils",884,0,0,100
+"Oil, vegetable",884,0,0,100
+"Dripping, beef",885,0,0,100
+"Fat, solid, vegetable oil based",885,0,0,100
+"Egg, chicken, whole, raw",127,12,0,8
+"Egg, chicken, whole, poached",133,13,0,8
+"Egg, chicken, whole, hard-boiled",136,12,0,9
+"Egg, chicken, whole, fried, no fat added",145,14,0,9
+"Egg, chicken, whole, omega-3 polyunsaturate enriched, raw",133,12,0,9
+"Egg, chicken, whole, omega-3 polyunsaturate enriched, boiled",136,12,0,9
+"Egg, chicken, yolk, raw",313,15,0,28
+"Egg, chicken, yolk, hard-boiled",347,16,0,31
+"Egg, chicken, white (albumen), raw",47,11,0,0
+"Egg, chicken, white (albumen), hard-boiled",49,11,0,0
+"Egg, chicken, whole, scrambled, with regular fat cow's milk, no fat added",120,10,2,7
+"Apple, bonza, unpeeled, raw",58,0,11,0
+"Apple, fuji, unpeeled, raw",59,0,12,0
+"Apple, golden delicious, unpeeled, raw",52,0,11,0
+"Apple, green skin, unpeeled, raw",51,0,11,0
+"Apple, granny-smith, unpeeled, raw",50,0,10,0
+"Apple, jonathan, unpeeled, raw",54,0,11,0
+"Apple, pink lady, unpeeled, raw",58,0,12,0
+"Apple, red delicious, unpeeled, raw",59,0,13,0
+"Apple, royal gala, unpeeled, raw",53,0,12,0
+"Apple, red skin, peeled, raw",58,0,13,0
+"Apple, red skin, unpeeled, raw",58,0,12,0
+"Apple, dried",258,1,59,0
+"Apricot, raw",40,0,7,0
+"Apricot, dried",232,4,43,0
+"Apricot, canned in pear juice",46,0,8,0
+"Apricot, canned in pear juice, drained",47,1,7,0
+"Apricot, canned in pear juice, juice only",45,0,8,0
+"Banana, cavendish, peeled, raw",95,1,19,0
+"Banana, lady finger or sugar, peeled, raw",117,1,26,0
+"Banana, frozen",98,1,20,0
+"Banana chip",519,2,50,33
+"Currant, fresh",46,1,7,0
+"Blackberry, raw",46,1,7,0
+"Blackberry, purchased frozen",46,1,7,0
+"Blueberry, raw",49,0,10,0
+"Blueberry, purchased frozen",50,0,10,0
+"Cherry, raw",74,1,15,0
+"Cherry, black, canned in syrup",71,0,16,0
+"Cherry, black, canned in syrup, drained",74,0,16,0
+"Cherry, black, canned in syrup, syrup only",69,0,16,0
+"Cherry, pitted, frozen",76,1,15,0
+"Cranberry, raw",31,0,4,0
+"Cranberry, dried, sweetened",318,0,77,1
+"Currant, dried",291,2,69,0
+"Cumquat (kumquat), raw",64,1,9,0
+"Custard apple, African pride, peeled, raw",80,1,16,0
+"Date, dried",290,2,67,0
+"Feijoa, raw",42,0,8,0
+"Fig, fresh, unpeeled, raw",47,1,8,0
+"Fig, dried",259,3,54,0
+"Goji berry, dried",297,11,49,3
+"Grape, black muscatel (muscat), raw",83,1,18,0
+"Grape, black sultana, raw",66,1,14,0
+"Grape, cornichon, raw",61,1,12,0
+"Grape, green, raw",66,0,15,0
+"Grape, red globe, raw",75,0,17,0
+"Grape, waltham cross, raw",67,0,14,0
+"Grapefruit, pink flesh, peeled, raw",40,0,7,0
+"Grapefruit, yellow flesh, peeled, raw",39,0,6,0
+"Guava, Hawaiian, raw",34,0,3,0
+"Jackfruit, peeled, raw",83,2,16,0
+"Kiwifruit, green (hayward), peeled, raw",55,1,9,0
+"Kiwifruit, gold, peeled, raw",58,1,11,0
+"Lemon, peeled, raw",27,0,1,0
+"Lemon peel, raw",29,1,0,0
+"Lemon, preserved",24,0,1,0
+"Lime, peeled, raw",28,0,1,0
+"Lime, native, fruit",33,0,0,2
+"Loquat, peeled, raw",29,1,4,0
+"Lychee, peeled, raw",71,0,16,0
+"Lychee, peeled, frozen",73,0,17,0
+"Mandarin, peeled, raw",47,0,9,0
+"Mandarin, canned in syrup",57,0,13,0
+"Mandarin, canned in syrup, drained",61,0,13,0
+"Mandarin, canned in syrup, syrup only",53,0,13,0
+"Mango, peeled, raw",54,0,12,0
+"Mango, peeled, frozen",55,0,12,0
+"Mango, pulped, canned",59,0,14,0
+"Melon, honey dew, white skin, peeled, raw",36,0,7,0
+"Melon, honey dew, yellow skin, peeled, raw",26,0,4,0
+"Melon, honey dew, peeled, raw",30,0,6,0
+"Melon, rockmelon, peeled, raw",24,0,4,0
+"Melon, watermelon, peeled, raw",31,0,7,0
+"Mulberry, raw",33,2,4,0
+"Nectarine, white, unpeeled, raw",36,0,6,0
+"Nectarine, yellow, unpeeled, raw",38,0,7,0
+"Orange, navel, peeled, raw",41,1,8,0
+"Orange, valencia, peeled, raw",42,1,8,0
+"Orange, peeled, raw",42,1,8,0
+"Passionfruit, raw",79,2,6,1
+"Passionfruit, pulp, frozen",81,2,7,1
+"Passionfruit, pulp, canned",105,1,20,0
+"Pawpaw (papaya), peeled, raw",40,0,8,0
+"Papaya, red, peeled, raw",54,0,11,0
+"Papaya, yellow, peeled, raw",30,0,6,0
+"Peach, white, unpeeled, raw",35,0,7,0
+"Peach, yellow, unpeeled, raw",38,0,7,0
+"Peach, canned in pear juice",44,0,8,0
+"Peach, canned in pear juice, drained",46,0,8,0
+"Peach, canned in pear juice, juice only",42,0,8,0
+"Pear, Packham's triumph, unpeeled, raw",55,0,12,0
+"Pear, William Bartlett, unpeeled, raw",54,0,9,0
+"Pear, green skin, unpeeled, raw",59,0,10,0
+"Pear, brown skin, unpeeled, raw",56,0,9,0
+"Pear, canned in pear juice",46,0,8,0
+"Pear, canned in pear juice, drained",48,0,8,0
+"Pear, canned in pear juice, juice only",44,0,8,0
+"Pear, nashi, unpeeled, raw",49,0,9,0
+"Persimmon, peeled, raw",70,0,16,0
+"Pineapple, peeled, raw",39,0,8,0
+"Pineapple, peeled, frozen",40,0,8,0
+"Pineapple, canned in pineapple juice",56,0,12,0
+"Pineapple, canned in juice, drained",45,0,10,0
+"Pineapple, canned in pineapple juice, juice only",45,0,10,0
+"Pineapple, canned in syrup",86,0,19,0
+"Pineapple, canned in syrup, drained",71,0,17,0
+"Pineapple, canned in syrup, syrup only",88,0,22,0
+"Plum, unpeeled, raw",50,0,9,0
+"Plum, dark, canned in syrup",89,0,21,0
+"Plum, dark, canned in syrup, drained",92,0,21,0
+"Plum, dark, canned in syrup, syrup only",85,0,21,0
+"Plum, davidson (native), flesh",67,1,14,0
+"Plum, salted",205,3,34,0
+"Pomegranate, peeled, raw",79,1,13,0
+"Prickly pear, peeled, raw",49,0,8,0
+"Prune (dried plum)",207,2,32,0
+"Quandong, fruit, flesh",51,2,8,0
+"Quince, peeled, raw",58,0,11,0
+"Raisin",306,2,74,0
+"Rambutan, raw",75,1,15,0
+"Raspberry, raw",48,1,6,0
+"Raspberry, purchased frozen",48,1,6,0
+"Raspberry, canned in syrup",75,0,17,0
+"Raspberry, canned in syrup, drained",82,1,16,0
+"Raspberry, canned in syrup, syrup only",71,0,17,0
+"Rhubarb, stalk, raw",22,1,1,0
+"Rhubarb, stewed, sugar sweetened, no added fat",66,1,13,0
+"Sultana",313,2,75,0
+"Strawberry, raw",32,0,5,0
+"Strawberry, purchased frozen",32,0,5,0
+"Strawberry, canned in syrup",80,0,18,0
+"Strawberry, canned in syrup, drained",84,0,18,0
+"Strawberry, canned in syrup, syrup only",77,0,18,0
+"Tamarillo, peeled, raw",36,2,3,0
+"Tamarind, paste, pure",250,2,57,0
+"Tangelo, peeled, raw",41,0,7,0
+"Tangerine or tangor, peeled, raw",43,1,8,0
+"Wax jambu, raw",26,0,4,0
+"Fruit salad, canned in fruit juice",48,0,9,0
+"Fruit salad, canned in fruit juice, drained",49,0,9,0
+"Fruit salad, canned in fruit juice, juice only",46,0,10,0
+"Mixed berry, frozen",48,0,9,0
+"Mixed dried fruit",304,2,73,0
+"Baked beans, canned in tomato sauce",91,4,13,0
+"Baked beans, canned in tomato sauce, reduced salt",91,4,13,0
+"Bean, broad, dried",311,24,37,2
+"Bean, broad, fresh, raw",56,6,2,0
+"Bean, broad, fresh, boiled, drained",60,7,2,0
+"Bean, butter, fresh, raw",25,2,2,0
+"Bean, butter, fresh, boiled, drained",27,2,2,0
+"Bean, haricot, dried",292,21,34,2
+"Bean, haricot, dried, boiled, drained",111,8,12,0
+"Bean, lima, dried",310,21,40,1
+"Bean, lima, dried, boiled, drained",85,6,10,0
+"Bean, mung, whole, dried, uncooked",315,24,41,2
+"Bean, red kidney, dried",299,22,35,1
+"Bean, red kidney, dried, boiled, drained",91,7,9,0
+"Bean, red kidney, fresh, raw",134,12,14,0
+"Bean, red kidney, fresh, boiled, drained",144,13,15,0
+"Bean, red kidney, canned, drained",105,6,14,0
+"Bean, soya (soy), dried",402,31,12,20
+"Bean, soya (soy), dried, boiled, drained",147,13,1,7
+"Chickpea, dried",328,19,38,5
+"Chickpea, dried, boiled, drained",119,7,14,2
+"Chickpea, canned, drained",113,6,13,2
+"Dip, hummus (hommus), commercial",248,6,9,19
+"Lentil, French, hulled, dry",323,28,38,2
+"Lentil, green, hulled, dry",318,25,40,1
+"Lentil, red, hulled, dry",326,23,45,1
+"Lentil, hulled, dry",322,25,41,1
+"Lentil, dried, boiled, drained",92,7,11,0
+"Lupin, dehulled, splits, uncooked",315,37,10,7
+"Lupin, dehulled, flakes, uncooked",310,36,10,7
+"Lupin, whole, uncooked",283,28,7,6
+"Pea, split, dried",341,23,50,2
+"Pea, split, dried, boiled, drained",87,6,9,0
+"Pea, green, whole, dried",310,22,40,2
+"Pea, yellow, whole, dried",325,23,43,2
+"Beef, all cuts, separable fat, raw",592,12,0,61
+"Beef, all cuts, separable fat, cooked, no added fat",554,15,0,55
+"Beef, casserole meat, boneless or bone-in, shin, lean, raw",94,21,0,0
+"Beef, casserole meat, boneless or bone-in, shin, lean, casseroled, no added fat",163,33,0,2
+"Beef, casserole meat, boneless or bone-in, shin, untrimmed, raw",124,21,0,4
+"Beef, casserole meat, boneless or bone-in, shin, untrimmed, casseroled, no added fat",229,30,0,11
+"Beef, casserole meat, boneless, chuck, lean, raw",124,23,0,3
+"Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",228,33,0,10
+"Beef, casserole meat, boneless, chuck, untrimmed, raw",180,21,0,10
+"Beef, casserole meat, boneless, chuck, untrimmed, casseroled, no added fat",260,31,0,15
+"Beef, diced, lean, raw ",137,27,0,2
+"Beef, diced, lean, dry-fried, no added fat ",156,32,0,2
+"Beef, diced, lean, casseroled, no added fat",179,36,0,3
+"Beef, diced, untrimmed, raw",147,27,0,3
+"Beef, diced, untrimmed, dry-fried, no added fat",162,31,0,3
+"Beef, diced, untrimmed, casseroled, no added fat",185,36,0,4
+"Beef, stir-fry strips, lean, raw ",128,27,0,2
+"Beef, stir-fry strips, lean, dry-fried, no added fat ",154,30,0,3
+"Beef, strips, lean, casseroled, no added fat",177,37,0,2
+"Beef, stir-fry strips, untrimmed, raw",134,27,0,2
+"Beef, stir-fry strips, untrimmed, dry-fried, no added fat",157,30,0,3
+"Beef, strips, untrimmed, casseroled, no added fat",180,37,0,3
+"Beef, mince, lower fat, raw ",129,22,0,4
+"Beef, mince, lower fat, stir-fried, no added fat",203,32,0,8
+"Beef, mince, regular fat, raw ",170,22,0,8
+"Beef, mince, regular fat, stir-fried, no added fat",265,29,0,16
+"Beef, mince, higher fat, raw ",183,22,0,10
+"Beef, mince, higher fat, stir-fried, no added fat",231,27,0,13
+"Beef, rump steak, lean, raw",108,20,0,2
+"Beef, rump steak, lean, grilled, no added fat",170,32,0,4
+"Beef, rump steak, untrimmed, raw",130,20,0,5
+"Beef, rump steak, untrimmed, grilled, no added fat",217,29,0,10
+"Beef, sirloin steak, lean, raw",115,24,0,1
+"Beef, sirloin steak, lean, grilled, no added fat",158,30,0,3
+"Beef, sirloin steak, untrimmed, raw",143,23,0,5
+"Beef, sirloin steak, untrimmed, grilled, no added fat",241,27,0,14
+"Beef, steak, boneless, fillet or tenderloin, lean, raw",136,22,0,5
+"Beef, steak, boneless, fillet or tenderloin, lean, grilled, no added fat",178,31,0,5
+"Beef, steak, boneless, fillet or tenderloin, untrimmed, raw",170,21,0,9
+"Beef, steak, boneless, fillet or tenderloin, untrimmed, grilled, no added fat",203,30,0,8
+"Beef, steak, boneless or bone-in, blade, lean, raw",113,22,0,2
+"Beef, steak, boneless or bone-in, blade, lean, grilled, no added fat",155,31,0,2
+"Beef, steak, boneless or bone-in, blade, untrimmed, raw",169,21,0,9
+"Beef, steak, with bone, blade, untrimmed, grilled, no added fat",189,30,0,7
+"Beef, steak, boneless, round, lean, raw",100,21,0,1
+"Beef, steak, boneless, round, lean, grilled, no added fat",147,31,0,2
+"Beef, steak, boneless, round, untrimmed, raw",136,20,0,6
+"Beef, steak, boneless, round, untrimmed, grilled, no added fat",167,31,0,4
+"Beef, steak, boneless, scotch fillet, lean, raw",121,23,0,2
+"Beef, steak, boneless, scotch fillet, lean, grilled, no added fat",169,31,0,4
+"Beef, steak, boneless, scotch fillet, untrimmed, raw",179,22,0,10
+"Beef, steak, boneless, scotch fillet, untrimmed, grilled, no added fat",228,29,0,12
+"Beef, steak, with bone, T-bone, lean, raw",116,24,0,2
+"Beef, steak, with bone, T-bone, lean, grilled, no added fat",152,29,0,3
+"Beef, steak, with bone, T-bone, untrimmed, raw",236,21,0,16
+"Beef, steak, with bone, T-bone, untrimmed, grilled, no added fat",235,26,0,14
+"Beef, silverside roast, lean, raw ",118,24,0,2
+"Beef, silverside roast, lean, roasted, no added fat",159,26,0,5
+"Beef, silverside roast, untrimmed, raw",170,22,0,8
+"Beef, silverside roast, untrimmed, roasted, no added fat",190,26,0,9
+"Beef, topside roast, lean, raw ",117,22,0,3
+"Beef, topside roast, lean, roasted, no added fat",158,32,0,2
+"Beef, topside roast, untrimmed, raw",163,21,0,8
+"Beef, topside roast, untrimmed, roasted, no added fat",190,31,0,7
+"Meatball or rissole, beef mince, commercial, raw",220,15,2,16
+"Meatball or rissole, beef, commercial, cooked",297,20,2,22
+"Veal, all cuts, separable fat, raw",335,19,0,29
+"Veal, all cuts, separable fat, cooked",376,20,0,33
+"Veal, cutlet, with bone, lean, raw ",110,24,0,1
+"Veal, cutlet, with bone, lean, grilled, no added fat ",132,28,0,2
+"Veal, cutlet, with bone, untrimmed, raw",125,24,0,3
+"Veal, cutlet, with bone, untrimmed, grilled, no added fat",151,27,0,4
+"Veal, diced, lean, raw ",107,23,0,1
+"Veal, diced, lean, stir-fried, no added fat ",156,31,0,3
+"Veal, diced, untrimmed, raw",111,23,0,2
+"Veal, diced, untrimmed, stir-fried, no added fat",162,31,0,3
+"Veal, stir-fry strips, lean, raw ",128,27,0,2
+"Veal, stir-fry strips, lean, stir-fried, no added fat ",147,30,0,2
+"Veal, stir-fry strips, untrimmed, raw",132,27,0,2
+"Veal, stir-fry strips, untrimmed, stir-fried, no added fat",149,29,0,3
+"Veal, steak, boneless, leg, lean, raw ",112,24,0,1
+"Veal, steak, boneless, leg, lean, grilled, no added fat ",157,34,0,1
+"Veal, steak, boneless, leg, untrimmed, raw",115,24,0,1
+"Veal, steak, boneless, leg, untrimmed, grilled, no added fat",161,34,0,2
+"Lamb, all cuts, separable fat, raw",553,10,0,57
+"Lamb, all cuts, separable fat, cooked",538,16,0,53
+"Lamb, chop, with bone, chump, lean, raw ",130,22,0,4
+"Lamb, chop, with bone, chump, lean, grilled, no added fat",229,34,0,10
+"Lamb, chop, with bone, chump, untrimmed, raw",234,19,0,17
+"Lamb, chop, with bone, chump, untrimmed, grilled, no added fat",299,30,0,20
+"Lamb, chop, with bone, forequarter, lean, raw ",134,20,0,5
+"Lamb, chop, with bone, forequarter, lean, grilled, no added fat",215,28,0,11
+"Lamb, chop, with bone, forequarter, untrimmed, raw",269,17,0,22
+"Lamb, chop, with bone, forequarter, grilled, no added fat",280,25,0,19
+"Lamb, loin chop, lean, raw ",160,28,0,5
+"Lamb, loin chop, lean, grilled, no added fat",201,29,0,9
+"Lamb, loin chop, untrimmed, raw",305,22,0,24
+"Lamb, loin chop, untrimmed, grilled, no added fat",276,26,0,18
+"Lamb, cutlet or frenched cutlet, with bone, lean, raw",140,20,0,6
+"Lamb, cutlet or frenched cutlet, with bone, lean, grilled, no added fat ",200,30,0,8
+"Lamb, cutlet or frenched cutlet, with bone, untrimmed, raw",233,18,0,17
+"Lamb, cutlet or frenched cutlet, with bone, untrimmed, grilled, no added fat",278,27,0,18
+"Lamb, diced, lean, raw ",132,21,0,5
+"Lamb, diced, lean, stir-fried, no added fat",185,31,0,6
+"Lamb, diced, lean, casseroled, no added fat",185,32,0,6
+"Lamb, diced, untrimmed, raw",141,21,0,6
+"Lamb, diced, untrimmed, stir-fried, no added fat",193,31,0,7
+"Lamb, diced, untrimmed, casseroled, no added fat",193,31,0,7
+"Lamb, stir-fry strips, lean, raw",126,21,0,4
+"Lamb, stir-fry strips, lean, stir-fried, no added fat",182,28,0,7
+"Lamb, stir-fry strips, lean, casseroled, no added fat",185,32,0,6
+"Lamb, stir-fry strips, untrimmed, raw",138,21,0,5
+"Lamb, stir-fry strips, untrimmed, stir-fried, no added fat",187,28,0,8
+"Lamb, stir-fry strips, untrimmed, casseroled, no added fat",190,32,0,6
+"Lamb, mince, raw",144,20,0,6
+"Lamb, mince, stir-fried, no added fat",174,24,0,8
+"Lamb, leg roast, lean, raw ",114,21,0,3
+"Lamb, leg roast, lean, roasted, no added fat",177,30,0,6
+"Lamb, leg roast, untrimmed, raw",188,19,0,12
+"Lamb, leg roast, untrimmed, roasted, no added fat",229,28,0,12
+"Lamb, mini roast, lean, roasted, no added fat",163,27,0,5
+"Lamb, mini roast, untrimmed, roasted, no added fat",205,26,0,11
+"Lamb, roasting piece, shoulder, lean, raw ",112,18,0,4
+"Lamb, roasting piece, shoulder, lean, roasted, no added fat",168,29,0,5
+"Lamb, roasting piece, shoulder, untrimmed, raw",214,16,0,16
+"Lamb, roasting piece, shoulder, untrimmed, roasted, no added fat",262,26,0,17
+"Lamb, eye of loin, lean, raw",119,20,0,3
+"Lamb, eye of loin, lean, microwaved, no added fat ",158,26,0,5
+"Lamb, eye of loin, untrimmed, raw",130,20,0,5
+"Lamb, eye of loin, untrimmed, microwaved, no added fat",165,26,0,6
+"Lamb, fillet, lean, raw",116,19,0,4
+"Lamb, fillet, lean, grilled, no added fat",160,27,0,5
+"Lamb, fillet, untrimmed, raw",140,19,0,6
+"Lamb, fillet, untrimmed, grilled, no added fat",169,27,0,6
+"Lamb, steak, boneless, lean, raw",130,21,0,4
+"Lamb, steak, boneless, lean, grilled, no added fat",184,30,0,6
+"Lamb, steak, boneless, untrimmed, raw",187,20,0,11
+"Lamb, steak, boneless, untrimmed, grilled, no added fat",224,29,0,11
+"Lamb, with bone, shin, lean, raw",114,23,0,1
+"Lamb, with bone, shin, lean, casseroled, no added fat",180,34,0,4
+"Lamb, with bone, shin, untrimmed, raw",188,21,0,11
+"Lamb, with bone, shin, untrimmed, casseroled, no added fat",231,32,0,11
+"Mutton, all cuts, separable fat, raw",603,8,0,64
+"Mutton, all cuts, separable fat, cooked",644,10,0,67
+"Mutton, boneless dice or strips, shoulder, lean, raw",124,21,0,4
+"Mutton, boneless dice or strips, shoulder, lean, casseroled, no added fat",249,36,0,11
+"Mutton, boneless dice or strips, shoulder, semi-trimmed, casseroled, no added fat",266,35,0,13
+"Mutton, boneless dice or strips, shoulder, untrimmed, raw",171,20,0,10
+"Mutton, boneless dice or strips, shoulder, untrimmed, casseroled, no added fat",272,34,0,14
+"Mutton, roasting piece, with bone, leg, lean, raw ",122,21,0,3
+"Mutton, roasting piece, with bone, leg, lean, roasted, no added fat ",189,29,0,7
+"Mutton, roasting piece, with bone, leg, untrimmed, raw",194,19,0,12
+"Mutton, roasting piece, with bone, leg, untrimmed, roasted, no added fat",261,26,0,17
+"Buffalo, riverine, cube roll, raw",155,23,0,6
+"Buffalo, riverine, topside, raw",119,24,0,2
+"Buffalo, swamp, cube roll, raw",121,24,0,2
+"Buffalo, swamp, topside, raw",107,24,0,0
+"Camel, cube roll, raw",151,20,0,7
+"Camel, rump, raw",114,21,0,3
+"Camel, steak, as purchased, raw",123,20,0,4
+"Camel, steak, as purchased, fried, no added fat",189,32,0,6
+"Goat, all cuts, separable fat, raw ",443,12,0,44
+"Goat, all cuts, separable fat, baked, no added fat",611,10,0,64
+"Goat, forequarter, lean, raw ",103,21,0,1
+"Goat, forequarter, lean, baked, no added fat ",162,30,0,4
+"Goat, leg, lean, raw",109,22,0,2
+"Goat, leg, lean, baked, no added fat",166,33,0,3
+"Goat, loin, lean, raw",103,22,0,1
+"Goat, loin, lean, baked, no added fat",146,29,0,3
+"Goat, meat, all cuts, lean, raw",105,22,0,1
+"Goat, meat, all cuts, lean, baked, no added fat",158,31,0,3
+"Goat, meat, all cuts, lean, casseroled, no added fat",208,43,0,3
+"Goat, meat, all cuts, untrimmed, raw",135,21,0,5
+"Goat, meat, all cuts, untrimmed, baked, no added fat",202,29,0,9
+"Goat, meat, all cuts, untrimmed, casseroled, no added fat ",242,37,0,10
+"Rabbit, farmed, whole, raw",113,23,0,2
+"Rabbit, flesh, casseroled, no added fat",170,29,0,5
+"Venison, leg medallion, lean, raw",109,23,0,1
+"Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",133,28,0,1
+"Venison, mince, premium, raw",111,21,0,2
+"Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",154,29,0,3
+"Pork, belly, rind removed, raw",307,18,0,26
+"Pork, belly, rind removed, baked, no added fat",384,27,0,30
+"Pork, crackling, roasted, salted",666,8,0,71
+"Pork, diced, untrimmed, raw",120,22,0,3
+"Pork, diced, untrimmed, fried, no added fat",155,31,0,3
+"Pork, strips, untrimmed, raw",111,22,0,2
+"Pork, strips, untrimmed, fried, no added fat",149,31,0,2
+"Pork, forequarter (chop, roast, neck), separable fat, raw",488,9,0,50
+"Pork, forequarter, separable fat, BBQ'd, no added fat",521,11,0,53
+"Pork, forequarter chop, lean, raw",114,19,0,3
+"Pork, forequarter chop, lean, BBQ'd, no added fat",163,26,0,6
+"Pork, forequarter chop, untrimmed, raw",188,17,0,13
+"Pork, forequarter chop, untrimmed, BBQ'd, no added fat",236,23,0,16
+"Pork, loin chop, separable fat, raw",644,7,0,69
+"Pork, loin chop, separable fat, BBQ'd, no added fat",661,8,0,70
+"Pork, loin chop, lean, raw",110,23,0,1
+"Pork, loin chop, lean, BBQ'd, no added fat",164,30,0,4
+"Pork, loin chop, untrimmed, raw",168,21,0,9
+"Pork, loin chop, untrimmed, BBQ'd, no added fat",222,28,0,12
+"Pork, loin cutlet, untrimmed, raw",201,21,0,13
+"Pork, loin cutlet, untrimmed, fried, no added fat",296,30,0,19
+"Pork, mince, untrimmed, raw",179,20,0,10
+"Pork, mince, as purchased, fried, no added fat",222,25,0,13
+"Pork, butterfly steak, lean, raw",112,24,0,1
+"Pork, butterfly steak, lean, grilled, no added fat",157,32,0,2
+"Pork, butterfly steak, untrimmed, raw",154,22,0,7
+"Pork, butterfly steak, untrimmed, grilled, no added fat",197,30,0,8
+"Pork, medallion or loin steak, separable fat, raw",631,6,0,68
+"Pork, medallion or loin steak, separable fat, fried, no added fat",551,14,0,55
+"Pork, medallion or loin steak, lean, raw",112,24,0,1
+"Pork, medallion or loin steak, lean, fried, no added fat",151,29,0,3
+"Pork, medallion or loin steak, untrimmed, raw",147,22,0,6
+"Pork, medallion or loin steak, untrimmed, fried, no added fat",213,33,0,8
+"Pork, leg steak (rump), separable fat, raw",622,8,0,66
+"Pork, leg steak (rump), separable fat, fried, no added fat",524,12,0,53
+"Pork, rump steak, lean, raw",121,25,0,2
+"Pork, rump steak, lean, fried, no added fat",150,28,0,3
+"Pork, rump steak, untrimmed, raw",136,24,0,4
+"Pork, rump steak, untrimmed, fried, no added fat",200,36,0,5
+"Pork, fillet, lean, raw",103,23,0,1
+"Pork, fillet, fully-trimmed, baked, no added fat",135,28,0,2
+"Pork, forequarter shoulder roast, lean, raw",107,19,0,3
+"Pork, forequarter shoulder roast, lean, BBQ'd, no added fat",157,24,0,6
+"Pork, forequarter shoulder roast, untrimmed, raw",182,17,0,12
+"Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",215,22,0,14
+"Pork, leg roast, untrimmed, raw",164,21,0,8
+"Pork, leg roast, untrimmed, baked, no added fat",221,31,0,10
+"Pork, loin roast, separable fat, raw",703,5,0,77
+"Pork, loin roast, separable fat, baked, no added fat",628,8,0,67
+"Pork, loin roast, lean, raw",114,23,0,2
+"Pork, loin roast, lean, baked, no added fat",206,31,0,8
+"Pork, loin roast, untrimmed, raw",225,19,0,16
+"Pork, loin roast, untrimmed, baked, no added fat",261,28,0,16
+"Pork, round mini roast, separable fat, raw",440,11,0,44
+"Pork, round mini roast, separable fat, baked, no added fat",469,16,0,45
+"Pork, round mini roast, lean, raw",106,23,0,1
+"Pork, round mini roast, lean, baked, no added fat",163,34,0,2
+"Pork, scotch roast, separable fat, raw",508,10,0,52
+"Pork, scotch roast, separable fat, baked, no added fat",496,12,0,50
+"Pork, scotch roast, lean, raw",151,20,0,7
+"Pork, scotch roast, lean, baked, no added fat",230,30,0,12
+"Pork, scotch roast, untrimmed, raw",213,18,0,15
+"Pork, scotch roast, untrimmed, baked, no added fat",245,29,0,14
+"Pork, spare ribs, untrimmed, raw",286,18,0,24
+"Pork, spare ribs, untrimmed, baked, no added fat",397,27,0,32
+"Pork, spare ribs, marinated, baked, roasted, fried, grilled or BBQ'd, fat not further defined",354,23,5,27
+"Chicken, separable fat, composite, raw",572,5,0,62
+"Chicken, separable fat, composite, baked or roasted, no added fat",452,9,0,46
+"Chicken, separable fat, composite, cooked, no added fat",693,6,0,75
+"Chicken, skin, composite, raw",362,12,0,35
+"Chicken, skin, composite, baked, no added fat",435,22,0,38
+"Chicken, skin, composite, casseroled, no added fat",416,18,0,38
+"Chicken, barbecued, with skin",193,27,0,8
+"Chicken, breast, lean flesh, raw",98,22,0,0
+"Chicken, breast, lean flesh, baked, no added fat",152,29,0,3
+"Chicken, breast, lean flesh, grilled, no added fat",143,29,0,2
+"Chicken, breast, lean flesh, fried, no added fat",158,34,0,1
+"Chicken, breast, lean flesh, casseroled, no added fat",142,27,0,3
+"Chicken, breast, lean flesh, skin & fat, raw",159,20,0,8
+"Chicken, breast, lean flesh, skin & fat, baked, no added fat",193,27,0,9
+"Chicken, drumstick, lean flesh, raw",118,18,0,4
+"Chicken, drumstick, lean flesh, baked, no added fat",198,29,0,8
+"Chicken, drumstick, lean flesh, casseroled, no added fat",174,28,0,6
+"Chicken, drumstick, lean flesh, skin & fat, raw",154,17,0,9
+"Chicken, drumstick, lean flesh, skin & fat, baked, no added fat",237,28,0,13
+"Chicken, drumstick, lean flesh, skin & fat, casseroled, no added fat",212,26,0,11
+"Chicken, mince, raw",97,21,0,1
+"Chicken, mince, fried, no added fat",127,28,0,1
+"Chicken, thigh, lean flesh, raw",104,19,0,3
+"Chicken, thigh, lean flesh, baked, no added fat",175,24,0,8
+"Chicken, thigh, lean flesh, casseroled, no added fat",194,26,0,9
+"Chicken, thigh, lean flesh, fried, no added fat",158,27,0,5
+"Chicken, thigh, lean flesh, skin & fat, raw",215,16,0,16
+"Chicken, thigh, lean flesh, skin & fat, baked, no added fat",236,23,0,16
+"Chicken, thigh, lean flesh, skin & fat, casseroled, no added fat",250,24,0,17
+"Chicken, wing, lean flesh, raw",112,18,0,4
+"Chicken, wing, lean flesh, baked, no added fat",194,30,0,7
+"Chicken, wing, lean flesh, casseroled, no added fat",191,27,0,8
+"Chicken, wing, lean flesh, skin & fat, raw",219,16,0,17
+"Chicken, wing, lean flesh, skin & fat, baked, no added fat",267,28,0,17
+"Chicken, wing, lean flesh, skin & fat, casseroled, no added fat",259,24,0,17
+"Chicken, nugget, purchased frozen, baked, no added fat",269,14,17,15
+"Chicken, nugget, purchased from independent takeaway & fast food chain, fried, undefined oil",264,13,16,15
+"Chicken, nugget, purchased from fast food chain, grilled",196,14,19,5
+"Chicken piece, flesh, skin & fat, coated, fast food outlet, fried",262,23,9,14
+"Chicken, schnitzel, baked without fat",207,16,13,9
+"Turkey, breast, lean flesh, raw",117,21,0,3
+"Turkey, breast, lean flesh, baked, no added fat",155,29,0,4
+"Turkey, breast, lean flesh, skin & fat, raw",158,20,0,8
+"Turkey, breast, lean flesh, skin & fat, baked, no added fat",193,27,0,9
+"Turkey, hindquarter, lean flesh, raw",122,18,0,5
+"Turkey, hindquarter, lean flesh, baked, no added fat",171,26,0,7
+"Turkey, hindquarter, lean flesh, skin & fat, raw",187,18,0,12
+"Turkey, hindquarter, lean flesh, skin & fat, baked, no added fat",218,25,0,12
+"Duck, skin & fat, raw",562,9,0,59
+"Duck, skin & fat, baked, no added fat",482,13,0,48
+"Duck, breast, lean flesh, raw",92,21,0,0
+"Duck, breast, lean, fried, no added fat",120,28,0,0
+"Duck, lean flesh, raw",121,17,0,5
+"Duck, lean flesh, baked, no added fat",122,28,0,0
+"Duck, lean flesh, skin & fat, raw",379,13,0,36
+"Duck, lean flesh, skin & fat, baked, no added fat",418,17,0,39
+"Quail, lean flesh & skin, raw",173,18,0,11
+"Quail, lean flesh & skin, baked, no added fat",197,27,0,9
+"Emu, fan fillet, raw",116,24,0,1
+"Emu, steak, as purchased, raw",117,23,0,2
+"Emu, steak, as purchased, fried, no added fat",154,30,0,3
+"Kangaroo, loin fillet, raw",95,21,0,0
+"Kangaroo, loin fillet, grilled, no added fat",133,30,0,1
+"Kangaroo, rump, raw",89,20,0,0
+"Kangaroo, rump, baked, no added fat",160,33,0,2
+"Kangaroo, steak, as purchased, raw",102,22,0,1
+"Kangaroo, steak, as purchased, fried, no added fat",157,34,0,1
+"Kangaroo, tail, raw",91,20,0,1
+"Kangaroo, tail, cooked, no added fat",111,24,0,1
+"Ostrich, fan fillet, raw",101,23,0,0
+"Ostrich, moon steak, raw",109,23,0,1
+"Pigeon (squab), whole, raw",291,16,0,25
+"Pigeon (squab), meat, cooked",402,22,0,35
+"Crocodile, back leg, raw",109,22,0,2
+"Crocodile, tail fillet, raw",106,22,0,1
+"Crocodile, steak, as purchased, raw",97,20,0,1
+"Crocodile, steak, as purchased, fried, no added fat",162,34,0,2
+"Chicken, liver, raw",111,16,0,4
+"Chicken, liver, fried, added butter",178,20,0,10
+"Lamb, liver, grilled, no added fat",188,21,2,10
+"Bacon, middle rasher, untrimmed, raw",313,15,0,28
+"Bacon, middle rasher, untrimmed, baked, roasted, fried, grilled or BBQ'd, no added fat",418,20,0,37
+"Bacon, middle rasher, separable lean, fried, no added fat",205,31,0,8
+"Bacon, middle rasher, separable fat, fried, no added fat",766,11,0,81
+"Bacon, shortcut, as purchased without rind, fried, no added fat",250,30,0,13
+"Ham, leg, lean",112,17,2,2
+"Prosciutto",293,30,0,18
+"Frankfurt, cooked",225,14,3,17
+"Sausage, beef, raw",236,14,2,18
+"Sausage, beef, fried, no added fat",246,16,4,18
+"Sausage, beef, grilled, no added fat",218,17,3,14
+"Sausage, chicken, plain, fried, no added fat",201,18,4,12
+"Sausage, chicken, flavoured, fried, no added fat",201,18,4,12
+"Sausage, lamb, plain, fried, no added fat",226,15,4,16
+"Sausage, lamb, flavoured, fried, no added fat",226,15,4,16
+"Sausage, pork, fried, no added fat",259,16,4,19
+"Sausage, chorizo, uncooked",283,20,1,22
+"Sausage, chorizo, fried, no added fat",298,21,1,23
+"Salami, danish",444,19,1,40
+"Salami, hungarian",426,21,0,37
+"Salami, mettwurst",428,21,0,37
+"Salami, milano",426,21,2,36
+"Salami, pepperoni",424,23,1,36
+"Salami, all varieties, raw",345,21,0,28
+"Chicken, processed luncheon meat, low or reduced fat",115,20,4,1
+"Beef, corned, canned",229,21,0,15
+"Braised steak & onions, canned",63,7,4,1
+"Pie, steak & kidney, canned",166,10,13,7
+"Sausages & vegetables, canned",68,4,7,2
+"Spam, canned",296,14,1,26
+"Steak & vegetables, canned",62,4,6,1
+"Coconut, fresh, mature fruit, flesh",334,3,3,32
+"Coconut, fresh, young or immature, flesh",84,1,7,5
+"Coconut, fresh, mature, water or juice",21,0,4,0
+"Coconut, fresh, young or immature, water or juice",26,0,6,0
+"Water, coconut, commercial",13,0,3,0
+"Coconut, grated & desiccated",664,6,7,65
+"Coconut, cream, regular fat",217,1,1,23
+"Coconut, milk, canned, regular fat",148,1,1,15
+"Coconut, milk, canned, reduced fat",69,0,0,7
+"Nut, almond, with skin, raw, unsalted",570,19,5,50
+"Nut, almond, with skin, roasted, unsalted",588,19,5,52
+"Nut, almond meal",570,19,5,50
+"Nut, brazil, raw or blanched, unsalted",690,14,2,68
+"Nut, cashew, raw, unsalted",607,17,22,49
+"Nut, cashew, roasted, unsalted",605,17,26,47
+"Nut, cashew, roasted, salted",610,17,26,48
+"Nut, chestnut, raw, unsalted",174,3,32,0
+"Nut, chestnut, roasted, unsalted",183,3,35,1
+"Nut, hazelnut, raw, unsalted",643,14,5,61
+"Nut, macadamia, raw, unsalted",738,6,4,76
+"Nut, peanut, with skin, raw, unsalted",568,24,8,47
+"Nut, peanut, with skin, roasted, with oil, salted",630,24,14,51
+"Nut, peanut, without skin, roasted, with oil, unsalted",637,25,14,52
+"Nut, peanut, without skin, roasted, with oil, salted",637,25,14,52
+"Nut, pecan, raw, unsalted",711,9,4,71
+"Nut, pine, raw, unsalted",699,13,4,70
+"Nut, pistachio, raw, unsalted",546,17,7,48
+"Nut, walnut, raw, unsalted",694,14,3,69
+"Seed, chia, dried",436,23,3,29
+"Seed, hemp, dried",586,29,2,50
+"Seed, linseed or flaxseed",450,21,2,32
+"Seed, poppy",512,18,8,41
+"Seed, pumpkin, hulled & dried",538,30,2,45
+"Seed, sunflower",565,24,3,48
+"Seed, sesame, unsalted",626,22,6,55
+"Wattle seed (acacia), ground",283,20,10,6
+"Flour, hemp",293,22,2,11
+"Tahini, sesame seed pulp",649,20,1,60
+"Barramundi, aquacultured, fillet, raw",125,19,0,5
+"Barramundi, aquacultured, fillet, grilled, no added fat",171,26,0,7
+"Barramundi, aquacultured, fillet, steamed with no added fat",149,22,0,6
+"Bassa (basa), fillet, raw",79,15,0,1
+"Bassa (basa), fillet, baked, no added fat",109,21,0,2
+"Bassa (basa), fillet, steamed, no added fat",95,18,0,2
+"Blue grenadier (hoki), fillet, raw",84,18,0,1
+"Blue grenadier (hoki), fillet, baked, no added fat",115,24,0,1
+"Blue grenadier (hoki), fillet, steamed, no added fat",100,21,0,1
+"Bream, fillet, raw",125,19,0,5
+"Bream, fillet, baked, no added fat",171,26,0,7
+"Bream, fillet, steamed, no added fat",139,22,0,5
+"Flathead, fillet, raw",94,21,0,1
+"Flathead, fillet, baked, no added fat",129,28,0,1
+"Flathead, fillet, steamed, no added fat",116,26,0,1
+"Gemfish, fillet, raw",80,14,0,2
+"Gemfish, fillet, baked, no added fat",110,19,0,3
+"Gemfish, fillet, steamed, no added fat",136,26,0,3
+"Kingfish, yellowtail, aquacultured, fillet, with skin, raw",205,22,0,12
+"Kingfish, yellowtail, aquacultured, fillet, with skin, grilled, no added fat",281,31,0,17
+"Kingfish, yellowtail, aquacultured, fillet, with skin, steamed, no added fat",244,27,0,15
+"Mackerel, raw",134,19,0,6
+"Mackerel, grilled, no added fat",184,26,0,8
+"Mackerel, steamed, no added fat",160,23,0,7
+"Milkfish, aquacultured, fillet, raw",190,23,0,10
+"Milkfish, aquacultured, fillet, grilled, no added fat",260,32,0,14
+"Milkfish, aquacultured, fillet, steamed, no added fat",226,27,0,12
+"Morwong, fillet, raw",130,19,0,5
+"Morwong, fillet, grilled, no added fat",178,26,0,7
+"Morwong, fillet, steamed, no added fat",126,23,0,3
+"Mullet, yelloweye, fillet, raw",131,19,0,6
+"Mullet, yelloweye, fillet, baked, no added fat",180,26,0,8
+"Mullet, yelloweye, fillet, steamed, no added fat",134,22,0,5
+"Mulloway, fillet, raw",104,20,0,2
+"Mulloway, fillet baked, no added fat",142,28,0,3
+"Mulloway, fillet, steamed, no added fat",129,23,0,3
+"Salmon, Atlantic, fillet, raw",231,20,0,16
+"Salmon, Atlantic, fillet, grilled, no added fat",258,22,0,18
+"Salmon, Atlantic, fillet, steamed, no added fat",271,24,0,19
+"Salmon, Pacific King, fillet, skinless, raw",275,18,0,22
+"Salmon, Pacific King, fillet, skinless, grilled, no added fat",307,20,0,25
+"Salmon, Pacific King, fillet, steamed, no added fat",323,21,0,26
+"Sardine, Australian, whole, raw",106,19,0,2
+"Sardine, Australian, whole, fried, no added fat",106,22,0,1
+"Sprat, blue, wild caught, flesh, skin & bones, raw",90,18,0,1
+"Sprat, blue, wild caught, flesh, skin & bones, fried, no added fat",106,22,0,1
+"Shark, fillet, without skin, raw",104,24,0,0
+"Shark, fillet, without skin, baked, no added fat",142,33,0,0
+"Shark, fillet, without skin, steamed, no added fat",117,27,0,0
+"Shark, battered, deep-fried, takeaway outlet",241,21,9,12
+"Silver perch, aquacultured, raw",221,19,0,16
+"Silver perch, aquacultured, baked, no added fat",303,26,0,22
+"Silver perch, aquacultured, steamed, no added fat",263,23,0,19
+"Snapper, fillet, raw",97,20,0,1
+"Snapper, fillet, baked, no added fat",132,27,0,2
+"Snapper, fillet, steamed, no added fat",132,27,0,2
+"Tilapia, fillet, raw",114,18,0,4
+"Tilapia, fillet, baked, no added fat",156,25,0,6
+"Tilapia, fillet, steamed, no added fat",136,22,0,5
+"Trout, ocean, aquacultured, fillet, without skin, raw",288,17,0,24
+"Trout, ocean, aquacultured, fillet, without skin, baked, no added fat",395,23,0,33
+"Trout, ocean, aquacultured, fillet, without skin, steamed, no added fat",343,20,0,29
+"Trout, rainbow, aquacultured, raw",154,19,0,8
+"Trout, rainbow, aquacultured, baked, no added fat",211,26,0,11
+"Trout, rainbow, aquacultured, steamed, no added fat",183,23,0,10
+"Tuna, yellowfin, fillet, raw",104,23,0,1
+"Tuna, yellowfin, fillet, baked, no added fat",142,32,0,1
+"Tuna, yellowfin, fillet, steamed, no added fat",124,27,0,1
+"Whiting, King George, fillet, raw",87,19,0,0
+"Whiting, King George, fillet, baked, no added fat",124,28,0,1
+"Whiting, King George, fillet, steamed, no added fat",104,23,0,1
+"Fish, eel, raw",178,18,0,11
+"Fish finger, crumbed, purchased frozen, raw",221,12,16,11
+"Fish finger, crumbed, purchased frozen, grilled, no added fat",251,13,18,13
+"Fish, white flesh, battered, packaged frozen, baked, no added fat",196,12,20,7
+"Fish, white flesh, crumbed, packaged frozen, baked, no added fat",223,13,18,10
+"Abalone, black lip, aquacultured, raw",79,16,1,0
+"Abalone, black lip, wild, raw",91,19,1,0
+"Abalone, green lip, aquacultured, raw",82,17,1,0
+"Abalone, green lip, wild, raw",87,18,1,0
+"Abalone, brown lip, wild, raw",84,17,1,0
+"Crab, flesh, purchased steamed or boiled",88,20,0,0
+"Lobster, southern rock, wild, flesh, raw",88,20,0,0
+"Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",98,22,0,0
+"Mussel, blue, steamed",105,16,4,2
+"Octopus, raw",70,14,0,1
+"Octopus, boiled, no added fat",77,16,0,1
+"Oyster, native, aquacultured, raw",47,7,0,1
+"Oyster, Pacific, aquacultured, raw",66,10,0,2
+"Oyster, Sydney rock, aquacultured, raw",70,10,0,2
+"Oyster, aquacultured, raw",64,10,0,2
+"Prawn, banana, wild, flesh, raw",59,13,0,0
+"Prawn, banana, aquacultured, purchased cooked",103,23,0,1
+"Prawn, brown tiger, wild, flesh, raw",103,23,0,0
+"Prawn, black tiger, aquacultured, purchased cooked",91,20,0,1
+"Prawn, endeavour, wild, flesh, raw",98,22,0,0
+"Prawn, school, wild, flesh, raw",82,17,0,1
+"Prawn, Western king, wild, flesh, raw",104,23,0,0
+"Prawn, flesh, raw (green)",91,20,0,0
+"Prawn, flesh, cooked from raw, no added fat",121,27,0,1
+"Scallop, raw",84,15,3,0
+"Scallop, fried, no added fat",105,19,4,1
+"Squid or calamari, raw",78,16,0,1
+"Squid or calamari, fried, no added fat",98,20,0,1
+"Anchovy, canned in oil, drained",182,25,0,8
+"Cod, smoked, raw",85,18,0,1
+"Cod or hake, smoked, steamed",95,20,0,1
+"Salmon, pink, canned in brine, drained",138,20,0,6
+"Salmon, red, canned in brine, drained",147,24,0,5
+"Salmon, flavoured, canned",129,15,5,5
+"Salmon, smoked, sliced",188,24,0,10
+"Tuna, unflavoured, canned in water, drained",129,26,0,2
+"Tuna, canned in brine, drained",129,26,0,2
+"Tuna, flavoured, canned in oil",138,18,3,5
+"Snack ball, date based",332,8,45,11
+"Bar, muesli, plain or with dried fruit",379,8,59,11
+"Bar, muesli, plain or with dried fruit, chocolate-coated",395,6,64,11
+"Bar, muesli, plain or with dried fruit, yoghurt-coated",400,6,59,14
+"Bar, muesli, with nuts",445,9,54,19
+"Bar, snack, oat based, baked",457,8,44,26
+"Bar, snack, fruit filled, baked",335,3,69,3
+"Bar, snack, with >55% nuts",517,18,31,34
+"Bar, snack, with >35% nuts, added protein",511,25,30,31
+"Extruded snack, cheese flavoured",487,8,53,25
+"Snack, grain based, extruded, flavoured",462,7,54,22
+"Noodle snack, wheat, flavoured, dry",497,10,60,23
+"Corn chips, plain, salted",491,7,56,25
+"Taco shell, from corn flour, plain",466,6,56,21
+"Popcorn, commercial, butter flavoured, salted",491,9,49,26
+"Potato crisps or chips, plain, salted",511,6,45,33
+"Potato crisps or chips, salt & vinegar flavoured",501,6,43,32
+"Potato crisps or chips, flavoured (other than salt & vinegar)",500,6,43,32
+"Potato crisps or chips, reformed, salted",501,5,55,28
+"Potato straws, French fries, plain",517,6,51,31
+"Vegetable crisps or chips, sweet potato & taro, flavoured",490,3,47,31
+"Bar, cherry & coconut centre, dark chocolate-coated",427,4,52,22
+"Bar, coconut cream centre, milk chocolate-coated",425,4,52,22
+"Bar, honeycomb centre, milk chocolate-coated",424,2,70,16
+"Bar, nougat & caramel centre, milk chocolate-coated",423,3,68,15
+"Bar, wafer & cream layers, chocolate-coated",500,6,59,27
+"Chocolate, compound, cooking",511,4,57,30
+"Chocolate, dark, no added sugar",506,6,4,38
+"Chocolate, dark, high cocoa solids",528,3,62,30
+"Chocolate, milk",521,7,56,30
+"Chocolate, milk, fondant or caramel filled",478,6,61,24
+"Chocolate, milk, with dried fruit & nuts",498,7,55,28
+"Chocolate, milk, with nuts",556,9,40,39
+"Chocolate, white",543,7,54,34
+"Confectionery, almond, chocolate-coated",528,9,48,33
+"Confectionery, chocolate centre, sugar-coated",486,4,76,18
+"Confectionery, dried fruit & nuts, chocolate-coated",500,9,49,29
+"Confectionery, peanut, chocolate-coated",558,13,41,37
+"Confectionery, sultana, chocolate-coated",458,6,61,21
+"Liquorice, chocolate-coated",371,6,66,9
+"Capers, pickled, canned, drained",30,2,1,0
+"Chutney or relish, commercial",180,0,43,0
+"Jam, berry",263,0,67,0
+"Jam, plum",251,0,64,0
+"Jam, stone fruit",251,0,64,0
+"Marmalade, orange",253,0,65,0
+"Spread, hazelnut & chocolate flavoured",524,6,57,30
+"Sugar, brown",371,0,96,0
+"Sugar, raw",382,0,99,0
+"Sugar, white, granulated or lump",382,0,100,0
+"Sugar, white, icing",382,0,100,0
+"Sugar, white, icing mixture",382,0,99,0
+"Glucose, liquid or syrup",303,0,87,0
+"Honey",278,0,72,0
+"Syrup, golden",288,0,74,0
+"Syrup, maple, pure",259,0,67,0
+"Syrup, malt",318,6,75,0
+"Syrup, rice malt",324,0,82,0
+"Treacle or molasses",268,0,69,0
+"Jelly crystals, sugar sweetened, all flavours",378,7,90,0
+"Jelly, sugar sweetened, all flavours, prepared",55,1,13,0
+"Caramels, soft & hard",387,2,74,11
+"Liquorice, allsorts",352,2,88,0
+"Liquorice, black",307,5,70,0
+"Lolly, hard varieties",374,0,98,0
+"Lolly, jelly varieties",301,3,75,0
+"Lolly, mint flavoured, sugar sweetened",380,0,93,2
+"Lolly, with fruit juice",331,2,82,0
+"Meringue, all flavours, commercial",368,2,90,1
+"Basil, green, fresh, raw",22,2,0,0
+"Chives, raw",29,1,2,0
+"Coriander, fresh, raw",32,3,1,0
+"Dill, fresh, raw",41,3,2,1
+"Marjoram, fresh, raw",95,3,0,5
+"Mint, fresh, raw",54,3,4,1
+"Oregano, fresh, raw",95,3,0,5
+"Parsley, continental, fresh, raw",36,3,1,0
+"Parsley, curly, fresh, raw",23,1,0,0
+"Rosemary, fresh, raw",95,3,0,5
+"Sage, fresh, raw",95,3,0,5
+"Thyme, fresh, raw",69,5,1,1
+"Artichoke, globe, raw",35,2,1,0
+"Artichoke, globe, boiled, drained",41,3,1,0
+"Artichoke, jerusalem, peeled, raw",59,2,10,0
+"Artichoke, jerusalem, peeled, boiled, drained",63,2,11,0
+"Artichoke heart, canned in brine, drained",25,1,1,0
+"Asparagus, green, raw",21,2,1,0
+"Asparagus, green, boiled, drained",25,2,1,0
+"Asparagus, green, fresh or frozen, baked, roasted, stir-fried or fried, grilled or BBQ'd, no added fat",26,3,1,0
+"Asparagus, canned in brine, drained",24,1,1,0
+"Avocado, hass, raw",156,1,2,14
+"Avocado, shepard, raw",153,1,2,14
+"Bamboo shoot, canned in water, heated, drained",14,0,1,0
+"Bean, green, fresh, raw",25,1,3,0
+"Bean, green, fresh, boiled, drained",27,1,3,0
+"Bean, green, frozen, boiled, drained",26,1,2,0
+"Bean, green, fresh, cooked, no added fat",30,2,3,0
+"Beetroot, fresh, purple, peeled, raw",55,2,9,0
+"Beetroot, fresh, purple, peeled, baked, no added fat",68,2,11,0
+"Beetroot, fresh, purple, peeled, boiled, drained",60,2,10,0
+"Beetroot, canned in brine, drained",44,1,8,0
+"Bok choy, raw",19,2,0,0
+"Bok choy, fried, no added fat",27,3,0,0
+"Bok choy, steamed",20,2,0,0
+"Broccoli, fresh, raw",32,4,1,0
+"Broccoli, fresh, microwaved",27,3,1,0
+"Broccoli, fresh, boiled, drained",24,2,1,0
+"Broccoli, fresh, baked, no added fat",39,4,1,0
+"Broccolini, fresh, raw",29,3,2,0
+"Broccolini, fresh, boiled, drained",30,3,2,0
+"Brussels sprout, fresh, raw",44,3,4,0
+"Brussels sprout, fresh, boiled, drained",46,4,4,0
+"Brussels sprout, fresh, baked, no added fat",49,4,4,0
+"Cabbage, Chinese, raw",11,1,0,0
+"Cabbage, Chinese, boiled, drained",11,1,0,0
+"Cabbage, Chinese flowering, raw",17,1,0,0
+"Cabbage, Chinese flowering, boiled, drained",18,1,0,0
+"Cabbage, mustard, raw",18,2,0,0
+"Cabbage, mustard, boiled, drained",19,2,0,0
+"Cabbage, red, raw",31,2,3,0
+"Cabbage, red, boiled, drained",32,2,3,0
+"Cabbage, savoy, raw",22,1,2,0
+"Cabbage, savoy, boiled, drained",22,1,2,0
+"Cabbage, white, raw",24,1,3,0
+"Cabbage, white, boiled, drained",25,1,3,0
+"Capsicum, green, fresh, raw",16,0,2,0
+"Capsicum, green, fresh, fried, no added fat",18,1,2,0
+"Capsicum, red, fresh, raw",27,1,4,0
+"Capsicum, red, fresh, fried, no added fat",31,1,4,0
+"Capsicum, yellow, fresh, raw",28,1,4,0
+"Carrot, baby, peeled, fresh, raw",32,0,5,0
+"Carrot, baby, peeled, fresh, boiled, drained",34,0,5,0
+"Carrot, baby, baked, no added fat",35,0,6,0
+"Carrot, mature, peeled, fresh, raw",35,0,6,0
+"Carrot, mature, peeled, fresh, baked, no added fat",42,0,8,0
+"Carrot, mature, peeled, fresh, boiled, drained",33,1,5,0
+"Cassava, peeled, fresh, raw",140,1,30,0
+"Cassava, peeled, fresh, boiled, drained",151,1,32,0
+"Cassava, white flesh, peeled, fresh, raw",154,0,34,0
+"Cassava, white flesh, peeled, fresh, boiled, drained",165,0,36,0
+"Cassava, yellow flesh, peeled, fresh, raw",127,1,26,0
+"Cassava, yellow flesh, peeled, fresh, boiled, drained",136,1,28,0
+"Cauliflower, fresh, raw",24,1,3,0
+"Cauliflower, fresh, boiled, drained",25,2,3,0
+"Cauliflower, fresh, baked, no added fat",30,2,4,0
+"Celeriac, peeled, raw",39,1,2,0
+"Celeriac, peeled, boiled, drained",42,1,3,0
+"Celery, fresh, raw",18,0,1,0
+"Celery, fresh, fried, no added fat",22,0,2,0
+"Chicory, raw",16,1,0,0
+"Chicory, boiled, drained",19,2,0,0
+"Chilli (chili), green, raw",43,2,1,0
+"Chilli (chili), green, fried, no added fat",48,3,1,0
+"Chilli (chili), red, raw",46,1,4,0
+"Chilli (chili), red, fried, no added fat",51,1,5,0
+"Choko, peeled, fresh, raw",21,0,3,0
+"Choko, peeled, fresh, boiled, drained",25,0,4,0
+"Corn, fresh on cob, raw",88,3,12,1
+"Corn, fresh on cob, boiled, drained",92,3,13,1
+"Sweetcorn, fresh or frozen on cob, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",98,4,13,2
+"Corn, kernels, purchased frozen, raw",93,3,16,0
+"Corn, kernels, purchased frozen, boiled, drained",108,3,19,0
+"Corn, kernels, canned in brine, drained",93,2,16,1
+"Cucumber, common, peeled, raw",12,0,2,0
+"Cucumber, common, unpeeled, raw",12,0,1,0
+"Cucumber, Lebanese, peeled, raw",11,0,1,0
+"Cucumber, Lebanese, unpeeled, raw",11,0,1,0
+"Cucumber, telegraph, unpeeled, raw",13,1,1,0
+"Eggplant, unpeeled, fresh, raw",20,1,2,0
+"Eggplant, unpeeled, fresh, roasted, no added fat",32,1,4,0
+"Endive, fresh, raw",14,1,0,0
+"Fennel, fresh, raw",22,1,3,0
+"Fennel, fresh, boiled, drained",26,1,3,0
+"Garlic, peeled, fresh, raw",125,6,10,2
+"Garlic, peeled, fresh, fried, no added fat",201,9,16,4
+"Gherkin, pickled, drained, commercial",105,0,24,0
+"Ginger, peeled, fresh, raw",32,0,4,0
+"Ginger, peeled, fresh, fried, no added fat",38,1,5,0
+"Kale, raw",26,3,0,0
+"Kale, fried, no added fat",37,4,0,0
+"Kohlrabi, peeled, fresh, raw",39,3,4,0
+"Kohlrabi, peeled, fresh, boiled, drained",41,3,4,0
+"Leek, fresh, raw",31,1,4,0
+"Leek, fresh, fried, no added fat",37,2,4,0
+"Leek, fresh, boiled, drained",34,1,4,0
+"Lettuce, cos, raw",17,1,1,0
+"Lettuce, iceberg, raw",14,1,2,0
+"Lettuce, mignonette, raw",15,1,1,0
+"Melon, bitter, fresh, raw",11,0,0,0
+"Melon, hairy, fresh, raw",15,0,2,0
+"Mushroom, common, fresh, raw",27,2,0,0
+"Mushroom, common, fresh, fried, no added fat",50,5,3,1
+"Mushroom, common, vitamin D enhanced, fresh, raw",21,2,0,0
+"Mushroom, common, vitamin D enhanced, fresh, fried, no added fat",37,4,0,0
+"Okra, raw",27,3,1,0
+"Okra, boiled, drained",29,3,1,0
+"Olive, green or black, drained",207,2,0,21
+"Onion, mature, brown skinned, peeled, raw",33,1,5,0
+"Onion, mature, brown skinned, peeled, fresh, fried, no added fat",52,2,9,0
+"Onion, mature, red skinned, raw",28,0,5,0
+"Onion, mature, red skinned, peeled, fried, no added fat",45,1,8,0
+"Onion, mature, white skinned, peeled, fresh, raw",31,1,4,0
+"Onion, spring, fresh, raw",30,1,4,0
+"Onion, spring, fresh, fried, no added fat",49,2,7,0
+"Parsnip, peeled, fresh, raw",59,1,10,0
+"Parsnip, peeled, fresh, baked, no added fat",72,2,12,0
+"Parsnip, peeled, fresh, boiled, drained",63,1,10,0
+"Pea, green, fresh, raw",74,6,7,0
+"Pea, green, fresh, boiled, drained",60,4,6,0
+"Pea, green, frozen, boiled, drained",62,5,6,0
+"Potato, coliban, peeled, raw",58,2,11,0
+"Potato, coliban, peeled, baked, no added fat",88,3,17,0
+"Potato, coliban, peeled, boiled, drained",56,1,11,0
+"Potato, desiree, peeled, raw",57,2,10,0
+"Potato, desiree, peeled, baked, no added fat",87,3,16,0
+"Potato, desiree, peeled, boiled, drained",59,2,10,0
+"Potato, new, peeled, raw",65,2,12,0
+"Potato, new, peeled, baked, no added fat",99,3,19,0
+"Potato, new, peeled, boiled, drained",67,2,12,0
+"Potato, pale skin, peeled, raw",58,2,11,0
+"Potato, pale skin, peeled, boiled, drained",62,1,12,0
+"Potato, pale skin, peeled, baked, no added fat",88,3,17,0
+"Potato, pontiac, peeled, raw",66,2,12,0
+"Potato, pontiac, peeled, baked, no added fat",101,3,19,0
+"Potato, pontiac, peeled, boiled, drained",68,2,12,0
+"Potato, red skin, peeled, raw",57,2,10,0
+"Potato, red skin, peeled, baked, no added fat",87,3,16,0
+"Potato, red skin, peeled, boiled, drained",71,2,14,0
+"Potato, sebago, peeled, raw",72,2,13,0
+"Potato, sebago, peeled, baked, no added fat",110,3,20,0
+"Potato, sebago, peeled, boiled, drained",73,2,13,0
+"Potato, chips, regular, fast food outlet, deep fried, blended oil, salted",226,3,28,10
+"Potato, chips, regular, fast food outlet, deep fried, monounsaturated oil, salted",244,3,28,12
+"Potato, chips, regular, independent takeaway outlet, deep fried, blended oil, salted",238,3,28,11
+"Potato, chips, regular, purchased frozen, baked, no added fat",175,3,24,5
+"Potato, fries, fast food outlet, deep fried, monounsaturated oil, salted",316,4,35,16
+"Potato, fries, independent takeaway outlet, deep fried, blended oil, salted",325,4,35,17
+"Potato, wedges, regular, purchased frozen, baked or roasted, no added fat",175,3,24,5
+"Pumpkin, butternut, peeled, fresh, raw",45,2,6,0
+"Pumpkin, butternut, peeled, fresh, baked, no added fat",53,2,8,0
+"Pumpkin, butternut, peeled, fresh, boiled, drained",47,2,7,0
+"Pumpkin, golden nugget, peeled, fresh, raw",30,2,4,0
+"Pumpkin, golden nugget, peeled, fresh, baked, no added fat",35,2,4,0
+"Pumpkin, golden nugget, peeled, fresh, boiled, drained",31,2,4,0
+"Pumpkin, jarrahdale, peeled, fresh, raw",27,0,4,0
+"Pumpkin, jarrahdale, peeled, fresh, baked, no added fat",32,0,5,0
+"Pumpkin, jarrahdale, peeled, fresh, boiled, drained",28,0,4,0
+"Pumpkin, kent/jap, peeled, fresh, raw",27,1,4,0
+"Pumpkin, kent/jap, peeled, fresh, boiled, drained, no added fat",28,1,4,0
+"Pumpkin, kent/jap, peeled, fresh, baked, no added fat",32,1,5,0
+"Pumpkin, Queensland blue, peeled, fresh, raw",50,2,8,0
+"Pumpkin, Queensland blue, peeled, fresh, baked, no added fat",58,2,9,0
+"Pumpkin, Queensland blue, peeled, fresh, boiled, drained",52,2,8,0
+"Pumpkin, peeled, fresh, raw",34,1,6,0
+"Pumpkin, peeled, fresh, baked, no added fat",41,1,7,0
+"Pumpkin, peeled, fresh, boiled, drained",36,1,7,0
+"Radish, red skinned, unpeeled, raw",15,0,1,0
+"Radish, white skinned, peeled, raw",21,0,2,0
+"Rocket, fresh, raw",22,3,0,0
+"Seaweed, nori, dried",303,46,2,4
+"Seaweed, boiled, drained",54,8,0,0
+"Shallot, peeled, fresh, raw",26,1,3,0
+"Shallot, peeled, fresh, fried, no added fat",41,2,5,0
+"Silverbeet, fresh, raw",21,2,1,0
+"Silverbeet, fresh, boiled, drained",25,2,1,0
+"Snow pea, fresh, raw",39,3,5,0
+"Snow pea, fresh, fried, no added fat",49,3,7,0
+"Snow pea, fresh, boiled, drained",42,3,6,0
+"Spinach, baby, fresh, raw",16,2,0,0
+"Spinach, Mature English, fresh, raw",20,2,0,0
+"Spinach, Mature English, fresh, boiled, drained",23,2,0,0
+"Spinach, water, fresh, raw",26,2,1,0
+"Sprout, alfalfa, fresh, raw",22,3,0,0
+"Sprout, bean, fresh, raw",22,3,1,0
+"Squash, button, fresh, raw",26,2,3,0
+"Squash, button, fresh, boiled, drained",31,3,3,0
+"Squash, scallopini, fresh, raw",20,2,2,0
+"Squash, scallopini, fresh, boiled, drained",24,2,2,0
+"Swede, peeled, fresh, raw",22,0,3,0
+"Swede, peeled, fresh, boiled, drained",24,1,4,0
+"Sweet potato, orange flesh, peeled, fresh, raw",65,1,13,0
+"Sweet potato, orange flesh, unpeeled, raw",65,1,13,0
+"Sweet potato, orange flesh, peeled, fresh, baked, no added fat",80,1,16,0
+"Sweet potato, orange flesh, peeled, fresh, boiled, drained",70,1,14,0
+"Sweet potato, purple flesh, peeled, raw",116,1,25,0
+"Sweet potato, purple flesh, peeled, baked, no added fat",141,1,31,0
+"Sweet potato, white flesh, peeled or unpeeled, fresh or frozen, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",136,1,29,0
+"Sweet potato, white flesh, peeled, raw",111,1,24,0
+"Taro, peeled, fresh, raw",112,1,23,0
+"Taro, peeled, fresh, boiled, drained",120,2,25,0
+"Tomato, cherry, raw",22,0,3,0
+"Tomato, common, raw",17,0,3,0
+"Tomato, paste, with added salt",66,3,10,0
+"Tomato, paste, no added salt",64,3,10,0
+"Tomato, puree, commercial",23,1,3,0
+"Tomato, sundried",263,11,35,4
+"Tomato, whole, canned in tomato juice, undrained",19,0,3,0
+"Tomato, whole, canned in tomato juice, drained",21,0,3,0
+"Tomato, whole, canned in tomato juice, no added salt, undrained",19,0,3,0
+"Turnip, white, peeled, fresh, raw",22,1,3,0
+"Turnip, white, peeled, fresh, boiled, no added fat",24,1,3,0
+"Vine leaf, grape, canned",61,4,1,2
+"Water chestnut, peeled, canned, drained",52,0,9,0
+"Watercress, raw",26,2,0,0
+"Yam, wild harvested, cooked",107,3,20,0
+"Zucchini, green skin, fresh, unpeeled, raw",16,1,2,0
+"Zucchini, green skin, fresh, unpeeled, fried, no added fat",23,1,3,0
+"Zucchini, green skin, fresh, unpeeled, boiled, drained",20,1,2,0
+"Zucchini, golden, fresh, unpeeled, raw",19,2,1,0
+"Zucchini, golden, fresh, unpeeled, boiled, drained",22,2,1,0
+"Mixed leafy greens, pre-packaged, all types",13,2,0,0
+"Mixed vegetables, purchased frozen, carrot, corn & pea/bean, boiled, drained",45,1,5,0

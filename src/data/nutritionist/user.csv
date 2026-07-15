@@ -1,0 +1,4 @@
+username,height,weight,age,sex,activity,daily_calories,target_weight,allergens,goal,diet_type,culinary_preferences
+test,173.0,74.0,27,male,moderate,2364,74.5,None,maintain,omnivore,I don't have any specific preference
+test_2,173.0,93.0,27,male,moderate,2359,74.5,None,lose,omnivore,I prefer traditional Italian dishes
+test_3,155.0,46.0,27,female,light,1858,52.1,peas,gain,vegetarian,i loke stracchino cheese

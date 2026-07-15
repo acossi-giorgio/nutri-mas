@@ -1,0 +1,20 @@
+model_list:
+  - model_name: agent-model
+    litellm_params:
+      model: azure/your-chat-deployment
+      api_base: "os.environ/AZURE_OPENAI_ENDPOINT"
+      api_key: "os.environ/AZURE_OPENAI_API_KEY"
+      api_version: "os.environ/AZURE_OPENAI_API_VERSION"
+
+  - model_name: embedding-model
+    litellm_params:
+      model: azure/your-embedding-deployment
+      api_base: "os.environ/AZURE_OPENAI_ENDPOINT"
+      api_key: "os.environ/AZURE_OPENAI_API_KEY"
+      api_version: "os.environ/AZURE_OPENAI_API_VERSION"
+
+litellm_settings:
+  drop_params: true
+
+general_settings:
+  master_key: "os.environ/LITELLM_PROXY_API_KEY"
