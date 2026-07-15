@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.18)  16 JUL 2026 01:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.18)  16 JUL 2026 01:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -698,7 +698,7 @@ tex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
 \l__pdf_internal_box=\box70
-) (C:\Users\acoss\Desktop\uni\sdai\sdai-project\report\report.aux
+) (C:\Users\acoss\Desktop\uni\sdai\nutri-mas\report\report.aux
 
 LaTeX Warning: Label `fig:demo-week-plan' multiply defined.
 
@@ -786,8 +786,8 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count326
 Package hyperref Info: Link coloring ON on input line 71.
- (C:\Users\acoss\Desktop\uni\sdai\sdai-project\report\report.out)
-(C:\Users\acoss\Desktop\uni\sdai\sdai-project\report\report.out)
+ (C:\Users\acoss\Desktop\uni\sdai\nutri-mas\report\report.out)
+(C:\Users\acoss\Desktop\uni\sdai\nutri-mas\report\report.out)
 \@outlinefile=\write4
 \openout4 = `report.out'.
 
@@ -869,7 +869,7 @@ Package pdftex.def Info: report/images/demo_week_plan.png  used on input line 1
 [26 <./report/images/demo_week_plan.png>] [27
 
 ] [28]
-(C:\Users\acoss\Desktop\uni\sdai\sdai-project\report\report.aux)
+(C:\Users\acoss\Desktop\uni\sdai\nutri-mas\report\report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -882,10 +882,10 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 162373699CD0AF968FA0B9267507CA67;6466.
  ) 
 Here is how much of TeX's memory you used:
- 23763 strings out of 474486
- 442066 string characters out of 5743755
+ 23764 strings out of 474486
+ 442057 string characters out of 5743755
  2064542 words of memory out of 5000000
- 45532 multiletter control sequences out of 15000+600000
+ 45533 multiletter control sequences out of 15000+600000
  577454 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,11n,87p,774b,2056s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -908,8 +908,8 @@ Users\acoss\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk
 \ecti1440.pk> <C:\Users\acoss\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
 dpi600\ecrm1440.pk> <C:\Users\acoss\AppData\Local\MiKTeX\fonts/pk/ljfour/jknapp
 en/ec/dpi600\ecrm2074.pk>
-Output written on C:\Users\acoss\Desktop\uni\sdai\sdai-project\report\report.pd
-f (28 pages, 658029 bytes).
+Output written on C:\Users\acoss\Desktop\uni\sdai\nutri-mas\report\report.pdf (
+28 pages, 658037 bytes).
 PDF statistics:
  1044 PDF objects out of 1200 (max. 8388607)
  135 named destinations out of 1000 (max. 500000)
