@@ -349,10 +349,12 @@ start.
 +change_planned_meal(Username, Date, MealType, Intent)[source(_)] :
         meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
             PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            Calories, Protein, Carbs, Fat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) <-
+            Calories, Protein, Carbs, Fat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) &
+        user_profile_row(Username, _, _, _, _, _, Daily, _, _, _, DietType, _) <-
     -change_planned_meal(Username, Date, MealType, Intent);
     .send("chef@localhost", achieve,
-        choose_runtime_template(Username, Date, MealType, Planned)).
+        choose_runtime_template(Username, Date, MealType, Planned, DietType, Daily,
+            PlannedProtein, PlannedCarbs, PlannedFat)).
 
 /* Handle the change planned meal event. */
 +change_planned_meal(Username, Date, MealType, Intent)[source(_)] : true <-

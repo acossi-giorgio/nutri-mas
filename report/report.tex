@@ -83,11 +83,12 @@
 \section{Details of the proposal}
 \label{sec:yourProposal}
 
-\subsection{Complete specification of the proposal}
+\subsection{Proposal specification}
 \label{subsec:specification}
 
-Nutri-MAS is a conversational assistant that combines reactive agents, BDI agents, and LLM-based agents. The system collects the user's profile, calculates indicative caloric targets, builds a weekly plan, generates recipes, records the meals actually consumed, and rebalances the subsequent slots when the plan is modified. 
-The main objective of the project is to develop a hybrid architecture capable of making deterministic systems collaborate with non-deterministic systems, more flexible and creative, exploiting the strengths of both approaches.
+Nutri-MAS is a conversational assistant that combines reactive agents, BDI agents, and LLM-based agents. 
+The system collects the user's profile, calculates indicative caloric targets, builds a weekly plan, 
+generates recipes, records the meals actually consumed, and rebalances the subsequent slots when the plan is modified. 
 
 \subsection{Type of proposal}
 \label{subsec:kind}
@@ -114,7 +115,7 @@ Some simplifications of the domain have been adopted to make the
 more complex aspects of meal planning manageable. These choices reduce
 the breadth of the problem, but they do not eliminate the main difficulty, represented
 by the end-to-end functional integration of the different components of the system.
-The difficulty of the project has been evaluated as \emph{medium-hard}.
+The difficulty of the project has been proposed as \emph{medium-hard}.
 
 \section{Introduction}
 \label{sec:intro}
@@ -127,8 +128,7 @@ varied recipes, and reacting to deviations from the plan. If, for example, the u
 meal different from the one expected, the system must record the event and
 redistribute the residual budget over the subsequent slots.
 
-The objective of the project is to experiment with the collaboration between
-different decision-making models. Nutri-MAS assigns to BDI agents the logic based on
+Nutri-MAS assigns to BDI agents the logic based on
 beliefs and rules, such as planning and monitoring; to LLM agents it entrusts
 linguistic understanding and recipe generation; a reactive agent finally manages
 access to the system. Through the conversational interface the user
@@ -182,40 +182,35 @@ also record off-plan meals, and check the residual caloric budget.
 \caption{High-level architecture of Nutri-MAS}
 \end{figure}
 
-The architecture of Nutri-MAS is composed of a conversational interface (chat), a Gateway, and a set of specialized agents.
-The interface communicates with the Gateway by means of JSON messages. The Gateway is a reactive agent
-that connects the frontend to the multi-agent system, validates the messages, and controls their routing.
+The architecture of Nutri-MAS is composed of a conversational UI, a Gateway, and a set of specialized agents.
+The UI communicates with the Gateway by means of JSON messages. The Gateway connects the UI to the multi-agent system, 
+validates the messages, and controls their routing.
 
-The system includes three BDI agents, dedicated to state management and
-to the application of decision rules, and two LLM-based agents. The
-Nutritionist maintains the user profile, the nutritional targets, and the logs;
-the Planner builds the weekly plan, while the Chef selects the food templates
-compatible with the constraints. The NLP Agent interprets requests in
-natural language and produces structured commands; the Creative Cook instead uses
-the language model to generate concrete recipes starting from the
-templates and constraints defined by the BDI agents.
+The multi-agent system adopts a hybrid architecture composed of three BDI agents and two LLM-based agents. 
+The BDI agents handle the system’s state and enforce its rules: the Nutritionist manages the user profile, 
+nutritional targets, and dietary logs; the Planner constructs the weekly meal plan; and the Chef selects 
+food templates that satisfy the specified constraints. The LLM-based agents complement these functions: 
+the NLP Agent translates natural-language requests into structured commands, while the Creative Cook turns 
+the templates and constraints provided by the BDI agents into complete recipes.
 
 Communication between the agents takes place through XMPP, while the content of the application messages uses a representation
-compatible with the AgentSpeak syntax. State persistence is entrusted to CSV files that contain the user profile and the meal plans. 
-
-Qdrant supports the semantic search of the linguistic examples of the NLP Agent and
+compatible with the AgentSpeak syntax. State persistence is entrusted to CSV files that contain the user profile and the meal plans. Qdrant supports the semantic search of the linguistic examples of the NLP Agent and
 of the ingredients used by the Creative Cook.
 
 \section{Technological stack}
 
 The system was developed using Python as the programming language and the SPADE, SPADE-BDI and SPADE-LLM libraries for agent management, 
-Streamlit for the frontend, Qdrant for semantic search and LiteLLM as a proxy for access to Large Language Models.
+Streamlit for the UI, Qdrant for semantic search and LiteLLM as a proxy for access to Large Language Models.
 
 \subsection{Streamlit}
 
-The frontend is developed in Python and uses Streamlit to implement
-a \emph{single-user} conversational interface. Communication between the UI
-and the Gateway takes place through two in-memory queues: one carries the user's
+The UI was implemented with the Python library Streamlit. Communication between the UI
+and the Gateway takes place through two queues, one carries the user's
 messages toward the system, while the other transfers to the UI the responses
 and events produced by the agents.
 
 The interface keeps message input available even during
-agent processing. The questions generated by the system preserve an
+agent processing. The questions and answers generated by the system preserve an
 explicit context, used by the NLP Agent to associate the user's response
 with the correct AgentSpeak command.
 
@@ -237,10 +232,6 @@ defining their behaviour through instructions and context and allowing them
 to use tools to access application
 functionalities and interact with the other components of the system.
 
-Nutri-MAS combines these approaches by using reactive agents for communication and
-coordination, BDI agents for symbolic reasoning and LLM agents for
-natural language interpretation and creative activities.
-
 \subsection{XMPP}
 
 XMPP (Extensible Messaging and Presence Protocol) is an IETF standard for the
@@ -250,12 +241,12 @@ message delivery, identifying each entity through an ID.
 In Nutri-MAS, each agent possesses a local ID used as
 identity and communication address. SPADE manages the connection to the
 XMPP server and the exchange of messages among agents, while the application
-content of the messages is represented through commands in AgentSpeak (ASL) syntax.
+content of the messages is represented through commands in AgentSpeak syntax.
 
 \subsection{SPADE-BDI}
 
 The deliberative layer of Nutri-MAS is implemented through SPADE-BDI,
-an extension that allows the execution of AgentSpeak(L) programs within
+an extension that allows the execution of AgentSpeak programs within
 SPADE agents. The Nutritionist, Planner and Chef agents extend
 \texttt{BDIAgent} and load their respective AgentSpeak programs. In this
 model, \emph{beliefs} represent the information that the agent considers
@@ -276,7 +267,7 @@ and infrastructural operations.
 SPADE-LLM extends the SPADE agent model by introducing functionalities
 based on Large Language Models. An LLM agent is configured through a
 provider, a set of initial instructions (\emph{system prompt}) and a series
-of tools, the tools.
+of tools.
 
 The \emph{tools} are implemented as Python functions and described through a
 schema that specifies their parameters and methods of use. The model can
@@ -284,22 +275,6 @@ select the necessary tools, provide the corresponding arguments and use
 the obtained results to continue processing. A single request can
 therefore involve multiple interactions between the model and the tools, up to the production
 of the final result or the reaching of the configured limit.
-
-In Nutri-MAS the LLM agents do not use a persistent conversational memory
-between successive requests. The context is built dynamically
-starting from the current message and from the information retrieved through the
-tools, which make it possible to access application functionalities and, when
-necessary, to request data from the other agents. 
-
-The NLP Agent uses this
-mechanism to identify candidate messages, validate their structure and
-translate natural language into AgentSpeak commands. 
-The Creative Cook
-instead retrieves, through requests to the other agents and queries to the
-ingredient database, the data necessary to generate recipes or evaluate
-free meals. 
-The LLMs therefore perform a role of local orchestration,
-coordinating the tools available within circumscribed workflows.
 
 \subsection{LiteLLM Proxy}
 
@@ -433,25 +408,19 @@ Collection & Main agent & Description and use \\
 & Creative Cook
 & Semantically indexes the names of the ingredients coming
 from the Australian Food Composition Database \cite{FSANZAFCDRelease3}. Each ingredient is associated with
-its calorie, protein, carbohydrate, and fat values. The Creative Cook
-uses the collection to identify the ingredients with which to develop the
-recipes and calculate their nutritional estimates. \\
+its calorie, protein, carbohydrate, and fat values. \\
 
 \texttt{nlp\_translations}
  & NLP Agent
  & Contains linguistic templates associated with the application messages available in the
  system. Through semantic search, the NLP Agent identifies the messages most
- suitable for the user's request and retrieves their structure from the registry. This
- information is then used to translate
-the request into a valid AgentSpeak command. \\
+ suitable for the user's request and retrieves their structure from the registry. \\
 
 \bottomrule
 \end{tabular}
 \caption{Vector collections used by Nutri-MAS}
 \end{table}
-The ingredient embeddings are generated through the provider
-configured in LiteLLM, while the NLP Agent's templates use an English
-embedding model configured directly in the index.
+The embeddings are generated through the embedding model configured in LiteLLM.
 
 \section{Design and implementation of the agents}
 \sloppy
@@ -469,23 +438,23 @@ Gateway
 
 NLP
 & Translation of requests in natural language into valid
-application actions and conversion from AgentSpeak commands to responses in natural language \\
+application actions and conversion from AgentSpeak commands to responses in natural language. \\
 
 Nutritionist
 & Onboarding, target calculation, weight and meal logging, reminders,
-recaps and rebalancing of nutritional plans \\
+recaps and rebalancing of nutritional plans. \\
 
 Planner
 & Generation of the nutritional plan, control of variety and frequencies,
-plan consultation and management of daily meals \\
+plan consultation and management of daily meals. \\
 
 Chef
 & Selection of food templates compatible with diet, slot, calories,
-macronutrients and constraints \\
+macronutrients and constraints. \\
 
 Creative Cook
 & Generation of concrete recipes and nutritional estimation of meals described
-freely \\
+freely. \\
 
 \bottomrule
 \end{tabular}
@@ -503,18 +472,19 @@ AgentSpeak/Prolog commands, then validates and forwards those commands to the re
 it sends the technical responses of the agents back to the NLP so that they are converted into a form suitable for the
 UI. It does not make nutritional decisions, but deals only with the flow and validation of
 messages.
+
+
 Its operation is based on two cyclic behaviours. \texttt{LocalCommandBehaviour} retrieves from the
 UI queue the user's messages and sends them to the NLP for translation; \texttt{GatewayBehaviour}
 receives XMPP messages, forwards the translated commands to the domain agents and sends back to the NLP their
-responses, before publishing the result in the UI. Each XMPP send is executed by a
-one-shot \texttt{OutboundBehaviour}.
+responses, before publishing the result in the UI.
 
 \subsection{NLP Agent}
 
 The NLP Agent manages the translation between the natural language of the chat and the
 AgentSpeak/Prolog messages exchanged by the system. The two directions are implemented differently. The requests
 of the user are interpreted by an \texttt{LLMAgent}, while the responses of the BDI agents are
-mapped through a \texttt{CyclicBehaviour}.
+mapped with static message through a \texttt{CyclicBehaviour}.
 
 The Gateway sends to the NLP Agent one of the following two formats:
 
@@ -529,10 +499,10 @@ answer: <user reply>
 
 The first format represents an autonomous request, for example ``Show me today's meal plan''.
 The second is used when the user replies to a previous question. The Gateway includes
-explicitly both the displayed question and the new answer, making it possible to interpret the user's replies in the best way,
-which otherwise may be ambiguous.
+explicitly both the displayed question and the new answer, making it possible to interpret the
+user's replies in the best way, which otherwise may be ambiguous.
 
-A \emph{registered message} represents an operation that the user can request through the
+A \emph{message} represents an operation that the user can request through the
 chat. Its definition contains an identifier, a description, the recipient agent,
 the SPADE performative and the schema needed to build the AgentSpeak performative.
 All messages are saved in a JSON list, which constitutes the message registry.
@@ -549,12 +519,12 @@ associates a possible user formulation with the identifier of a message:
 
 Several chunks can point to the same identifier, making it possible to represent different
 formulations without duplicating the command definition. The search retrieves the semantically closest
-points, removes duplicate identifiers and returns a number of candidates chosen by the model,
-between one and ten. The content of the template therefore influences
+points, removes duplicate identifiers and returns a number of candidates chosen by the model. 
+The content of the template therefore influences
 only the initial selection; it is never used as a command to execute.
 
-For each retrieved identifier, the registry provides the complete definition.
-\begin{lstlisting}[language=Python,caption={Abbreviated authoritative definition of nutritionist.log\_meal}]
+For each retrieved identifier, the message registry provides the complete definition.
+\begin{lstlisting}[language=Python,caption={Example of message definition in the registry}]
 {
     "id": "nutritionist.get_daily_recap",
     "agent": "nutritionist",
@@ -567,8 +537,7 @@ For each retrieved identifier, the registry provides the complete definition.
         "type": "object",
         "properties": {
             "Username": {
-                "type": "string",
-                "source": "gateway"
+                "type": "string"
             }
         },
         "required": ["Username"]
@@ -578,14 +547,18 @@ For each retrieved identifier, the registry provides the complete definition.
 
 The description helps the model distinguish semantically close operations, while signature and
 schema establish structure, order, types and allowed values. The model therefore must not reconstruct
-the command from the linguistic chunk, but only from the authoritative data of the registry.
+the command from the linguistic chunk, but only from the data of the registry.
 
 The tools available for translation are:
 
 \begin{itemize}
-    \item \texttt{search\_message\_templates}: searches in Qdrant for templates semantically similar to the request and returns the distinct identifiers of the candidate messages. The order of the results indicates only the degree of similarity.
-    \item \texttt{get\_message}: retrieves from the registry the authoritative definitions of the candidate messages, including description, recipient, performative, signature and argument schema.
-    \item \texttt{submit\_translation}: validates the ASL syntax, the arity, the absence of free variables and the consistency between command and registered route, then transmits the result to the Gateway.
+    \item \texttt{search\_message\_templates}: searches in Qdrant for templates semantically similar to 
+    the request and returns the distinct identifiers of the candidate messages. The order of the results 
+    indicates only the degree of similarity.
+    \item \texttt{get\_message}: retrieves from the registry the definitions of the candidate messages, 
+    including description, recipient, performative, signature and argument schema.
+    \item \texttt{submit\_translation}: validates the ASL syntax, the arity, the absence of free variables and the 
+    consistency between command and registered route, then transmits the result to the Gateway.
 \end{itemize}
 
 The translation process follows the following steps:
@@ -610,17 +583,15 @@ system. It maintains profile, objectives and logs, starts planning and reacts to
 that require confirmations or modifications of the plan. The decision rules are expressed by means of
 BDI plans.
 
-\subsubsection{Beliefs used}
-
 The beliefs of the Nutritionist represent the user's profile and nutritional objectives,
-together with the history of meals and weight and the state of the operations in progress. The agent uses them
+together with the history of meals, weight and the state of the operations in progress. The agent uses them
 to adapt targets, monitor consumption and decide when to update or rebalance the plan.
 
 The BDI plans implement the following functionalities:
 \begin{itemize}
     \item \textbf{Onboarding}: \texttt{check\_user\_profile} verifies the presence of \texttt{user\_profile\_row}. If the profile exists, it derives the operational beliefs from it; otherwise it starts the questions on personal data, allergens, diet and culinary preferences, progressively storing the answers.
     \item \textbf{Profile update}: \texttt{update\_weight} updates profile and \texttt{weight\_log\_entry}, then compares the new weight with the previous one. An absolute variation at least equal to 1\% keeps the current goal, recalculates calories and macronutrients on the new weight and activates \texttt{refresh\_week\_plan}; smaller variations only update the state. Reaching the target has priority: it sets \texttt{maintain}, removes caloric deficit or surplus and regenerates the plan. \texttt{update\_preferences} modifies the diet, while \texttt{update\_culinary\_preferences} replaces the free text of culinary preferences; these modifications too can regenerate the plan to avoid one that is no longer coherent.
-    \item \textbf{Reminder}: a Python \texttt{CyclicBehaviour} publishes only the \texttt{clock\_tick}. The BDI plan keeps \texttt{last\_clock\_tick} and generates a confirmation exclusively when the interval between two ticks crosses the slot time. The first tick, a date change or a backward jump of the clock establish a new baseline without recovering previous meals.
+    \item \textbf{Reminder}: a \texttt{CyclicBehaviour} publishes only the \texttt{clock\_tick}. The BDI plan keeps \texttt{last\_clock\_tick} and generates a confirmation exclusively when the interval between two ticks crosses the slot time. The first tick, a date change or a backward jump of the clock establish a new baseline without recovering previous meals.
     \item \textbf{Meal tracking}: \texttt{confirm\_meal} transfers recipe and planned values into the log row, marking it as \texttt{confirmed}. \texttt{log\_meal} instead delegates to the Creative Cook the estimation of a different meal and saves the result as \texttt{modified}.
     \item \textbf{Rebalancing}: \texttt{request\_rebalance\_after} identifies the subsequent slots still modifiable, calculates the residual budget and requests new recipes from the Planner. The beliefs \texttt{pending\_rebalances} and \texttt{pending\_rebalance\_origin} maintain the state of the workflow until completion of all responses.
     \item \textbf{Consultation}: \texttt{get\_daily\_recap}, \texttt{get\_meal\_logs} and \texttt{get\_weight\_logs} read the current beliefs and build the structured data returned to the Gateway.
@@ -667,14 +638,13 @@ The BDI plans implement the following functionalities:
 \begin{itemize}
     \item \textbf{Complete construction}: \texttt{build\_week\_plan} saves user, diet and targets in the belief \texttt{planning\_context}, initializes \texttt{next\_step} to Monday/breakfast and prevents the start of two concurrent plannings.
     \item \textbf{Nutritional distribution}: for each slot the plan calculates calories and macros and stores them in \texttt{slot\_macro\_target}. \texttt{slot\_preferred\_category} consults the current frequencies to favor the categories still below the weekly minimum.
-    \item \textbf{Variety and local backtracking}: \texttt{used\_dish} records the dishes already chosen, while \texttt{category\_count} maintains the category frequencies. If the Chef's response violates one of these constraints, the Planner repeats the request locally by adding the element to the exclusions.
     \item \textbf{Recipe composition}: after template selection, \texttt{pending\_slot} and \texttt{pending\_recipe\_slot} keep the context of the request sent to the Creative Cook. The belief is removed only when \texttt{recipe} arrives; the result is saved and \texttt{advance\_plan} updates \texttt{next\_step}.
     \item \textbf{Final validation}: at the end of the slots, \texttt{send\_final\_plan} compares \texttt{category\_count} with the configured limits. A failure interrupts the workflow, avoiding publishing as valid an incomplete or non-compliant plan.
     \item \textbf{Local replanning}: \texttt{rebalance\_slot} stores the slot concerned and applies the new target received from the Nutritionist, rebuilding only that meal without restarting the entire week.
     \item \textbf{Consultation}: \texttt{get\_plan}, \texttt{query\_plan} and \texttt{get\_plan\_day\_context} read the beliefs \texttt{planned\_dish\_row} and \texttt{planned\_recipe\_row} to return the complete plan, single slot or daily context.
 \end{itemize}
 
-The BDI plans establish the order of decisions, while the Python actions calculate the targets per
+The BDI plans establish the decisions, while the Python actions calculate the targets per
 slot, determine the next step and serialize the result. The Planner receives profile and
 objectives from the Nutritionist, uses the Chef to select the templates and the Creative Cook to
 generate the recipes.
@@ -694,11 +664,11 @@ according to dietary and nutritional constraints and return to the requester an 
 The BDI plans implement the following functionalities:
 \begin{itemize}
     \item \textbf{Compatibility with diet and slot}: the beliefs \texttt{template\_for\_plan} represent the available templates. The rules \texttt{diet\_category\_allowed} and \texttt{slot\_allowed} eliminate those incompatible with the user's diet or with the requested slot.
-    \item \textbf{Nutritional tolerance}: \texttt{strict\_template\_candidate} combines calories and macronutrients of the template with the received target. The beliefs \texttt{tollerance} delimit the acceptable intervals before a candidate can be selected.
-    \item \textbf{Guided category}: when the Planner still has to satisfy a minimum frequency, \texttt{guided\_strict\_template\_candidate} adds the required category to the selection constraints.
+    \item \textbf{Nutritional tolerance}: \texttt{template\_candidate} combines calories and macronutrients of the template with the received target. The beliefs \texttt{tollerance} delimit the acceptable intervals before a candidate can be selected.
+    \item \textbf{Guided category}: when the Planner still has to satisfy a minimum frequency, \texttt{guided\_template\_candidate} adds the required category to the selection constraints.
     \item \textbf{Variety}: the names and categories received as exclusions are discarded during candidate construction. \texttt{.random\_candidate} introduces variability only after the application of all the rules.
-    \item \textbf{Controlled fallback}: if no strict candidates exist, the plan searches for a compatible template under 500 kcal. If this set too is empty, it returns an explicit failure to the requester.
-    \item \textbf{Meal alternative}: \texttt{choose\_runtime\_template} consults the template beliefs and selects a proposal different from the planned meal, maintaining compatibility with the slot.
+    \item \textbf{Explicit failure}: if no candidate satisfies all the constraints, the Chef returns an empty domain or an explicit failure instead of relaxing the nutritional criteria.
+    \item \textbf{Meal alternative}: \texttt{choose\_runtime\_template} applies \texttt{template\_candidate} to select a proposal different from the planned meal while preserving diet, slot and nutritional constraints.
 \end{itemize}
 
 The BDI plans establish which candidates are applicable, while the Python actions load the
@@ -1176,6 +1146,23 @@ repository is recommended:
 \begin{lstlisting}
 .\scripts\run.ps1
 \end{lstlisting}
+
+\section{Use of Generative AI}
+
+Generative AI tools were used as supporting instruments during the development of the project,
+mainly for tasks that were not central to its research objectives. Their use was limited to the following activities:
+
+\begin{itemize}
+    \item \textbf{Streamlit interface}: AI assistance was used during the implementation of the user interface, 
+    allowing more development effort to be dedicated to the multi-agent architecture, 
+    BDI reasoning and communication between agents.
+    \item \textbf{Debugging support}: AI tools were occasionally used to investigate complex implementation problems. 
+    This was particularly useful when debugging AgentSpeak plans, where untyped terms, complex predicates and 
+    interactions between multiple plans can make errors difficult to identify.
+    \item \textbf{Documentation}: AI assistance was used to improve the clarity, structure and language of 
+    selected parts of the project documentation.
+\end{itemize}
+
 
 \makeatletter
 \renewcommand{\@biblabel}[1]{\textbullet}

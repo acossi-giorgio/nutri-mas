@@ -71,7 +71,7 @@ MESSAGES: dict[str, Messages] = {
             "the request contains both the question shown to the user and its answer."
         ),
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "Field": {
                 "type": "string",
                 "enum": [
@@ -94,7 +94,7 @@ MESSAGES: dict[str, Messages] = {
         "tell",
         "build_week_plan",
         "Generate a new weekly meal plan for the current user.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
     "nutritionist.get_meal_logs": _message(
@@ -102,7 +102,7 @@ MESSAGES: dict[str, Messages] = {
         "achieve",
         "get_meal_logs",
         "Show the user's meal history.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
     "nutritionist.get_weight_logs": _message(
@@ -110,7 +110,7 @@ MESSAGES: dict[str, Messages] = {
         "achieve",
         "get_weight_logs",
         "Show the user's weight history.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
     "nutritionist.get_current_plan": _message(
@@ -118,7 +118,7 @@ MESSAGES: dict[str, Messages] = {
         "achieve",
         "get_current_plan",
         "Show the current day's meal plan.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
     "nutritionist.get_daily_recap": _message(
@@ -126,7 +126,7 @@ MESSAGES: dict[str, Messages] = {
         "achieve",
         "get_daily_recap",
         "Show today's calorie recap.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
     "nutritionist.update_weight": _message(
@@ -140,7 +140,7 @@ MESSAGES: dict[str, Messages] = {
             "use for an onboarding question reply."
         ),
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "NewWeight": {"type": "number", "minimum": 0},
         },
         ["Username", "NewWeight"],
@@ -154,7 +154,7 @@ MESSAGES: dict[str, Messages] = {
             "weekly plan. Do not use for an onboarding question reply."
         ),
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "DietType": {
                 "type": "string",
                 "enum": ["omnivore", "vegetarian", "vegan"],
@@ -171,7 +171,7 @@ MESSAGES: dict[str, Messages] = {
             "use for an onboarding question reply."
         ),
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "CulinaryPreferences": {"type": "string"},
         },
         ["Username", "CulinaryPreferences"],
@@ -182,7 +182,7 @@ MESSAGES: dict[str, Messages] = {
         "confirm_meal",
         "Confirm that today's planned meal for a slot was eaten.",
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "MealType": {"type": "string", "enum": _MEAL_SLOTS[:-1]},
         },
         ["Username", "MealType"],
@@ -193,7 +193,7 @@ MESSAGES: dict[str, Messages] = {
         "log_meal",
         "Log a free-form meal for a slot. Calories may be a number or the string unknown.",
         {
-            "Username": {"type": "string", "source": "gateway"},
+            "Username": {"type": "string"},
             "Slot": {"type": "string", "enum": _MEAL_SLOTS},
             "Name": {"type": "string"},
             "Calories": {
@@ -210,7 +210,7 @@ MESSAGES: dict[str, Messages] = {
         "achieve",
         "get_plan",
         "Show the user's weekly meal plan.",
-        {"Username": {"type": "string", "source": "gateway"}},
+        {"Username": {"type": "string"}},
         ["Username"],
     ),
 }
