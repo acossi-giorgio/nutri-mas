@@ -8,7 +8,6 @@ from src.utils.bdi import add_belief_fact, ground
 
 BeforeDispatch = Callable[[object, list], None]
 APPEND_BELIEF_FUNCTORS = {
-    "planned_dish_row",
     "planned_recipe_row",
 }
 

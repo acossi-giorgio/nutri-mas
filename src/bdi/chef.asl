@@ -1,5 +1,22 @@
 /* Initial beliefs and dietary constraints */
 start.
+slot_weight(breakfast, 0.24).
+slot_weight(morning_snack, 0.10).
+slot_weight(lunch, 0.29).
+slot_weight(afternoon_snack, 0.10).
+slot_weight(dinner, 0.27).
+slot_allowed(any, breakfast).
+slot_allowed(any, morning_snack).
+slot_allowed(any, lunch).
+slot_allowed(any, afternoon_snack).
+slot_allowed(any, dinner).
+slot_allowed(breakfast, breakfast).
+slot_allowed(snack, morning_snack).
+slot_allowed(snack, afternoon_snack).
+slot_allowed(main_meal, lunch).
+slot_allowed(main_meal, dinner).
+slot_allowed(lunch, lunch).
+slot_allowed(dinner, dinner).
 tollerance(min, 0.85).
 tollerance(max, 1.08).
 diet_category_allowed(omnivore, dairy).
@@ -52,21 +69,6 @@ guided_template_candidate(Slot, DietType, DailyTarget, Excluded, TargetProtein, 
 /* Start the agent. */
 +!start : true <-
     .log("Chef Agent ready").
-
-/* Runtime meal substitution */
-/* Handle the choose runtime template goal. */
-+!choose_runtime_template(Username, Date, MealType, PlannedRecipe, DietType, DailyTarget,
-        TargetProtein, TargetCarbs, TargetFat)[source(_)] :
-        template_candidate(MealType, DietType, DailyTarget, PlannedRecipe,
-            TargetProtein, TargetCarbs, TargetFat,
-            candidate(Name, Calories, Protein, Carbs, Fat, _)) <-
-    .send("nutritionist@localhost", tell,
-        template_candidate_response(Username, Date, MealType, Name, Calories, Protein, Carbs, Fat)).
-
-/* Handle the choose runtime template goal. */
-+!choose_runtime_template(Username, Date, MealType, PlannedRecipe, DietType, DailyTarget,
-        TargetProtein, TargetCarbs, TargetFat)[source(_)] : true <-
-    .send("nutritionist@localhost", tell, template_candidate_missing(Username, Date, MealType)).
 
 /* Template-domain exchange with the Planner */
 /* Handle the template domain request goal. */

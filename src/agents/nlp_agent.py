@@ -300,14 +300,6 @@ def _present_simple(functor: str, args: list[object]) -> UIEvent:
             "Your weekly plan is ready.",
         ),
         "no_plan_found": ("no_plan_found", "No meal plan was found for this profile."),
-        "log_meal_ok": (
-            "meal_logged",
-            (
-                f"{args[0]} was logged with {_number(args[1])} kcal."
-                if len(args) >= 2
-                else "Meal logged."
-            ),
-        ),
         "meal_logged_rebalancing": (
             "meal_logged_rebalancing",
             (
@@ -315,14 +307,6 @@ def _present_simple(functor: str, args: list[object]) -> UIEvent:
                 if len(args) >= 2
                 else "Your meal was logged. I’ll rebalance the rest of your day now."
             ),
-        ),
-        "meal_removed": (
-            "meal_removed",
-            f"{args[0]} was removed." if args else "Meal removed.",
-        ),
-        "meal_not_found": (
-            "meal_not_found",
-            f"No meal named {args[0]} was found." if args else "Meal not found.",
         ),
         "daily_recap": (
             "daily_recap",
@@ -340,40 +324,15 @@ def _present_simple(functor: str, args: list[object]) -> UIEvent:
                 else "Weekly budget exceeded."
             ),
         ),
-        "plan_info_empty": ("plan_info_empty", "No meal is planned for that slot."),
     }
     code, message = messages[functor]
     return _message(code, message)
-
-
-def _present_plan_info(args: list[object]) -> UIEvent:
-    """Format the plan info response."""
-    if len(args) < 4:
-        return _error("invalid_plan_data", "Plan lookup data is invalid.")
-    row = {
-        "day": str(args[0]).lower(),
-        "slot": str(args[1]).lower(),
-        "dish": str(args[2]),
-        "template": "",
-        "ingredients": "",
-        "instructions": "",
-        "calories": _number(args[3]),
-        "protein_g": 0,
-        "carbs_g": 0,
-        "fat_g": 0,
-    }
-    return UIEvent(
-        type="plan",
-        message="Your requested meal",
-        payload={"scope": "current", "rows": [row]},
-    )
 
 
 def _present_error(functor: str, args: list[object]) -> UIEvent:
     """Format the error response."""
     descriptions = {
         "translation_failed": "I could not understand that request.",
-        "runtime_alternative_failed": "I could not find an alternative meal.",
         "rebalance_failed": "I could not rebalance the remaining meals.",
     }
     if functor == "translation_failed" and len(args) > 1:
@@ -408,18 +367,13 @@ EVENT_PRESENTERS: dict[str, Callable[[list[object]], UIEvent]] = {
     "planning_failed": _present_planning_failed,
     "meal_status_updated": _present_meal_status,
     "meal_status_missing": _present_meal_missing,
-    "plan_info": _present_plan_info,
     "session_closed": _present_session_closed,
 }
 for _functor in {
     "planning_started",
     "no_plan_found",
-    "log_meal_ok",
-    "meal_removed",
-    "meal_not_found",
     "daily_recap",
     "weekly_budget_exceeded",
-    "plan_info_empty",
     "meal_tracking_started",
     "meal_logged_rebalancing",
 }:
@@ -428,7 +382,6 @@ for _functor in {
     )
 for _functor in {
     "translation_failed",
-    "runtime_alternative_failed",
     "rebalance_failed",
 }:
     EVENT_PRESENTERS[_functor] = lambda args, functor=_functor: _present_error(

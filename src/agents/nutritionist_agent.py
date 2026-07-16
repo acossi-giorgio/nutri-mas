@@ -9,6 +9,7 @@ from src.utils.bdi import (
     add_belief_fact,
     add_typed_belief_fact,
     belief_dicts,
+    belief_rows,
     group_rows_by_key,
     ground,
 )
@@ -32,7 +33,6 @@ from src.utils.agent_format import (
     row_args as _row_args,
     text_value as _text,
 )
-from src.domain.constants import MEAL_SLOTS, inject_bdi_constants
 import agentspeak
 import agentspeak.stdlib
 
@@ -130,7 +130,6 @@ _MEAL_LOG_SCHEMA = [
     ("updated_at", _text),
 ]
 _WEIGHT_SCHEMA = [("username", _text), ("date", _text), ("weight", float)]
-_MEAL_SLOT_ORDER = MEAL_SLOTS
 
 
 def _meal_label(value: object) -> str:
@@ -325,7 +324,10 @@ def _send_daily_recap_from_meal_log(asl_agent, term, intention):
         for row in nutritionist._meal_log_beliefs_by_user().get(username, [])
         if str(row.get("date", "")).strip() == today
     ]
-    slot_rank = {slot: idx for idx, slot in enumerate(_MEAL_SLOT_ORDER)}
+    slot_rank = {
+        str(slot): int(index)
+        for slot, index in belief_rows(nutritionist, "meal_slot_order", 2)
+    }
     rows.sort(
         key=lambda item: slot_rank.get(
             str(item.get("meal_type", "")).strip().lower(), 99
@@ -605,7 +607,6 @@ class NutritionistAgent(BDIAgent):
         logger.info("Starting Nutritionist Agent...")
         user_rows, meal_rows, weight_rows = self._load_csv_state()
         await super().setup()
-        inject_bdi_constants(self, schedule=True, recipe_slots=True)
         self._inject_csv_beliefs(user_rows, meal_rows, weight_rows)
         _agent_ref["instance"] = self
         add_achieve_bridge(self, _logger)

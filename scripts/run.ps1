@@ -160,7 +160,6 @@ if ($proxyUri.Host -eq "localhost") {
 }
 
 $startedLiteLLM = $null
-$nullDevice = if ($IsWindows -or $env:OS -eq "Windows_NT") { "NUL" } else { "/dev/null" }
 
 try {
     if (-not $SkipLiteLLM) {
@@ -172,8 +171,6 @@ try {
                 -ArgumentList @("--config", $resolvedLiteLLMConfigPath, "--host", $env:LITELLM_PROXY_HOST, "--port", $proxyPort) `
                 -WorkingDirectory $ProjectRoot `
                 -WindowStyle Hidden `
-                -RedirectStandardOutput $nullDevice `
-                -RedirectStandardError $nullDevice `
                 -PassThru
 
             $ready = $false

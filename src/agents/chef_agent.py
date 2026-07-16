@@ -4,7 +4,6 @@ from spade_bdi.bdi import BDIAgent
 from src.utils.logger import get_logger
 from src.utils.bdi import add_belief_fact
 from src.utils.bdi_bridge import add_achieve_bridge, register_log_action
-from src.domain.constants import inject_bdi_constants
 from src.utils.csv_store import read_csv
 from src.utils.agent_format import (
     int_value as _int,
@@ -71,30 +70,23 @@ class ChefAgent(BDIAgent):
     def __init__(self, jid: str, password: str, asl: str):
         """Initialize the instance."""
         super().__init__(jid, password, asl, actions=actions)
-        self._template_rows: list[dict] = []
 
     async def setup(self):
         """Initialize the agent and its behaviours."""
         logger.info("Starting Chef Agent...")
-        self._load_templates()
         await super().setup()
-        inject_bdi_constants(self, allowed_slots=True)
-        self._inject_template_beliefs()
+        self._load_template_beliefs()
         add_achieve_bridge(self, logger)
         logger.info("Chef Agent ready.")
 
-    def _load_templates(self):
-        """Load templates."""
-        self._template_rows = read_csv(_CSV_PATH, encoding="utf-8-sig")
-        logger.info("Loaded %d recipes from CSV", len(self._template_rows))
-
-    def _inject_template_beliefs(self) -> None:
-        """Inject template beliefs."""
-        for row in self._template_rows:
+    def _load_template_beliefs(self) -> None:
+        """Load CSV templates directly into the BDI belief base."""
+        rows = read_csv(_CSV_PATH, encoding="utf-8-sig")
+        for row in rows:
             add_belief_fact(
                 self, "template_for_plan", *_row_args(row, _TEMPLATE_FOR_PLAN_SCHEMA)
             )
-        logger.info("Injected %d recipe rows into Chef BDI", len(self._template_rows))
+        logger.info("Loaded %d recipe templates into Chef BDI beliefs", len(rows))
 
     def flush_state(self) -> None:
         """Persist state."""

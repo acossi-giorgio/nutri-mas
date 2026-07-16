@@ -1,5 +1,31 @@
 /* Agent lifecycle and user-session setup */
 start.
+meal_slot_order(breakfast, 0).
+meal_slot_order(morning_snack, 1).
+meal_slot_order(lunch, 2).
+meal_slot_order(afternoon_snack, 3).
+meal_slot_order(dinner, 4).
+slot_weight(breakfast, 0.24).
+slot_weight(morning_snack, 0.10).
+slot_weight(lunch, 0.29).
+slot_weight(afternoon_snack, 0.10).
+slot_weight(dinner, 0.27).
+meal_time(breakfast, 540).
+meal_time(morning_snack, 630).
+meal_time(lunch, 780).
+meal_time(afternoon_snack, 990).
+meal_time(dinner, 1200).
+next_meal_slot(breakfast, morning_snack).
+next_meal_slot(morning_snack, lunch).
+next_meal_slot(lunch, afternoon_snack).
+next_meal_slot(afternoon_snack, dinner).
+recipe_meal_slot(breakfast, breakfast).
+recipe_meal_slot(snack, morning_snack).
+recipe_meal_slot(snack, afternoon_snack).
+recipe_meal_slot(main_meal, lunch).
+recipe_meal_slot(main_meal, dinner).
+recipe_meal_slot(lunch, lunch).
+recipe_meal_slot(dinner, dinner).
 /* Start the agent. */
 +!start : true <-
     .log("Nutritionist Agent ready").
@@ -345,67 +371,6 @@ start.
     -confirm_meal(Username, MealType);
     .send("gateway@localhost", tell, meal_status_missing(Today, MealType)).
 
-/* Handle the change planned meal event. */
-+change_planned_meal(Username, Date, MealType, Intent)[source(_)] :
-        meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
-            PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            Calories, Protein, Carbs, Fat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) &
-        user_profile_row(Username, _, _, _, _, _, Daily, _, _, _, DietType, _) <-
-    -change_planned_meal(Username, Date, MealType, Intent);
-    .send("chef@localhost", achieve,
-        choose_runtime_template(Username, Date, MealType, Planned, DietType, Daily,
-            PlannedProtein, PlannedCarbs, PlannedFat)).
-
-/* Handle the change planned meal event. */
-+change_planned_meal(Username, Date, MealType, Intent)[source(_)] : true <-
-    -change_planned_meal(Username, Date, MealType, Intent);
-    .send("gateway@localhost", tell, meal_status_missing(Date, MealType)).
-
-/* Handle the template candidate response event. */
-+template_candidate_response(Username, Date, MealType, Template, Calories, Protein, Carbs, Fat)[source(_)] :
-        meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
-            PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            OldCalories, OldProtein, OldCarbs, OldFat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) <-
-    -template_candidate_response(Username, Date, MealType, Template, Calories, Protein, Carbs, Fat);
-    .send("planner@localhost", achieve,
-        prepare_runtime_recipe(Username, Date, Weekday, MealType, Template, Calories, Protein, Carbs, Fat, "user_alternative")).
-
-/* Handle the template candidate missing event. */
-+template_candidate_missing(Username, Date, MealType)[source(_)] : true <-
-    -template_candidate_missing(Username, Date, MealType);
-    .send("gateway@localhost", tell, meal_status_missing(Date, MealType)).
-
-/* Handle the runtime recipe response event. */
-+runtime_recipe_response(Username, Date, MealType, Template, RecipeName, Calories, Protein, Carbs, Fat)[source(_)] :
-        meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
-            PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            OldCalories, OldProtein, OldCarbs, OldFat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) <-
-    -runtime_recipe_response(Username, Date, MealType, Template, RecipeName, Calories, Protein, Carbs, Fat);
-    !apply_meal_update(Username, Date, MealType, RecipeName, Calories, Protein, Carbs, Fat, "user_prepared");
-    !maybe_rebalance_after_update(Username, Date, MealType).
-
-/* Handle the runtime recipe failed event. */
-+runtime_recipe_failed(Username, Date, MealType)[source(_)] : true <-
-    -runtime_recipe_failed(Username, Date, MealType);
-    .log("Nutritionist - runtime alternative failed, notifying user.");
-    .send("gateway@localhost", tell, runtime_alternative_failed(Username, Date, MealType));
-    .send("gateway@localhost", tell, meal_status_missing(Date, MealType)).
-
-/* Handle the apply meal update goal. */
-+!apply_meal_update(Username, Date, MealType, RecipeName, Calories, Protein, Carbs, Fat, NewSource) :
-        meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
-            PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            OldCalories, OldProtein, OldCarbs, OldFat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) <-
-    -meal_log_row(Username, Date, Weekday, MealType, Planned, Actual, Status,
-        PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-        OldCalories, OldProtein, OldCarbs, OldFat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt);
-    +meal_log_row(Username, Date, Weekday, MealType, Planned, RecipeName, "modified",
-        PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-        Calories, Protein, Carbs, Fat, NewSource, ForecastedAt, ConfirmationRequestedAt, "bdi").
-
-/* Handle the apply meal update goal. */
-+!apply_meal_update(_, _, _, _, _, _, _, _, _) : true <- true.
-
 /* Handle the maybe rebalance after update goal. */
 +!maybe_rebalance_after_update(Username, Date, MealType) : true <-
     !request_rebalance_after(Username, Date, MealType).
@@ -626,7 +591,7 @@ start.
 
 /* Handle the create daily forecast slot goal. */
 +!create_daily_forecast_slot(Username, Date, Weekday, Slot) :
-        planned_dish_row(Username, Weekday, Slot, Dish, Calories, Protein, Carbs, Fat) <-
+        planned_recipe_row(Username, Weekday, Slot, Dish, _, _, _, Calories, Protein, Carbs, Fat) <-
     +meal_log_row(Username, Date, Weekday, Slot, Dish, "", "forecasted",
         Calories, Protein, Carbs, Fat, Calories, Protein, Carbs, Fat, "plan", "bdi", "", "bdi").
 
@@ -666,7 +631,6 @@ start.
 +free_meal_evaluated(Username, Date, Slot, Name, Calories, Protein, Carbs, Fat, Template)[source(_)] : true <-
     -free_meal_evaluated(Username, Date, Slot, Name, Calories, Protein, Carbs, Fat, Template);
     .log("Nutritionist - free meal evaluated without planned row, storing standalone log entry...");
-    +meal_log_entry(Username, Date, Name, Calories, Protein, Carbs, Fat);
     +meal_log_row(Username, Date, "", Slot, "", Name, "confirmed",
         0, 0, 0, 0,
         Calories, Protein, Carbs, Fat, "user", "", "", "bdi");
@@ -676,50 +640,9 @@ start.
     .send("gateway@localhost", tell, meal_logged_rebalancing(Name, Calories));
     !maybe_rebalance_after_update(Username, Date, Slot).
 
-/* Handle the log meal calories event. */
-+log_meal_calories(Username, Name, Calories)[source(_)] : true <-
-    -log_meal_calories(Username, Name, Calories);
-    !record_meal_entry(Username, Name, Calories);
-    .send("gateway@localhost", tell, log_meal_ok(Name, Calories)).
-
-/* Handle the remove meal event. */
-+remove_meal(Username, Name)[source(_)] :
-        current_date(Today) & meal_log_entry(Username, Today, Name, Calories, Protein, Carbs, Fat) <-
-    -remove_meal(Username, Name);
-    -meal_log_entry(Username, Today, Name, Calories, Protein, Carbs, Fat);
-    !remove_meal_log_row_by_name(Username, Today, Name);
-    !decrease_weekly_eaten_total(Username, Calories);
-    !decrease_daily_recap(Username, Calories);
-    !clear_daily_meals_text(Username);
-    .send("gateway@localhost", tell, meal_removed(Name)).
-
-/* Handle the remove meal event. */
-+remove_meal(Username, Name)[source(_)] : true <-
-    -remove_meal(Username, Name);
-    .send("gateway@localhost", tell, meal_not_found(Name)).
-
-/* Handle the remove meal log row by name goal. */
-+!remove_meal_log_row_by_name(Username, Date, Name) :
-        meal_log_row(Username, Date, Weekday, MealType, Planned, Name, Status,
-            PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-            Calories, Protein, Carbs, Fat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt) <-
-    -meal_log_row(Username, Date, Weekday, MealType, Planned, Name, Status,
-        PlannedCalories, PlannedProtein, PlannedCarbs, PlannedFat,
-        Calories, Protein, Carbs, Fat, Source, ForecastedAt, ConfirmationRequestedAt, UpdatedAt).
-
-/* Handle the remove meal log row by name goal. */
-+!remove_meal_log_row_by_name(_, _, _) : true <- true.
-
 /* Handle the get daily recap goal. */
 +!get_daily_recap(Username)[source(_)] : true <-
     .send_daily_recap_from_meal_log(Username).
-
-/* Handle the record meal entry goal. */
-+!record_meal_entry(Username, Name, Calories) : current_date(Today) <-
-    +meal_log_entry(Username, Today, Name, Calories, 0, 0, 0);
-    +meal_log_row(Username, Today, "", "logged", "", Name, "confirmed",
-        Calories, 0, 0, 0, Calories, 0, 0, 0, "user", "", "", "bdi");
-    !update_daily_recap(Username, Name, Calories).
 
 /* Handle the update daily recap goal. */
 +!update_daily_recap(Username, Name, Calories) :
@@ -745,23 +668,6 @@ start.
     +daily_eaten_total(Username, Calories);
     +daily_meals_text(Username, Name).
 
-/* Handle the decrease daily recap goal. */
-+!decrease_daily_recap(Username, Calories) : daily_eaten_total(Username, Previous) <-
-    -daily_eaten_total(Username, Previous);
-    Total = Previous - Calories;
-    +daily_eaten_total(Username, Total).
-
-/* Handle the decrease daily recap goal. */
-+!decrease_daily_recap(_, _) : true <- true.
-
-/* Handle the clear daily meals text goal. */
-+!clear_daily_meals_text(Username) : daily_meals_text(Username, Meals) <-
-    -daily_meals_text(Username, Meals);
-    +daily_meals_text(Username, "").
-
-/* Handle the clear daily meals text goal. */
-+!clear_daily_meals_text(_) : true <- true.
-
 /* Handle the update weekly eaten total goal. */
 +!update_weekly_eaten_total(Username, Calories, Total) : weekly_eaten_total(Username, Previous) <-
     -weekly_eaten_total(Username, Previous);
@@ -771,15 +677,6 @@ start.
 /* Handle the update weekly eaten total goal. */
 +!update_weekly_eaten_total(Username, Calories, Calories) : true <-
     +weekly_eaten_total(Username, Calories).
-
-/* Handle the decrease weekly eaten total goal. */
-+!decrease_weekly_eaten_total(Username, Calories) : weekly_eaten_total(Username, Previous) <-
-    -weekly_eaten_total(Username, Previous);
-    Total = Previous - Calories;
-    +weekly_eaten_total(Username, Total).
-
-/* Handle the decrease weekly eaten total goal. */
-+!decrease_weekly_eaten_total(_, _) : true <- true.
 
 /* Handle the check weekly budget goal. */
 +!check_weekly_budget(Name, Calories, WeeklyTotal) : daily_calories(DailyLimit) <-
@@ -798,21 +695,12 @@ start.
 +!decide_weekly_warning(_, _, _, _) : true <- true.
 
 /* Persisted-plan cleanup */
-/* Handle the clear planned dishes goal. */
-+!clear_planned_dishes(Username) : true <-
+/* Handle the clear planned recipes goal. */
++!clear_planned_recipes(Username) : true <-
     .log("Nutritionist - clearing active plan after the replacement is ready");
-    !clear_nutritionist_planned_dishes(Username);
     !clear_nutritionist_planned_recipes(Username);
     !clear_nutritionist_forecasts(Username);
     .send("planner@localhost", tell, plan_storage_cleared(Username)).
-
-/* Handle the clear nutritionist planned dishes goal. */
-+!clear_nutritionist_planned_dishes(Username) : planned_dish_row(Username, D, S, Di, C, P, Ca, F) <-
-    -planned_dish_row(Username, D, S, Di, C, P, Ca, F);
-    !clear_nutritionist_planned_dishes(Username).
-
-/* Handle the clear nutritionist planned dishes goal. */
-+!clear_nutritionist_planned_dishes(_) : true <- true.
 
 /* Handle the clear nutritionist planned recipes goal. */
 +!clear_nutritionist_planned_recipes(Username) : planned_recipe_row(Username, D, S, Di, T, I, Ins, C, P, Ca, F) <-

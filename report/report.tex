@@ -317,11 +317,12 @@ in read-only mode. Overall, they perform three functions:
     nutritional rules, and ingredient data.
 \end{itemize}
 
-During system startup, each agent loads or indexes the data under its responsibility. In the
-Nutritionist the operational and control state is represented by BDI beliefs;
-the Python code performs only adaptation, calculation, and persistence functions. Persistent data
-are updated on the files when the
-system is shut down.
+During system startup, each agent loads or indexes the data under its responsibility. The
+operational and control state of the BDI agents is represented by beliefs. Static reasoning
+facts, including slot order, slot weights, schedules and slot compatibility, are declared in
+the AgentSpeak programs; Python actions read those beliefs when they need the same information.
+The Python code performs adaptation, calculation and persistence functions.
+Persistent data are written back to the files when the systemis shut down.
 
 \begin{table}[H]
 \centering
@@ -363,8 +364,8 @@ and nutritional values. \\
 \texttt{week\_plan\_}\newline
 \texttt{template.csv}
 & Planner
-& Stores the abstract structure of the plan before the generation of the
-recipes. \\
+& Stores the selected abstract templates of the active plan, including their
+target calories, macronutrients, and food categories. \\
 
 \texttt{templates.csv}
 & Chef
@@ -446,7 +447,7 @@ recaps and rebalancing of nutritional plans. \\
 
 Planner
 & Generation of the nutritional plan, control of variety and frequencies,
-plan consultation and management of daily meals. \\
+plan consultation and local replanning of future meals. \\
 
 Chef
 & Selection of food templates compatible with diet, slot, calories,
@@ -468,23 +469,23 @@ freely. \\
 
 The Gateway connects the user interface to the multi-agent system and manages communication in
 both directions. It sends messages in natural language to the NLP, which translates them into
-AgentSpeak/Prolog commands, then validates and forwards those commands to the recipient agents. In the reverse path,
-it sends the technical responses of the agents back to the NLP so that they are converted into a form suitable for the
-UI. It does not make nutritional decisions, but deals only with the flow and validation of
-messages.
+AgentSpeak/Prolog commands; the Gateway then validates and forwards those commands to the recipient
+agents. In the reverse path, it deterministically converts the technical responses of the agents
+into validated UI events. It does not make nutritional decisions, but deals only with message
+flow, validation and presentation.
 
 
 Its operation is based on two cyclic behaviours. \texttt{LocalCommandBehaviour} retrieves from the
 UI queue the user's messages and sends them to the NLP for translation; \texttt{GatewayBehaviour}
-receives XMPP messages, forwards the translated commands to the domain agents and sends back to the NLP their
-responses, before publishing the result in the UI.
+receives XMPP messages, forwards translated commands returned by the NLP to the domain agents and
+publishes domain responses in the UI through the deterministic response renderer.
 
 \subsection{NLP Agent}
 
 The NLP Agent manages the translation between the natural language of the chat and the
-AgentSpeak/Prolog messages exchanged by the system. The two directions are implemented differently. The requests
-of the user are interpreted by an \texttt{LLMAgent}, while the responses of the BDI agents are
-mapped with static message through a \texttt{CyclicBehaviour}.
+AgentSpeak/Prolog commands accepted by the system. User requests are interpreted by an
+\texttt{LLMAgent}; deterministic rendering of BDI responses is instead invoked by the Gateway and
+does not require a second LLM translation.
 
 The Gateway sends to the NLP Agent one of the following two formats:
 
@@ -520,8 +521,7 @@ associates a possible user formulation with the identifier of a message:
 Several chunks can point to the same identifier, making it possible to represent different
 formulations without duplicating the command definition. The search retrieves the semantically closest
 points, removes duplicate identifiers and returns a number of candidates chosen by the model. 
-The content of the template therefore influences
-only the initial selection; it is never used as a command to execute.
+The content of the template therefore influences only the initial selection.
 
 For each retrieved identifier, the message registry provides the complete definition.
 \begin{lstlisting}[language=Python,caption={Example of message definition in the registry}]
@@ -587,40 +587,14 @@ The beliefs of the Nutritionist represent the user's profile and nutritional obj
 together with the history of meals, weight and the state of the operations in progress. The agent uses them
 to adapt targets, monitor consumption and decide when to update or rebalance the plan.
 
-The BDI plans implement the following functionalities:
+The main BDI plans implement the following functionalities:
 \begin{itemize}
-    \item \textbf{Onboarding}: \texttt{check\_user\_profile} verifies the presence of \texttt{user\_profile\_row}. If the profile exists, it derives the operational beliefs from it; otherwise it starts the questions on personal data, allergens, diet and culinary preferences, progressively storing the answers.
-    \item \textbf{Profile update}: \texttt{update\_weight} updates profile and \texttt{weight\_log\_entry}, then compares the new weight with the previous one. An absolute variation at least equal to 1\% keeps the current goal, recalculates calories and macronutrients on the new weight and activates \texttt{refresh\_week\_plan}; smaller variations only update the state. Reaching the target has priority: it sets \texttt{maintain}, removes caloric deficit or surplus and regenerates the plan. \texttt{update\_preferences} modifies the diet, while \texttt{update\_culinary\_preferences} replaces the free text of culinary preferences; these modifications too can regenerate the plan to avoid one that is no longer coherent.
-    \item \textbf{Reminder}: a \texttt{CyclicBehaviour} publishes only the \texttt{clock\_tick}. The BDI plan keeps \texttt{last\_clock\_tick} and generates a confirmation exclusively when the interval between two ticks crosses the slot time. The first tick, a date change or a backward jump of the clock establish a new baseline without recovering previous meals.
-    \item \textbf{Meal tracking}: \texttt{confirm\_meal} transfers recipe and planned values into the log row, marking it as \texttt{confirmed}. \texttt{log\_meal} instead delegates to the Creative Cook the estimation of a different meal and saves the result as \texttt{modified}.
-    \item \textbf{Rebalancing}: \texttt{request\_rebalance\_after} identifies the subsequent slots still modifiable, calculates the residual budget and requests new recipes from the Planner. The beliefs \texttt{pending\_rebalances} and \texttt{pending\_rebalance\_origin} maintain the state of the workflow until completion of all responses.
-    \item \textbf{Consultation}: \texttt{get\_daily\_recap}, \texttt{get\_meal\_logs} and \texttt{get\_weight\_logs} read the current beliefs and build the structured data returned to the Gateway.
+    \item \textbf{Onboarding and profile management}: \texttt{check\_user\_profile} restores an existing profile or starts the collection of personal data, allergens, diet and culinary preferences. Profile-update plans persist changes and, when necessary, regenerate the weekly plan. In particular, a weight variation of at least 1\% causes calories and macronutrients to be recalculated, while reaching the target changes the objective to maintenance. The nutritional calculations are performed by Python actions invoked by these plans.
+    \item \textbf{Daily monitoring}: reminder plans react to the \texttt{clock\_tick} produced by a \texttt{CyclicBehaviour} and request confirmation when a meal-slot time is crossed. Meal-tracking plans then confirm the planned recipe or ask the Creative Cook to estimate a different meal, updating the corresponding log beliefs.
+    \item \textbf{Rebalancing}: after a deviation from the plan, \texttt{request\_rebalance\_after} calculates the residual nutritional budget and coordinates the Planner, Chef and Creative Cook to replace only subsequent meals. The beliefs \texttt{pending\_rebalances} and \texttt{pending\_rebalance\_origin} preserve the workflow state until all responses have arrived.
+    \item \textbf{Consultation}: \texttt{get\_daily\_recap}, \texttt{get\_meal\_logs} and \texttt{get\_weight\_logs} read the current beliefs and use serialization actions to build the structured data returned to the Gateway.
 \end{itemize}
 
-The BDI plans and beliefs contain the state and establish when to execute the operations, while the
-Python actions implement only calculations, serialization and persistence. The temporal monitor
-does not maintain queues, flags or copies of the meal logs in Python. The Nutritionist collaborates with Planner for planning and
-rebalancing, with Chef for alternatives and with Creative Cook for the estimation of free meals.
-
-The calculations are executed by Python actions called by the BDI plans. Starting from height and weight, the
-Nutritionist calculates the BMI and uses it to determine an initial objective of gain,
-maintenance or reduction of weight according to the reference thresholds. 
-The daily caloric requirement is then estimated considering weight, height,
-age, sex and activity level and is corrected as a function of the objective.
-
-The system compares each new weight with the last value saved in the profile.
-If the difference, in increase or in decrease,
-is at least equal to 1\% of the previous weight, the Nutritionist keeps the active objective,
-recalculates the requirement on the new weight and requests the complete regeneration
-of the weekly plan. For variations below the threshold, instead,
-the new value is recorded without modifying the plan.
-
-If the new weight reaches the established objective, the system switches to maintenance and
-regenerates the plan.
-
-In case of deviation from the plan, the Nutritionist calculates the calories still available and redistributes them only among the
-subsequent meals, trying to rebalance the plan. This is a simplified model, based on coefficients and
-heuristics configured in the project.
 
 \subsection{Planner Agent}
 
@@ -628,26 +602,17 @@ The Planner transforms the user's nutritional requirement into a weekly plan. It
 construction of the plan, keeps the progress state and waits for the responses of Chef and Creative
 Cook before proceeding. The planning and control rules are expressed by means of BDI plans.
 
-\subsubsection{Beliefs used}
-
 The beliefs of the Planner represent the received targets, the plan already built, the constraints of
 variety and the progress state of the planning. The agent consults and updates them to
-coordinate the choice of meals, avoid repetitions and proceed correctly from one slot to the next.
+coordinate the choice of meals and avoid repetitions.
 
-The BDI plans implement the following functionalities:
+The main BDI plans implement the following functionalities:
 \begin{itemize}
-    \item \textbf{Complete construction}: \texttt{build\_week\_plan} saves user, diet and targets in the belief \texttt{planning\_context}, initializes \texttt{next\_step} to Monday/breakfast and prevents the start of two concurrent plannings.
-    \item \textbf{Nutritional distribution}: for each slot the plan calculates calories and macros and stores them in \texttt{slot\_macro\_target}. \texttt{slot\_preferred\_category} consults the current frequencies to favor the categories still below the weekly minimum.
-    \item \textbf{Recipe composition}: after template selection, \texttt{pending\_slot} and \texttt{pending\_recipe\_slot} keep the context of the request sent to the Creative Cook. The belief is removed only when \texttt{recipe} arrives; the result is saved and \texttt{advance\_plan} updates \texttt{next\_step}.
-    \item \textbf{Final validation}: at the end of the slots, \texttt{send\_final\_plan} compares \texttt{category\_count} with the configured limits. A failure interrupts the workflow, avoiding publishing as valid an incomplete or non-compliant plan.
-    \item \textbf{Local replanning}: \texttt{rebalance\_slot} stores the slot concerned and applies the new target received from the Nutritionist, rebuilding only that meal without restarting the entire week.
-    \item \textbf{Consultation}: \texttt{get\_plan}, \texttt{query\_plan} and \texttt{get\_plan\_day\_context} read the beliefs \texttt{planned\_dish\_row} and \texttt{planned\_recipe\_row} to return the complete plan, single slot or daily context.
+    \item \textbf{Weekly plan construction}: \texttt{build\_week\_plan} stores the user context and prevents concurrent generations. The Planner derives nutritional targets for the five slot types, obtains compatible template domains from the Chef and builds an assignment over the 35 weekly positions, enforcing daily variety and weekly category constraints. Python actions support the nutritional calculations and feasibility checks, while the BDI plans control the sequence of choices.
+    \item \textbf{Recipe generation and plan activation}: once the template assignment is complete, the Planner asks the Creative Cook to produce each concrete recipe and stores the responses in \texttt{draft\_recipe\_row}. Only a complete draft is promoted to \texttt{planned\_recipe\_row}; otherwise the draft is discarded and the previous active plan remains available.
+    \item \textbf{Local replanning}: \texttt{rebalance\_slot} applies the target received from the Nutritionist and coordinates Chef and Creative Cook to rebuild a single meal.
+    \item \textbf{Consultation}: \texttt{get\_plan} reads \texttt{planned\_recipe\_row} and serializes the complete weekly plan for the Gateway.
 \end{itemize}
-
-The BDI plans establish the decisions, while the Python actions calculate the targets per
-slot, determine the next step and serialize the result. The Planner receives profile and
-objectives from the Nutritionist, uses the Chef to select the templates and the Creative Cook to
-generate the recipes.
 
 \subsection{Chef Agent}
 
@@ -655,26 +620,16 @@ The Chef selects food templates compatible with the constraints of the plan. It 
 the recipes, but narrows the space of alternatives considering diet, slot, category, calories,
 macronutrients and nutritional constraints. The selection rules are expressed by means of BDI plans and rules.
 
-\subsubsection{Beliefs used}
-
 The beliefs of the Chef represent the available food templates and the criteria with which to evaluate
 their compatibility with respect to the current request. The agent uses them to filter the alternatives
-according to dietary and nutritional constraints and return to the requester an applicable candidate.
+according to diet, slot, category, calories, macronutrients and exclusions. For weekly generation it
+returns the complete valid domain; for local replanning it returns one strict candidate or reports failure.
 
-The BDI plans implement the following functionalities:
+The main BDI plans implement the following functionalities:
 \begin{itemize}
-    \item \textbf{Compatibility with diet and slot}: the beliefs \texttt{template\_for\_plan} represent the available templates. The rules \texttt{diet\_category\_allowed} and \texttt{slot\_allowed} eliminate those incompatible with the user's diet or with the requested slot.
-    \item \textbf{Nutritional tolerance}: \texttt{template\_candidate} combines calories and macronutrients of the template with the received target. The beliefs \texttt{tollerance} delimit the acceptable intervals before a candidate can be selected.
-    \item \textbf{Guided category}: when the Planner still has to satisfy a minimum frequency, \texttt{guided\_template\_candidate} adds the required category to the selection constraints.
-    \item \textbf{Variety}: the names and categories received as exclusions are discarded during candidate construction. \texttt{.random\_candidate} introduces variability only after the application of all the rules.
-    \item \textbf{Explicit failure}: if no candidate satisfies all the constraints, the Chef returns an empty domain or an explicit failure instead of relaxing the nutritional criteria.
-    \item \textbf{Meal alternative}: \texttt{choose\_runtime\_template} applies \texttt{template\_candidate} to select a proposal different from the planned meal while preserving diet, slot and nutritional constraints.
+    \item \textbf{Template selection}: \texttt{template\_candidate} filters the templates stored in \texttt{template\_for\_plan} according to diet, meal slot, calories, macronutrients and exclusions. Guided requests can also impose a required category. Python actions check numerical tolerances and introduce variability only among candidates already accepted by the BDI rules.
+    \item \textbf{Candidate-domain provision}: for each slot-type target received during weekly generation, the Chef returns every valid template and then signals completion of the domain transfer.
 \end{itemize}
-
-The BDI plans establish which candidates are applicable, while the Python actions load the
-templates, verify the nutritional tolerances and select one element among the valid ones. The Chef
-receives the targets from the Planner and the alternative requests from the Nutritionist, returning a
-structured template or an explicit failure.
 
 \subsection{Creative Cook Agent}
 
@@ -683,8 +638,6 @@ planning it transforms an abstract template into a concrete recipe with name, in
 grammages, instructions and macronutrients. During tracking, instead, it interprets a meal described
 freely and estimates its composition and nutritional values, also producing the template to use for
 the subsequent rebalancing.
-
-\subsubsection{Data used}
 
 The Creative Cook does not maintain a BDI belief base: it accesses the user's nutritional context,
 the constraints and targets of the request and the nutritional data of the ingredients. It uses this
@@ -708,8 +661,8 @@ The available tools are:
 \begin{itemize}
     \item \texttt{query\_user\_nutrition\_context}: requests from the Nutritionist, in read-only mode, diet, allergens, culinary preferences, objective, daily calories and meal distribution, the response is handled through a dedicated behaviour.
     \item \texttt{query\_ingredient\_db}: performs a semantic search in the Qdrant database of ingredients with nutritional values per 100 g.
-    \item \texttt{submit\_prepared\_recipe}: builds the message \texttt{recipe} with ingredients and grammages, instructions, calories and macros, then sends it to the Planner through the performative \texttt{prepare\_plan\_slot}.
-    \item \texttt{submit\_evaluated\_free\_meal}: builds the message \texttt{free\_meal\_evaluated} with estimated calories, macros and template, then sends it to the Nutritionist through the performative \texttt{evaluate\_free\_meal}.
+    \item \texttt{submit\_prepared\_recipe}: builds a \texttt{recipe} message with ingredients and grammages, instructions, calories and macros, then sends it to the Planner.
+    \item \texttt{submit\_evaluated\_free\_meal}: builds a \texttt{free\_meal\_evaluated} message with estimated calories, macros and template, then sends it to the Nutritionist.
 \end{itemize}
 
 The process of preparing a recipe follows the following steps:
@@ -768,9 +721,10 @@ therefore remain confined to the connection between BDI and non-BDI agents.
 
 \subsection{Onboarding and first planning}
 
-At startup the Nutritionist checks whether the user's profile exists. Otherwise it collects the data
-needed, repeating the request for each missing field; then it calculates the goal and the daily
-requirement and starts the generation of the weekly plan.
+At startup the Nutritionist checks whether a complete user profile exists. If it does, the stored
+profile is restored and the user is welcomed back without automatically regenerating the plan. If it
+does not, the Nutritionist collects all required profile data and preferences in a fixed sequence,
+calculates the goal and daily requirement, and starts generation of the first weekly plan.
 
 \begin{figure}[H]
 \centering
@@ -791,7 +745,7 @@ requirement and starts the generation of the weekly plan.
 \draw[rounded corners, thick, dashed, blue!55]
     (-0.65,-1.25) rectangle (5.65,-2.1);
 \node[font=\sffamily\scriptsize\bfseries, text=blue!65!black,
-      fill=white, inner sep=2pt] at (1.35,-1.25) {loop: for each missing datum};
+      fill=white, inner sep=2pt] at (1.35,-1.25) {sequence: required data and preferences};
 \draw[<->, thick] (0,-1.7) -- node[message, above]{profile data collection} (5,-1.7);
 \draw[->, thick, rounded corners] (5,-2.3) -- ++(-0.7,0) -- ++(0,-0.45) --
     node[message, left]{goal and requirement calculation} (5,-2.75);
@@ -802,65 +756,76 @@ requirement and starts the generation of the weekly plan.
 
 \subsection{Construction of the weekly plan}
 
-The Planner coordinates the construction of the weekly plan. For each food
-slot it determines the nutritional target to be satisfied; the Chef then selects
-a compatible template, while the Cook materializes the selected template
-into a concrete recipe.
-The generation was deliberately divided into two phases. In the first phase,
-the BDI agents build a structured and deterministic representation
-of the plan using food templates. These templates represent
-the basic structure of meals and specify the structure of the recipe, the categories of
-allowed ingredients and the indicative values of calories and macronutrients. The
-Chef selects, for each slot, a template compatible with the nutritional
-target and with the available constraints.
-In the second phase, the selected template is entrusted to the Cook, which
-transforms the template into a complete recipe, defining its
-ingredients, quantities and preparation in compliance with the preferences and
-constraints of the user.
-The completed slots are transferred to the Nutritionist as beliefs. Temporal
-monitoring does not perform recoveries at startup: a slot can produce a request only
-if the system, already running, crosses its configured time.
+The Nutritionist starts weekly generation after onboarding or an explicit regeneration request. The
+Planner then coordinates construction of the weekly plan: it computes the nutritional targets and
+requests from the Chef the complete domain of valid
+templates for each of the five meal-slot types. The Chef filters its template
+beliefs according to diet, slot, category, calorie and macronutrient constraints, returning
+only strict candidates without introducing relaxed fallback templates when no
+valid candidate is available.
+
+The generation process is divided into two phases. During the first phase, the
+candidate domains are stored as beliefs and a global AgentSpeak search is
+performed over the 35 ordered meal slots of the week. Templates are assigned
+while enforcing daily variety and weekly category-frequency constraints. Whenever a partial assignment becomes
+infeasible, the relevant choices are reverted and an alternative candidate is
+explored. This process produces a structured weekly template assignment.
+
+During the second phase, each selected template is passed to the Creative Cook,
+which turns it into a complete recipe by defining its ingredients, quantities,
+and preparation instructions. The Planner temporarily stores the generated
+recipes as beliefs and activates the draft only after all meal slots have been
+materialized successfully. It then performs a staged replacement: the previous
+active plan is cleared only when the complete draft is ready, after which the new
+recipes and slot targets are promoted and transferred to the Nutritionist as beliefs.
+
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
     >=Stealth,
     actor/.style={rectangle, draw=black!55, rounded corners, fill=blue!5,
-                  minimum width=2.3cm, minimum height=0.75cm, align=center,
+                  minimum width=2.05cm, minimum height=0.75cm, align=center,
                   font=\sffamily\small},
     message/.style={font=\sffamily\scriptsize, fill=white, inner sep=1.5pt}
 ]
 \node[actor] (planner) at (0,0) {Planner};
-\node[actor] (chef) at (4,0) {Chef};
-\node[actor, fill=green!6] (cook) at (8,0) {Creative Cook};
+\node[actor] (chef) at (3,0) {Chef};
+\node[actor, fill=green!6] (cook) at (6,0) {Creative Cook};
+\node[actor] (nutri) at (9,0) {Nutritionist};
 \node[actor, fill=purple!6] (ui) at (12,0) {Gateway / UI};
-\foreach \x in {planner,chef,cook,ui} {
-    \draw[dashed, black!35] (\x.south) -- ++(0,-6.8);
+\foreach \x in {planner,chef,cook,nutri,ui} {
+    \draw[dashed, black!35] (\x.south) -- ++(0,-8.5);
 }
 
-\draw[->, thick] (12,-0.8) -- node[message, above]{weekly plan request} (0,-0.8);
+\draw[->, thick] (12,-0.7) -- node[message, above]{weekly plan request} (9,-0.7);
+\draw[->, thick] (9,-1.35) -- node[message, above]{generation request} (0,-1.35);
 
-% First iterative phase: selection of templates for all slots.
+% First phase: domain collection and global AgentSpeak search.
 \draw[rounded corners, thick, dashed, blue!55]
-    (-0.65,-1.25) rectangle (4.65,-3.15);
+    (-0.65,-1.7) rectangle (3.65,-3.5);
 \node[font=\sffamily\scriptsize\bfseries, text=blue!65!black,
-      fill=white, inner sep=2pt] at (1.1,-1.25) {loop: for each slot};
-\draw[->, thick] (0,-1.9) -- node[message, above]{template request} (4,-1.9);
-\draw[->, thick, dashed] (4,-2.6) -- node[message, above]{compatible template} (0,-2.6);
-\node[message, font=\sffamily\scriptsize\itshape] at (2,-3.0)
-    {outcome: complete template plan};
+      fill=white, inner sep=2pt] at (1.25,-1.7) {loop: five slot-type domains};
+\draw[->, thick] (0,-2.25) -- node[message, above]{domain request} (3,-2.25);
+\draw[->, thick, dashed] (3,-2.85) -- node[message, above]{candidates and completion} (0,-2.85);
+\node[message, font=\sffamily\scriptsize\itshape] at (1.5,-3.3)
+    {outcome: global plan over 35 positions};
 
 % Second iterative phase: materialization of recipes.
 \draw[rounded corners, thick, dashed, green!55!black]
-    (-0.65,-3.55) rectangle (8.65,-5.45);
+    (-0.65,-3.85) rectangle (6.65,-5.75);
 \node[font=\sffamily\scriptsize\bfseries, text=green!45!black,
-      fill=white, inner sep=2pt] at (1.1,-3.55) {loop: for each template};
-\draw[->, thick] (0,-4.2) -- node[message, above]{recipe preparation} (8,-4.2);
-\draw[->, thick, dashed] (8,-4.9) -- node[message, above]{structured recipe} (0,-4.9);
-\node[message, font=\sffamily\scriptsize\itshape] at (4,-5.3)
-    {outcome: materialized recipes};
+      fill=white, inner sep=2pt] at (1.1,-3.85) {loop: for each template};
+\draw[->, thick] (0,-4.5) -- node[message, above]{recipe preparation} (6,-4.5);
+\draw[->, thick, dashed] (6,-5.15) -- node[message, above]{structured recipe} (0,-5.15);
+\node[message, font=\sffamily\scriptsize\itshape] at (3,-5.6)
+    {outcome: complete draft recipe plan};
 
-\draw[->, thick] (0,-6.15) -- node[message, above]{complete weekly plan} (12,-6.15);
+% Staged activation after the complete draft is available.
+\draw[->, thick] (0,-6.25) -- node[message, above]{clear previous active plan} (9,-6.25);
+\draw[->, thick, dashed] (9,-6.85) -- node[message, above]{storage cleared} (0,-6.85);
+\draw[->, thick] (0,-7.45) -- node[message, above]{new plan beliefs and targets} (9,-7.45);
+\draw[->, thick] (0,-8.05) -- node[message, above]{activated weekly plan} (12,-8.05);
 \end{tikzpicture}
 \caption{UML diagram of the construction of the weekly plan}
 \end{figure}
@@ -873,13 +838,11 @@ history and compares the measurement with the weight previously stored in the
 profile. If the absolute variation reaches 1\%, the agent recalculates the
 requirement on the new weight while maintaining the current goal and regenerates the entire
 weekly plan; below the threshold it records the value without modifying
-the plan. This logic also operates between entries made on the same day.
-
-The verification of the goal precedes the percentage heuristic. For a weight-loss
-goal the target is reached with a weight less than or equal to the reference;
+the plan.
+For a weight-loss goal the target is reached with a weight less than or equal to the reference;
 for a gain goal with a weight greater than or equal to it. In that case the goal
 switches to \texttt{maintain}, the requirement is recalculated on the reached weight
-without deficit or surplus and the week is regenerated in maintenance mode.
+without deficit or surplus and the week is regenerated.
 
 \begin{figure}[H]
 \centering
@@ -895,27 +858,30 @@ without deficit or surplus and the week is regenerated in maintenance mode.
 \node[actor] (nutri) at (8,0) {Nutritionist};
 \node[actor] (planner) at (12,0) {Planner};
 \foreach \x in {ui,nlp,nutri,planner} {
-    \draw[dashed, black!35] (\x.south) -- ++(0,-4.2);
+    \draw[dashed, black!35] (\x.south) -- ++(0,-5.2);
 }
 \draw[->, thick] (0,-0.9) -- node[message, above]{new weight} (4,-0.9);
-\draw[->, thick] (4,-1.7) -- node[message, above]{profile update} (8,-1.7);
-\draw[->, thick, rounded corners] (8,-2.3) -- ++(-0.7,0) -- ++(0,-0.45) --
-    node[message, left]{target and 1\% variation} (8,-2.75);
-\draw[->, thick] (8,-3.35) -- node[message, above]{recalculation and full rebuild} (12,-3.35);
-\draw[->, thick, dashed] (8,-4.05) -- node[message, above]{below threshold: recording only} (0,-4.05);
+\draw[->, thick, dashed] (4,-1.55) -- node[message, above]{translated command} (0,-1.55);
+\draw[->, thick] (0,-2.2) -- node[message, above]{validated profile update} (8,-2.2);
+\draw[->, thick, rounded corners] (8,-2.75) -- ++(-0.7,0) -- ++(0,-0.45) --
+    node[message, left]{target check, then 1\% variation} (8,-3.2);
+\draw[rounded corners, thick, dashed, blue!55]
+    (-0.65,-3.55) rectangle (12.65,-5.05);
+\node[font=\sffamily\scriptsize\bfseries, text=blue!65!black,
+      fill=white, inner sep=2pt] at (1.1,-3.55) {alternatives};
+\draw[->, thick] (8,-4.05) -- node[message, above]{target reached or change $\geq 1\%$: rebuild} (12,-4.05);
+\draw[->, thick, dashed] (8,-4.7) -- node[message, above]{change $< 1\%$: recording only} (0,-4.7);
 \end{tikzpicture}
 \caption{UML diagram of the weight update}
 \end{figure}
 
 \subsection{Proactive monitoring, confirmation and different meal}
 
-The Nutritionist periodically receives a tick from the Python monitor and compares in the
-BDI beliefs the current time with that of the previous tick. It requests confirmation
+A \texttt{CyclicBehaviour} internal to the Nutritionist periodically injects a clock tick into
+the BDI belief base. The AgentSpeak logic compares the current time with that of the previous
+tick and requests confirmation
 only for a slot whose time is crossed while the system is
-running. The first tick establishes the baseline: if the application is started
-at 14:00, breakfast, morning snack and lunch are not recovered nor asked
-later. Therefore there is neither a queue of expired meals nor a duplicated
-state machine in Python. The check is repeated at every tick for the entire duration of the
+running. The check is repeated at every tick for the entire duration of the
 session. The user can confirm what was planned or indicate that
 they consumed a different meal. In the latter case, the Cook estimates its
 nutritional values and the Nutritionist possibly rebalances the subsequent meals of the
@@ -930,32 +896,42 @@ same day to compensate for any deviation from the plan.
                   font=\sffamily\small},
     message/.style={font=\sffamily\scriptsize, fill=white, inner sep=1.5pt}
 ]
-\node[actor, fill=gray!8, minimum width=2.9cm] (behav) at (0,0) {CyclicBehaviour};
-\node[actor] (nutri) at (4,0) {Nutritionist};
-\node[actor, fill=purple!6] (ui) at (8,0) {Gateway / UI};
-\node[actor, fill=green!6] (nlp) at (12,0) {NLP Agent};
-\foreach \x in {behav,nutri,ui,nlp} {
-    \draw[dashed, black!35] (\x.south) -- ++(0,-4.4);
+\node[actor, fill=gray!8] (behav) at (0,0) {Monitor};
+\node[actor] (nutri) at (3,0) {Nutritionist};
+\node[actor, fill=purple!6] (ui) at (6,0) {Gateway / UI};
+\node[actor, fill=green!6] (nlp) at (9,0) {NLP Agent};
+\node[actor, fill=green!6] (cook) at (12,0) {Creative Cook};
+\foreach \x in {behav,nutri,ui,nlp,cook} {
+    \draw[dashed, black!35] (\x.south) -- ++(0,-7.0);
 }
 \draw[rounded corners, thick, dashed, blue!55]
-    (-0.65,-0.55) rectangle (12.65,-4.35);
+    (-0.65,-0.55) rectangle (12.65,-6.8);
 \node[font=\sffamily\scriptsize\bfseries, text=blue!65!black,
       fill=white, inner sep=2pt] at (1.15,-0.55) {loop: at each clock tick};
-\draw[->, thick] (0,-1.2) -- node[message, above]{clock tick} (4,-1.2);
-\draw[->, thick] (4,-1.9) -- node[message, above]{confirmation only if time slot crossed} (8,-1.9);
-\draw[->, thick] (8,-2.6) -- node[message, above]{user response} (12,-2.6);
-\draw[->, thick] (12,-3.3) -- node[message, above]{confirmed or different meal} (4,-3.3);
-\draw[->, thick, dashed] (4,-4.0) -- node[message, above]{updated outcome} (8,-4.0);
+\draw[->, thick] (0,-1.2) -- node[message, above]{inject clock event} (3,-1.2);
+\draw[->, thick] (3,-1.85) -- node[message, above]{confirmation if a slot time was crossed} (6,-1.85);
+\draw[->, thick] (6,-2.5) -- node[message, above]{user response} (9,-2.5);
+\draw[->, thick, dashed] (9,-3.15) -- node[message, above]{translated command} (6,-3.15);
+\draw[->, thick] (6,-3.8) -- node[message, above]{confirmed or different meal} (3,-3.8);
+\draw[rounded corners, thick, dashed, green!55!black]
+    (2.35,-4.15) rectangle (12.65,-5.85);
+\node[font=\sffamily\scriptsize\bfseries, text=green!45!black,
+      fill=white, inner sep=2pt] at (4.15,-4.15) {only for a different meal};
+\draw[->, thick] (3,-4.75) -- node[message, above]{free-meal evaluation} (12,-4.75);
+\draw[->, thick, dashed] (12,-5.4) -- node[message, above]{estimated nutrients and template} (3,-5.4);
+\draw[->, thick, dashed] (3,-6.35) -- node[message, above]{updated outcome} (6,-6.35);
 \end{tikzpicture}
 \caption{UML diagram of meal monitoring}
 \end{figure}
 
 \subsection{Replacement and rebalancing after a deviation}
 
-When a different meal is recorded, the Nutritionist compares the actual consumption with the
-daily requirement and recalculates only the future meals of the same day. The Planner, the
-Chef and the Cook then look for new recipes that compensate for the deviation while maintaining the diet
-and constraints of the plan. The sequence is repeated for each future slot still modifiable.
+When a different meal is recorded, the Creative Cook first estimates its nutritional values and
+returns them to the Nutritionist. The Nutritionist compares the actual consumption with the daily
+requirement and recalculates only the future meals of the same day. For each modifiable future slot,
+the Planner, Chef and Creative Cook produce a strict replacement compatible with the diet, slot,
+residual calorie target and scaled macronutrient target. This local procedure does not rerun the
+global weekly variety and category-frequency search.
 Compensation is limited by the availability of templates and realistic recipes, the system
 does not force excessively reduced meals to recover the deviation.
 
@@ -973,17 +949,18 @@ does not force excessively reduced meals to recover the deviation.
 \node[actor] (chef) at (8,0) {Chef};
 \node[actor, fill=green!6] (cook) at (12,0) {Creative Cook};
 \foreach \x in {nutri,planner,chef,cook} {
-    \draw[dashed, black!35] (\x.south) -- ++(0,-4.4);
+    \draw[dashed, black!35] (\x.south) -- ++(0,-5.0);
 }
 \draw[rounded corners, thick, dashed, blue!55]
-    (-0.65,-0.55) rectangle (12.65,-4.35);
+    (-0.65,-0.55) rectangle (12.65,-4.9);
 \node[font=\sffamily\scriptsize\bfseries, text=blue!65!black,
       fill=white, inner sep=2pt] at (1.25,-0.55) {loop: for each future slot};
 \draw[->, thick] (0,-1.2) -- node[message, above]{new future targets} (4,-1.2);
 \draw[->, thick] (4,-1.9) -- node[message, above]{compatible template} (8,-1.9);
 \draw[->, thick, dashed] (8,-2.6) -- node[message, above]{selected template} (4,-2.6);
-\draw[->, thick] (4,-3.3) -- node[message, above]{new recipe} (12,-3.3);
-\draw[->, thick, dashed] (12,-4.0) -- node[message, above]{updated meal} (0,-4.0);
+\draw[->, thick] (4,-3.3) -- node[message, above]{recipe request} (12,-3.3);
+\draw[->, thick, dashed] (12,-3.95) -- node[message, above]{structured recipe} (4,-3.95);
+\draw[->, thick, dashed] (4,-4.6) -- node[message, above]{updated future meal} (0,-4.6);
 \end{tikzpicture}
 \caption{UML diagram of rebalancing}
 \end{figure}
@@ -992,7 +969,9 @@ does not force excessively reduced meals to recover the deviation.
 \subsection{Plan consultation, recap and history}
 
 The user can request the current plan, daily recap and meal or weight history.
-The information is retrieved and presented in structured format.
+The NLP translates the natural request and returns the command to the Gateway, which validates
+and forwards it to the Planner or Nutritionist. The requested information is returned to the
+Gateway and deterministically rendered in structured format without a second LLM translation.
 
 \begin{figure}[H]
 \centering
@@ -1007,13 +986,14 @@ The information is retrieved and presented in structured format.
 \node[actor, fill=green!6] (nlp) at (4,0) {NLP Agent};
 \node[actor] (domain) at (8,0) {Planner / Nutritionist};
 \foreach \x in {ui,nlp,domain} {
-    \draw[dashed, black!35] (\x.south) -- ++(0,-3.6);
+    \draw[dashed, black!35] (\x.south) -- ++(0,-4.2);
 }
 \draw[->, thick] (0,-0.9) -- node[message, above]{natural request} (4,-0.9);
-\draw[->, thick] (4,-1.7) -- node[message, above]{structured request} (8,-1.7);
-\draw[->, thick, dashed] (8,-2.5) -- node[message, above]{requested data} (0,-2.5);
-\draw[->, thick, rounded corners] (0,-3.0) -- ++(-0.7,0) -- ++(0,-0.4) --
-    node[message, left]{display} (0,-3.4);
+\draw[->, thick, dashed] (4,-1.6) -- node[message, above]{translated command} (0,-1.6);
+\draw[->, thick] (0,-2.3) -- node[message, above]{validated structured request} (8,-2.3);
+\draw[->, thick, dashed] (8,-3.0) -- node[message, above]{structured requested data} (0,-3.0);
+\draw[->, thick, rounded corners] (0,-3.45) -- ++(-0.7,0) -- ++(0,-0.4) --
+    node[message, left]{deterministic rendering} (0,-3.85);
 \end{tikzpicture}
 \caption{UML diagram of data consultation}
 \end{figure}
@@ -1092,18 +1072,6 @@ The information is retrieved and presented in structured format.
     simplifies the estimation, but does not model all the variables that influence 
     the actual individual requirement.
 
-    \item \textbf{Simplified weight trend}: the continuous recalculation compares only two consecutive weigh-ins and uses an
-    absolute threshold of 1\%, without moving averages, minimum frequency of
-    measurements, or correction for daily fluctuations. This choice makes the
-    behavior deterministic and demonstrable in real time, but is not equivalent
-    to a clinical nutritional monitoring protocol.
-
-    \item \textbf{Non-retrospective reminders}: to keep the BDI behavior simple and observable, notifications
-    require that the system be active while the time slot is being crossed.
-    Meals prior to startup or to a clock jump are not
-    reconstructed; the day's meal log can therefore be intentionally
-    incomplete.
-
     \item \textbf{Local caloric rebalancing}: the rebalancing corrects the caloric deviation through a simplified modification
     of quantities. The procedure does not jointly optimize
     calories, macronutrients, food frequencies, variety, and compliance with
@@ -1149,18 +1117,17 @@ repository is recommended:
 
 \section{Use of Generative AI}
 
-Generative AI tools were used as supporting instruments during the development of the project,
-mainly for tasks that were not central to its research objectives. Their use was limited to the following activities:
+Generative AI tools were used as supporting instruments during the development of the project. 
+Their use was limited to the following activities:
 
 \begin{itemize}
     \item \textbf{Streamlit interface}: AI assistance was used during the implementation of the user interface, 
     allowing more development effort to be dedicated to the multi-agent architecture, 
     BDI reasoning and communication between agents.
-    \item \textbf{Debugging support}: AI tools were occasionally used to investigate complex implementation problems. 
-    This was particularly useful when debugging AgentSpeak plans, where untyped terms, complex predicates and 
-    interactions between multiple plans can make errors difficult to identify.
-    \item \textbf{Documentation}: AI assistance was used to improve the clarity, structure and language of 
-    selected parts of the project documentation.
+    \item \textbf{Debugging support}: AI tools were occasionally used to investigate
+    complex implementation issues. This was particularly useful when debugging
+    AgentSpeak code, where untyped terms, complex predicates, and interactions
+    between concurrent execution flows can make errors difficult to identify.
 \end{itemize}
 
 

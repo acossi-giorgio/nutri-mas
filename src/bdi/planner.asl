@@ -1,16 +1,28 @@
 /* Agent lifecycle */
 start.
+weekday_order(monday, 0).
+weekday_order(tuesday, 1).
+weekday_order(wednesday, 2).
+weekday_order(thursday, 3).
+weekday_order(friday, 4).
+weekday_order(saturday, 5).
+weekday_order(sunday, 6).
+meal_slot_order(breakfast, 0).
+meal_slot_order(morning_snack, 1).
+meal_slot_order(lunch, 2).
+meal_slot_order(afternoon_snack, 3).
+meal_slot_order(dinner, 4).
+slot_weight(breakfast, 0.24).
+slot_weight(morning_snack, 0.10).
+slot_weight(lunch, 0.29).
+slot_weight(afternoon_snack, 0.10).
+slot_weight(dinner, 0.27).
 /* Start the agent. */
 +!start : true <-
     .log("Planner Agent ready").
 
 /* Planning-state cleanup */
 /* Active plan cleanup is delayed until every draft recipe is ready. */
-/* Handle the clear active plan goal. */
-+!clear_active_plan(Username) : planned_dish_row(Username, D, S, Di, C, P, Ca, F) <-
-    -planned_dish_row(Username, D, S, Di, C, P, Ca, F);
-    !clear_active_plan(Username).
-
 /* Handle the clear active plan goal. */
 +!clear_active_plan(Username) : planned_recipe_row(Username, D, S, N, T, I, Ins, C, P, Ca, F) <-
     -planned_recipe_row(Username, D, S, N, T, I, Ins, C, P, Ca, F);
@@ -84,11 +96,6 @@ start.
 
 /* Handle the clear tried at goal. */
 +!clear_tried_at(_, _) : true <- true.
-
-/* Handle the clear draft recipes goal. */
-+!clear_draft_recipes(Username) : draft_dish_row(Username, D, S, N, C, P, Ca, F) <-
-    -draft_dish_row(Username, D, S, N, C, P, Ca, F);
-    !clear_draft_recipes(Username).
 
 /* Handle the clear draft recipes goal. */
 +!clear_draft_recipes(Username) : draft_recipe_row(Username, D, S, N, T, I, Ins, C, P, Ca, F) <-
@@ -456,7 +463,7 @@ start.
 
 /* Handle the runtime rebalance macro targets goal. */
 +!runtime_rebalance_macro_targets(Username, Day, Slot, TargetCalories, TargetProtein, TargetCarbs, TargetFat) :
-        planned_dish_row(Username, Day, Slot, _, BaseCalories, BaseProtein, BaseCarbs, BaseFat) &
+        planned_recipe_row(Username, Day, Slot, _, _, _, _, BaseCalories, BaseProtein, BaseCarbs, BaseFat) &
         BaseCalories > 0 <-
     .scale_runtime_macro_targets(TargetCalories, BaseCalories, BaseProtein, BaseCarbs, BaseFat,
         TargetProtein, TargetCarbs, TargetFat).
@@ -515,15 +522,6 @@ start.
 
 /* Handle the recipe event. */
 +recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
-        pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative") &
-        .same_text(RecipeDay, PendingDay) & .same_text(RecipeSlot, PendingSlot) <-
-    -recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
-    -pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "user_alternative");
-    .send("nutritionist@localhost", tell,
-        runtime_recipe_response(Username, Date, PendingSlot, Template, Name, Calories, Protein, Carbs, Fat)).
-
-/* Handle the recipe event. */
-+recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] :
         pending_runtime_recipe_slot(Username, Date, PendingDay, PendingSlot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, "rebalance") &
         .same_text(RecipeDay, PendingDay) & .same_text(RecipeSlot, PendingSlot) <-
     -recipe(Username, RecipeDay, RecipeSlot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
@@ -537,7 +535,6 @@ start.
         Index < 34 <-
     -recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     -pending_recipe_slot(Username, Index, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category);
-    +draft_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat);
     +draft_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     Next = Index + 1;
     !request_draft_recipe(Username, Next).
@@ -547,12 +544,11 @@ start.
         pending_recipe_slot(Username, 34, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category) <-
     -recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     -pending_recipe_slot(Username, 34, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category);
-    +draft_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat);
     +draft_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     -planning_phase(Username, recipe_generation);
     +planning_phase(Username, awaiting_commit);
     .log("Planner - all draft recipes ready, requesting atomic plan replacement");
-    .send("nutritionist@localhost", achieve, clear_planned_dishes(Username)).
+    .send("nutritionist@localhost", achieve, clear_planned_recipes(Username)).
 
 /* Handle the recipe event. */
 +recipe(Username, Day, Slot, Template, Name, Ingredients, Instructions, Calories, Protein, Carbs, Fat)[source(_)] : true <-
@@ -573,18 +569,13 @@ start.
 /* Handle the promote draft plan goal. */
 +!promote_draft_plan(Username) :
         template_assignment(Username, Index, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category) &
-        draft_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat) &
         draft_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat) <-
     -template_assignment(Username, Index, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category);
-    -draft_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat);
     -draft_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     -draft_slot_macro_target(Username, Day, Slot, TargetCalories, TargetProtein, TargetCarbs, TargetFat);
     +planned_template_row(Username, Day, Slot, Template, TargetCalories, TargetProtein, TargetCarbs, TargetFat, Category);
-    +planned_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat);
     +planned_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat);
     +slot_macro_target(Username, Day, Slot, TargetCalories, TargetProtein, TargetCarbs, TargetFat);
-    .send("nutritionist@localhost", tell,
-        planned_dish_row(Username, Day, Slot, Name, Calories, Protein, Carbs, Fat));
     .send("nutritionist@localhost", tell,
         planned_recipe_row(Username, Day, Slot, Name, Template, Ingredients, Instructions, Calories, Protein, Carbs, Fat));
     .send("nutritionist@localhost", tell,
@@ -609,12 +600,6 @@ start.
         pending_recipe_slot(Username, Index, Day, Slot, Template, Calories, Protein, Carbs, Fat, Category) <-
     -pending_recipe_slot(Username, Index, Day, Slot, Template, Calories, Protein, Carbs, Fat, Category);
     !abort_weekly_planning(Username, "cook_error").
-
-/* Handle the handle recipe failure goal. */
-+!handle_recipe_failure(Username, Day, Slot) :
-        pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, Calories, Protein, Carbs, Fat, "user_alternative") <-
-    -pending_runtime_recipe_slot(Username, Date, Day, Slot, Template, Calories, Protein, Carbs, Fat, "user_alternative");
-    .send("nutritionist@localhost", tell, runtime_recipe_failed(Username, Date, Slot)).
 
 /* Handle the handle recipe failure goal. */
 +!handle_recipe_failure(Username, Day, Slot) :
@@ -643,13 +628,3 @@ start.
 +get_plan_day_context(Username, Day)[source(_)] : true <-
     -get_plan_day_context(Username, Day);
     .send_plan_day_context(Username, Day).
-
-/* Handle the query plan event. */
-+query_plan(Username, Day, Slot)[source(_)] : planned_dish_row(Username, Day, Slot, Dish, Cal, _, _, _) <-
-    -query_plan(Username, Day, Slot);
-    .send("gateway@localhost", tell, plan_info(Day, Slot, Dish, Cal)).
-
-/* Handle the query plan event. */
-+query_plan(Username, Day, Slot)[source(_)] : true <-
-    -query_plan(Username, Day, Slot);
-    .send("gateway@localhost", tell, plan_info_empty(Day, Slot)).

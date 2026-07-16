@@ -30,7 +30,6 @@ from src.utils.agent_format import (
     row_args as _row_args,
     text_value as _text,
 )
-from src.domain.constants import MEAL_SLOTS, WEEKDAYS, inject_bdi_constants
 
 _logger = get_logger("PlannerAgent")
 actions = agentspeak.Actions(agentspeak.stdlib.actions)
@@ -40,16 +39,6 @@ _DATA_DIR = os.path.join("src", "data", "planner")
 _WEEK_PLAN_CSV = "week_plan.csv"
 _WEEK_PLAN_TEMPLATE_CSV = "week_plan_template.csv"
 _NUTRITION_RULES_CSV = "nutrition_rules.csv"
-_PLANNED_DISH_FIELDNAMES = [
-    "username",
-    "day",
-    "slot",
-    "dish",
-    "calories",
-    "protein_g",
-    "carbs_g",
-    "fat_g",
-]
 _WEEK_PLAN_FIELDNAMES = [
     "username",
     "day",
@@ -73,27 +62,6 @@ _WEEK_PLAN_TEMPLATE_FIELDNAMES = [
     "carbs_g",
     "fat_g",
     "category",
-]
-_SLOT_MACRO_TARGET_FIELDNAMES = [
-    "username",
-    "day",
-    "slot",
-    "calories",
-    "protein_g",
-    "carbs_g",
-    "fat_g",
-]
-_DAYS = WEEKDAYS
-_SLOTS = MEAL_SLOTS
-_PLANNED_DISH_ROW_SCHEMA = [
-    ("username", _text),
-    ("day", _text),
-    ("slot", _text),
-    ("dish", _text),
-    ("calories", _int),
-    ("protein_g", _int),
-    ("carbs_g", _int),
-    ("fat_g", _int),
 ]
 _PLANNED_RECIPE_ROW_SCHEMA = [
     ("username", _text),
@@ -126,6 +94,12 @@ _NUTRITION_RULE_SCHEMA = [
     ("min_per_week", _int),
     ("max_per_week", _int),
 ]
+
+
+def _ordered_belief_values(agent, name: str) -> tuple[str, ...]:
+    """Read values ordered by their numeric index from the BDI belief base."""
+    rows = sorted(belief_rows(agent, name, 2), key=lambda row: int(row[1]))
+    return tuple(str(value) for value, _ in rows)
 
 
 def _minimums_reachable_after(
@@ -184,8 +158,9 @@ def _minimums_reachable_after(
     # etc.). Every plan position is always assigned, so only recipe-category
     # rules need domain-based reachability checks here.
     deficits_by_slots: dict[tuple[str, ...], dict[str, int]] = {}
+    meal_slots = set(_ordered_belief_values(planner, "meal_slot_order"))
     for rule_category, allowed_slots, minimum in rules:
-        if rule_category in _SLOTS:
+        if rule_category in meal_slots:
             continue
         deficit = max(0, minimum - counts.get(rule_category, 0))
         if deficit == 0:
@@ -419,19 +394,24 @@ def _same_text(asl_agent, term, intention):
 @actions.add(".get_next_slot", 4)
 def _get_next_slot(asl_agent, term, intention):
     """Return next slot."""
+    planner = _agent_ref.get("instance")
+    if not planner:
+        return
+    days = _ordered_belief_values(planner, "weekday_order")
+    slots = _ordered_belief_values(planner, "meal_slot_order")
     day = _text(ground(term.args[0], intention.scope)).strip().lower()
     slot = _text(ground(term.args[1], intention.scope)).strip().lower()
     try:
-        day_index = _DAYS.index(day)
-        slot_index = _SLOTS.index(slot)
+        day_index = days.index(day)
+        slot_index = slots.index(slot)
     except ValueError:
         return
-    if slot_index < len(_SLOTS) - 1:
+    if slot_index < len(slots) - 1:
         next_day = day
-        next_slot = _SLOTS[slot_index + 1]
-    elif day_index < len(_DAYS) - 1:
-        next_day = _DAYS[day_index + 1]
-        next_slot = _SLOTS[0]
+        next_slot = slots[slot_index + 1]
+    elif day_index < len(days) - 1:
+        next_day = days[day_index + 1]
+        next_slot = slots[0]
     else:
         return
     output = (
@@ -493,7 +473,6 @@ class PlannerAgent(BDIAgent):
         _logger.info("Starting Planner Agent...")
         week_rows, template_rows, nutrition_rules = self._load_week_history()
         await super().setup()
-        inject_bdi_constants(self)
         self._inject_plan_positions()
         self._inject_week_plan_beliefs(week_rows, template_rows)
         self._inject_nutrition_rule_beliefs(nutrition_rules)
@@ -517,10 +496,12 @@ class PlannerAgent(BDIAgent):
         return week_rows, template_rows, nutrition_rules
 
     def _inject_plan_positions(self) -> None:
-        """Inject plan positions."""
+        """Derive plan positions from ordered BDI beliefs."""
+        days = _ordered_belief_values(self, "weekday_order")
+        slots = _ordered_belief_values(self, "meal_slot_order")
         index = 0
-        for day in _DAYS:
-            for slot in _SLOTS:
+        for day in days:
+            for slot in slots:
                 add_belief_fact(self, "plan_position", index, day, slot)
                 index += 1
         _logger.info("Injected %d ordered weekly plan positions", index)
@@ -530,9 +511,6 @@ class PlannerAgent(BDIAgent):
     ) -> None:
         """Inject week plan beliefs."""
         for row in week_rows:
-            add_belief_fact(
-                self, "planned_dish_row", *_row_args(row, _PLANNED_DISH_ROW_SCHEMA)
-            )
             add_belief_fact(
                 self, "planned_recipe_row", *_row_args(row, _PLANNED_RECIPE_ROW_SCHEMA)
             )
@@ -575,17 +553,6 @@ class PlannerAgent(BDIAgent):
         """Send plan beliefs to nutritionist."""
         bodies: list[str] = []
         for row in week_rows:
-            dish_args = [
-                _asl_string(row.get("username")),
-                str(row.get("day") or "").strip().lower(),
-                str(row.get("slot") or "").strip().lower(),
-                _asl_string(row.get("dish")),
-                row.get("calories", ""),
-                row.get("protein_g", ""),
-                row.get("carbs_g", ""),
-                row.get("fat_g", ""),
-            ]
-            bodies.append(f"planned_dish_row({', '.join(map(str, dish_args))})")
             recipe_args = [
                 _asl_string(row.get("username")),
                 _asl_string(str(row.get("day") or "").strip().lower()),
@@ -615,15 +582,6 @@ class PlannerAgent(BDIAgent):
     def _plan_rows_from_beliefs(self) -> dict[str, list[dict]]:
         """Handle plan rows from beliefs."""
         rows = belief_dicts(self, "planned_recipe_row", _WEEK_PLAN_FIELDNAMES)
-        if not rows:
-            legacy_rows = belief_dicts(
-                self, "planned_dish_row", _PLANNED_DISH_FIELDNAMES
-            )
-            for row in legacy_rows:
-                row["template"] = ""
-                row["ingredients"] = ""
-                row["instructions"] = ""
-            rows = legacy_rows
         return group_rows_by_key(rows, "username")
 
     def _template_rows_from_beliefs(self) -> list[dict]:
