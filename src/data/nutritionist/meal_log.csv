@@ -1,1 +1,51 @@
 username,date,weekday,meal_type,planned_recipe,actual_recipe,status,planned_calories,planned_protein_g,planned_carbs_g,planned_fat_g,calories,protein_g,carbs_g,fat_g,source,forecasted_at,confirmation_requested_at,updated_at
+test,2026-07-17,friday,afternoon_snack,Egg and Tomato Whole-Wheat Toast,,forecasted,239,17,21,12,239,17,21,12,plan,bdi,requested,bdi
+test,2026-07-17,friday,breakfast,Oat Yogurt Bowl with Banana and Almonds,,forecasted,456,27,54,14,456,27,54,14,plan,bdi,,bdi
+test,2026-07-17,friday,dinner,Grilled beef steak with boiled potatoes and salad,,forecasted,500,46,48,14,500,46,48,14,plan,bdi,requested,bdi
+test,2026-07-17,friday,lunch,Grilled Chicken Rice Bowl with Courgette and Tomato,,forecasted,650,46,69,19,650,46,69,19,plan,bdi,requested,bdi
+test,2026-07-17,friday,morning_snack,Wholegrain crispbread with lean ham and cucumber,,forecasted,281,20,31,9,281,20,31,9,plan,bdi,,bdi
+test,2026-07-18,saturday,afternoon_snack,Apple Yogurt Snack,,forecasted,160,10,17,4,160,10,17,4,plan,bdi,requested,bdi
+test,2026-07-18,saturday,breakfast,Whole-grain toast with lean ham and tomato,,forecasted,299,18,31,9,299,18,31,9,plan,bdi,requested,bdi
+test,2026-07-18,saturday,dinner,Chickpeas with Potatoes and Zucchini,,forecasted,499,28,59,17,499,28,59,17,plan,bdi,requested,bdi
+test,2026-07-18,saturday,lunch,Grilled chicken breast with brown rice and salad,,forecasted,653,38,77,22,653,38,77,22,plan,bdi,requested,bdi
+test,2026-07-18,saturday,morning_snack,Egg and Tomato Toast,,forecasted,244,18,27,11,244,18,27,11,plan,bdi,requested,bdi
+test,2026-07-19,sunday,afternoon_snack,Turkey Crispbread Snack,Turkey Crispbread Snack,confirmed,162,14,17,4,162,14,17,4,user,bdi,requested,bdi
+test,2026-07-19,sunday,breakfast,Yogurt Oats Bowl with Banana and Almonds,,forecasted,301,17,35,10,301,17,35,10,plan,bdi,requested,bdi
+test,2026-07-19,sunday,dinner,Mozzarella with Potatoes and Salad,big pizza,modified,494,31,60,17,1140,65,100,45,user,bdi,requested,bdi
+test,2026-07-19,sunday,lunch,Eggs with Potatoes and Sautéed Courgette,Eggs with Potatoes and Sautéed Courgette,confirmed,646,38,52,30,646,38,52,30,user,bdi,requested,bdi
+test,2026-07-19,sunday,morning_snack,Apple with high-protein yogurt and almonds,,forecasted,159,9,19,5,159,9,19,5,plan,bdi,requested,bdi
+test,2026-07-20,monday,afternoon_snack,High-Protein Yogurt with Apple and Almonds,,forecasted,157,12,12,4,157,12,12,4,plan,bdi,requested,bdi
+test,2026-07-20,monday,breakfast,Yogurt with Apple and Honey Cereal,,forecasted,297,18,36,1,297,18,36,1,plan,bdi,requested,bdi
+test,2026-07-20,monday,dinner,Steamed Bream with Boiled Potatoes and Green Salad,,forecasted,507,31,42,21,507,31,42,21,plan,bdi,requested,bdi
+test,2026-07-20,monday,lunch,Grilled Veal Steak with Potatoes and Green Salad,,forecasted,648,38,75,21,648,38,75,21,plan,bdi,requested,bdi
+test,2026-07-20,monday,morning_snack,Banana Yogurt with Almonds and Honey,,forecasted,241,16,29,7,241,16,29,7,plan,bdi,requested,bdi
+test,2026-07-21,tuesday,afternoon_snack,Turkey Crispbread Snack,,forecasted,161,12,21,4,161,12,21,4,plan,bdi,requested,bdi
+test,2026-07-21,tuesday,breakfast,Savory Ham and Egg Toast,,forecasted,454,29,50,15,454,29,50,15,plan,bdi,requested,bdi
+test,2026-07-21,tuesday,dinner,Boiled Eggs with Potatoes and Green Salad,,forecasted,506,38,56,18,506,38,56,18,plan,bdi,requested,bdi
+test,2026-07-21,tuesday,lunch,Grilled beef steak with boiled potatoes and salad,,forecasted,649,39,77,19,649,39,77,19,plan,bdi,requested,bdi
+test,2026-07-21,tuesday,morning_snack,Apple with High-Protein Yogurt and Mixed Nuts,,forecasted,280,17,32,10,280,17,32,10,plan,bdi,requested,bdi
+test,2026-07-22,wednesday,afternoon_snack,Egg and Tomato Crispbread,,forecasted,159,9,18,7,159,9,18,7,plan,bdi,requested,bdi
+test,2026-07-22,wednesday,breakfast,"Oat Bowl with Yogurt, Banana and Almonds",,forecasted,452,26,54,14,452,26,54,14,plan,bdi,requested,bdi
+test,2026-07-22,wednesday,dinner,Grilled Chicken with Potatoes and Zucchini,,forecasted,499,42,40,16,499,42,40,16,plan,bdi,requested,bdi
+test,2026-07-22,wednesday,lunch,"Mozzarella with Potatoes, Salad and Whole-wheat Bread",,forecasted,651,38,76,22,651,38,76,22,plan,bdi,requested,bdi
+test,2026-07-22,wednesday,morning_snack,"Protein Yogurt with Banana, Oats and Honey",,forecasted,240,18,28,2,240,18,28,2,plan,bdi,requested,bdi
+test,2026-07-23,thursday,afternoon_snack,Apple and Protein Yogurt with Almonds,,forecasted,239,16,28,7,239,16,28,7,plan,bdi,requested,bdi
+test,2026-07-23,thursday,breakfast,Protein Yogurt Bowl with Oats and Banana,,forecasted,453,31,52,13,453,31,52,13,plan,bdi,requested,bdi
+test,2026-07-23,thursday,dinner,Soft Scrambled Eggs with Potatoes and Zucchini,,forecasted,501,29,58,17,501,29,58,17,plan,bdi,requested,bdi
+test,2026-07-23,thursday,lunch,Grilled Chicken with Brown Rice and Courgettes,,forecasted,654,45,77,20,654,45,77,20,plan,bdi,requested,bdi
+test,2026-07-23,thursday,morning_snack,Yogurt with Apple and Oats,,forecasted,159,11,19,1,159,11,19,1,plan,bdi,requested,bdi
+test,2026-07-24,friday,afternoon_snack,Egg and Tomato Whole-Wheat Toast,,forecasted,239,17,21,12,239,17,21,12,plan,bdi,requested,bdi
+test,2026-07-24,friday,breakfast,Oat Yogurt Bowl with Banana and Almonds,,forecasted,456,27,54,14,456,27,54,14,plan,bdi,requested,bdi
+test,2026-07-24,friday,dinner,Grilled beef steak with boiled potatoes and salad,,forecasted,500,46,48,14,500,46,48,14,plan,bdi,requested,bdi
+test,2026-07-24,friday,lunch,Grilled Chicken Rice Bowl with Courgette and Tomato,,forecasted,650,46,69,19,650,46,69,19,plan,bdi,requested,bdi
+test,2026-07-24,friday,morning_snack,Wholegrain crispbread with lean ham and cucumber,,forecasted,281,20,31,9,281,20,31,9,plan,bdi,requested,bdi
+test,2026-07-25,saturday,afternoon_snack,Apple Yogurt Snack,,forecasted,160,10,17,4,160,10,17,4,plan,bdi,requested,bdi
+test,2026-07-25,saturday,breakfast,Whole-grain toast with lean ham and tomato,,forecasted,299,18,31,9,299,18,31,9,plan,bdi,requested,bdi
+test,2026-07-25,saturday,dinner,Chickpeas with Potatoes and Zucchini,,forecasted,499,28,59,17,499,28,59,17,plan,bdi,requested,bdi
+test,2026-07-25,saturday,lunch,Grilled chicken breast with brown rice and salad,,forecasted,653,38,77,22,653,38,77,22,plan,bdi,requested,bdi
+test,2026-07-25,saturday,morning_snack,Egg and Tomato Toast,,forecasted,244,18,27,11,244,18,27,11,plan,bdi,requested,bdi
+test,2026-07-26,sunday,afternoon_snack,Turkey Crispbread Snack,,forecasted,162,14,17,4,162,14,17,4,plan,bdi,,bdi
+test,2026-07-26,sunday,breakfast,Yogurt Oats Bowl with Banana and Almonds,,forecasted,301,17,35,10,301,17,35,10,plan,bdi,,bdi
+test,2026-07-26,sunday,dinner,Mozzarella with Potatoes and Salad,,forecasted,494,31,60,17,494,31,60,17,plan,bdi,,bdi
+test,2026-07-26,sunday,lunch,Eggs with Potatoes and Sautéed Courgette,,forecasted,646,38,52,30,646,38,52,30,plan,bdi,,bdi
+test,2026-07-26,sunday,morning_snack,Apple with high-protein yogurt and almonds,,forecasted,159,9,19,5,159,9,19,5,plan,bdi,,bdi
