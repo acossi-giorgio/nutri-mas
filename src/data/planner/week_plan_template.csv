@@ -69,38 +69,38 @@ test_2,wednesday,breakfast,Colazione a base di latticini Large,600,34,70,20,dair
 test_2,wednesday,dinner,Primo piatto di carboidrati con contorno Medium,650,37,76,22,grain
 test_2,wednesday,lunch,Secondo piatto di carne rossa con contorno Medium,650,37,76,22,red_meat
 test_2,wednesday,morning_snack,Spuntino salato proteico (Affettati) Medium,240,14,28,8,poultry
-test_3,friday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
-test_3,friday,breakfast,Complex carbohydrate breakfast Medium,450,15,53,15,grain
-test_3,friday,dinner,Vegetable dish with light protein Small,500,18,63,17,vegetable
-test_3,friday,lunch,Egg-based main course with side dish Small,500,18,63,17,egg
-test_3,friday,morning_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,friday,afternoon_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,friday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
+test_3,friday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
+test_3,friday,lunch,Legume main course with side dish Small,500,18,63,17,legume
+test_3,friday,morning_snack,Dairy-based snack Small,160,7,22,5,dairy
 test_3,monday,afternoon_snack,Fresh fruit snack Small,160,7,22,5,fruit
-test_3,monday,breakfast,Nuts and seeds breakfast Medium,450,15,53,15,nuts
-test_3,monday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
-test_3,monday,lunch,Legume main course with side dish Small,500,18,63,17,legume
+test_3,monday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
+test_3,monday,dinner,Egg-based main course with side dish Small,500,18,63,17,egg
+test_3,monday,lunch,Vegetable dish with light protein Small,500,18,63,17,vegetable
 test_3,monday,morning_snack,Nuts snack Small,160,7,22,5,nuts
-test_3,saturday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
-test_3,saturday,breakfast,Complex carbohydrate breakfast Medium,450,15,53,15,grain
-test_3,saturday,dinner,Vegetable dish with light protein Small,500,18,63,17,vegetable
-test_3,saturday,lunch,Egg-based main course with side dish Small,500,18,63,17,egg
-test_3,saturday,morning_snack,Nuts snack Small,160,7,22,5,nuts
-test_3,sunday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
-test_3,sunday,breakfast,Complex carbohydrate breakfast Medium,450,15,53,15,grain
-test_3,sunday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
-test_3,sunday,lunch,Legume main course with side dish Small,500,18,63,17,legume
-test_3,sunday,morning_snack,Nuts snack Small,160,7,22,5,nuts
-test_3,thursday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
-test_3,thursday,breakfast,Complex carbohydrate breakfast Medium,450,15,53,15,grain
+test_3,saturday,afternoon_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,saturday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
+test_3,saturday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
+test_3,saturday,lunch,Legume main course with side dish Small,500,18,63,17,legume
+test_3,saturday,morning_snack,Dairy-based snack Small,160,7,22,5,dairy
+test_3,sunday,afternoon_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,sunday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
+test_3,sunday,dinner,Vegetable dish with light protein Small,500,18,63,17,vegetable
+test_3,sunday,lunch,Cheese-based main course with side dish Small,500,18,63,17,dairy
+test_3,sunday,morning_snack,Dairy-based snack Small,160,7,22,5,dairy
+test_3,thursday,afternoon_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,thursday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
 test_3,thursday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
 test_3,thursday,lunch,Legume main course with side dish Small,500,18,63,17,legume
-test_3,thursday,morning_snack,Nuts snack Small,160,7,22,5,nuts
-test_3,tuesday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
+test_3,thursday,morning_snack,Dairy-based snack Small,160,7,22,5,dairy
+test_3,tuesday,afternoon_snack,Fresh fruit snack Small,160,7,22,5,fruit
 test_3,tuesday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
-test_3,tuesday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
-test_3,tuesday,lunch,Legume main course with side dish Small,500,18,63,17,legume
-test_3,tuesday,morning_snack,Fresh fruit snack Small,160,7,22,5,fruit
-test_3,wednesday,afternoon_snack,Carbohydrate-based snack Small,160,7,22,5,grain
+test_3,tuesday,dinner,Egg-based main course with side dish Small,500,18,63,17,egg
+test_3,tuesday,lunch,Vegetable dish with light protein Small,500,18,63,17,vegetable
+test_3,tuesday,morning_snack,Nuts snack Small,160,7,22,5,nuts
+test_3,wednesday,afternoon_snack,Nuts snack Small,160,7,22,5,nuts
 test_3,wednesday,breakfast,Fruit-based breakfast Medium,450,15,53,15,fruit
 test_3,wednesday,dinner,Carbohydrate-based first course with side dish Small,500,18,63,17,grain
 test_3,wednesday,lunch,Legume main course with side dish Small,500,18,63,17,legume
-test_3,wednesday,morning_snack,Fresh fruit snack Small,160,7,22,5,fruit
+test_3,wednesday,morning_snack,Dairy-based snack Small,160,7,22,5,dairy
